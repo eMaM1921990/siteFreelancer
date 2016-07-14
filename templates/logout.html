@@ -1,0 +1,89 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="header">
+        <div class="row">
+
+            <!-- ====================================================================== -->
+            <!-- Start: Navbar -->
+            <!-- ====================================================================== -->
+
+            <nav class="navbar navbar-default navUpper" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#"><img src="{% static 'Logo.png' %}" alt="logo" class="logo"/></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="myNav">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Client<span class="sr-only">(current)</span></a></li>
+                    <li><a href="/index">Teenlancer</a></li>
+                    <li><a href="#">Hire</a></li>
+
+                  </ul>
+
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/login" class="IconAvatar">Login</a></li>
+                    <li><a href="/register" class="postTeen"><span class="hidden-sm hidden-md">Register</span></a></li>
+
+                  </ul>
+
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+
+
+
+
+            <!-- ====================================================================== -->
+            <!-- End: Navbar -->
+            <!-- ====================================================================== -->
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Header -->
+    <!-- ====================================================================== -->
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container-fluid">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="homeAbout logout">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="aboutPageBack" style="background-image:url(img/logout.png); background-size: cover;">
+                                    <div class="captionText">
+                                        <h1>14 year old jobs</h1>
+                                        <h3>At 14, Ela makes $575 weekly on TEENLANCER.CO as a teenlance Graphic Designer</h3>
+                                        <a href="#!">Here's how</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+{% endblock %}

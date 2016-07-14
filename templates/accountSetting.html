@@ -1,0 +1,188 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+{% include 'login_header.html' %}
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="myMessages countries accountSetting">
+                        <div class="row orderButtons">
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/accountSettings/">Account</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/profileSettings/">Profile</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/membershipSettings/">Membership</a>
+                            </div>
+                            <!--<div class="col-xs-12 col-sm-3 text-center">-->
+                            <!--    <a href="#!">Payment</a>-->
+                            <!--</div>-->
+                        </div>
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <h3 class="myHeadLine">Account Type</h3>
+                            </div>
+                        </div>
+                        {% if error %}
+                            <div class="col-xs-12 col-sm-12 client text-center">
+                                <h1 class="myHeadLine">{{ error }}</h1>
+                            </div>
+                        {% endif %}
+                         <form action="/accountSettings/" id="submitForm" method="POST">{%csrf_token%}
+                        <div class="row accSetting">
+                            <div class="col-xs-12 col-sm-6 client">
+                                <h3 class="myHeadLine ">I'm a Client</h3>
+                                <input type="number" name="client" value="0" class="myCheckboxClient" hidden>
+                                <span class="myCheckbox pull-right" id="myCheckboxClient"></span>
+                                <!--<span class="myCheckbox clientCheck pull-right"></span>-->
+                                <!--<span class="clearfix"></span>-->
+                            </div>
+                            <div class="col-xs-12 col-sm-6 teenlancer">
+                                <h3 class="myHeadLine  ">I'm a Teenlancer</h3>
+                                <input type="number" name="teenlancer" value="0"  class="myCheckboxTeenlancer" hidden>
+                                <span class="myCheckbox pull-right" id="myCheckboxTeenlancer"></span>
+                                <!--<span class="myCheckbox teenlancerCheck pull-right"></span>-->
+                                <!--<span class="clearfix"></span>-->
+                            </div>
+                        </div>
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <h3 class="myHeadLine">Login Details</h3>
+                            </div>
+                        </div>
+
+
+                        <div class="row inputRow">
+                            <div class="col-xs-12 col-sm-4 pull-left">
+                                <input type="text" class="form-group myInput" name="current_email" id="current_email" placeholder="Current Email" />
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <input type="text" class="form-group myInput mail" name="new_email" id="mail1"  placeholder="New Email" />
+                            </div>
+                            <div class="col-xs-12 col-sm-4 pull-right ">
+                                <input type="text" class="form-group myInput mail" id="mail2"  placeholder="Confirm New Email" />
+                            </div>
+                        </div>
+                       <div class="row inputRow">
+                            <div class="col-xs-12 col-sm-4 pull-left">
+                                <input type="password" class="form-group myInput" id="current_pass" name="current_pass" placeholder="Current Password" />
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <input type="password" class="form-group myInput pass" id="pass1" name="new_pass" placeholder="New Password" />
+                            </div>
+                            <div class="col-xs-12 col-sm-4 pull-right">
+                                <input type="password" class="form-group myInput pass" id="pass2" placeholder="Confirm New Password" />
+                            </div>
+                        </div>
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <a id="submitButton" class="myButton">Save Changes</a>
+                            </div>
+                        </div>
+
+                        <input type = "number" hidden name="email_flag" id="email_flag" value="0" />
+                        <input type = "number" hidden name="pass_flag" id="pass_flag" value="0"/>
+                        <input type = "number" hidden name="type_flag" id="type_flag" value="0"/>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+    <script>
+
+         $(".myInput").click(function () {
+            $(this).css("border", "2px solid rgba(226, 228, 229, 0.44)")
+        });
+
+        $("#submitButton").click(function(){
+            flag = true;
+            if ( $("#current_email").val() != "" ){
+                $("#email_flag").val(1);
+                if ($("#mail1").val() != $("#mail2").val() ){
+                    $("#mail1").css("border","1px solid red");
+                    $("#mail2").css("border","1px solid red");
+                    flag = false;
+                }
+            }
+            if ($(".myCheckboxTeenlancer").val() == 1 || $(".myCheckboxClient").val() == 1 ){
+                $("#type_flag").val(1);
+
+            }
+            else {
+                $("#type_flag").val(0);
+            }
+
+
+
+            if ( $("#current_pass").val() != "" ){
+                $("#pass_flag").val(1);
+                if ($("#pass1").val() != $("#pass2").val() ){
+                    $("#pass1").css("border","1px solid red");
+                    $("#pass2").css("border","1px solid red");
+                    flag = false;
+                }
+            }
+            if (flag){
+                // alert($(".myCheckboxClient").val());
+                $("#submitForm").submit();
+            }
+        });
+
+
+
+
+        $("#myCheckboxTeenlancer").click(function () {
+            $(".myCheckbox").css("border", "2px solid rgba(226, 228, 229, 0.44)");
+            if ( $(".myCheckboxTeenlancer").val() == 1 ){
+                    $(this).css("background-image", "none");
+                     $(".myCheckboxTeenlancer").val(0);
+            } else {
+                if ( $(".myCheckboxClient").val() == 1){
+                    $(".myCheckbox").css("background-image", "none");
+                    $(".myCheckboxClient").val(0);
+                }
+                $(this).css("background-image", "url(/static/galka.png)");
+                $(this).css("background-size", "100%");
+                $(this).css("background-repeat", "no-repeat");
+                $(".myCheckboxTeenlancer").val(1);
+            }
+        });
+
+         $("#myCheckboxClient").click(function () {
+             $(".myCheckbox").css("border", "2px solid rgba(226, 228, 229, 0.44)");
+            if ( $(".myCheckboxClient").val() == 1){
+                    $(this).css("background-image", "none");
+                     $(".myCheckboxClient").val(0);
+            } else {
+
+                if ( $(".myCheckboxTeenlancer").val() == 1){
+                    $(".myCheckbox").css("background-image", "none");
+                    $(".myCheckboxTeenlancer").val(0);
+                }
+                $(this).css("background-image", "url(/static/galka.png)");
+                $(this).css("background-size", "100%");
+                $(this).css("background-repeat", "no-repeat");
+                $(".myCheckboxClient").val(1);
+            }
+        });
+
+
+
+    </script>
+
+{% endblock %}

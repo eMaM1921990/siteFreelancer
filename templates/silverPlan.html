@@ -1,0 +1,140 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+{% include 'header.html' %}
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+     <script src="https://secure.payza.com/JS/PayzaCheckout.js"></script>
+    <form method="post" action="https://secure.payza.com/checkout" >
+        <input type="hidden" name="ap_productid"
+        value="Amc0MLt89k3cyUzHBU4IEg=="/>
+        <input type="hidden" name="ap_quantity" value="1"/>
+        <input type="hidden" name="ap_cancelurl" value="http://www.payza.com/Cancel.html" />
+        <input type="hidden" name="ap_inpage" value="1"/>
+        <input type="hidden" name="ap_returnurl" value="http://drowerik3.pythonanywhere.com/silver_confirmed/"/>
+
+
+    </form>
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent checkoutSkrillCont silverPlanCont">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="checkoutSkrill silverPlan">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h5 class="subTitle">You have selected the silver Membership Plan which costs $9.99/monthly</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="myCard">
+                                            <h5 class="headTitle">Select Payment</h5>
+                                            <h5 class="subTitle">Credit Card <span class="myCardType">Skrill</span> <span class="myCardType activeCard">Payza</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <img src="{% static 'Payza.png' %}" alt="Payza" class="img-responsive skrillImage" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <h5 class="subHead">Deposit Amount</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-1 leftXS">
+                                        <h5 class="dollar">$</h5>
+                                    </div>
+                                    <div class="col-xs-10">
+                                        <h5 class="price">10.65</h5>
+                                    </div>
+                                    <div class="col-xs-1 rightXS">
+                                        <h5 class="usd">USD</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <a  name='linkPay' href="https://secure.payza.com/checkout?BTRAaGpkc3FsYnNkKTRAfHdsd3FkeHRic2QpQEB
+qSEw3WEVLfVh8ZjZuPDt3T1AzZnBEQGdsd2Z4Z3J1c2JzZAI=" class="myButton">Confirm</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 rightSideCont">
+                                <div class="row">
+                                    <div class="col-xs-12 rightSide">
+                                        <div class="myCard">
+
+                                            <div class="row cardHead">
+                                                <div class="col-xs-12 col-sm-8 leftAlign">
+                                                    <h5 class="">Payment Breakdown</h5>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 rightAlign">
+                                                    <h5 class="">(USD)</h5>
+                                                </div>
+                                            </div>
+                                            <div class="row cardBody">
+                                                <div class="col-xs-12 col-sm-8 leftAlign">
+                                                    <h5 class="">Deposit Amount</h5>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 rightAlign">
+                                                    <h5 class="">$9.99</h5>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-8 leftAlign">
+                                                    <h5 class="">Deposit Fee</h5>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 rightAlign">
+                                                    <h5 class="">$0.66</h5>
+                                                </div>
+                                            </div>
+
+                                            <div class="row cardFooter">
+                                                <div class="col-xs-12 col-sm-8 leftAlign">
+                                                    <h5 class="orange">Total</h5>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 rightAlign">
+                                                    <h5 class="">$10.65</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row rightBottom">
+                                    <div class="col-xs-12 sslCard">
+                                        <div class="">
+
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-2">
+                                                    <img src="{% static 'SSL.png' %}" class="img-responsive mySSLImage" />
+                                                </div>
+                                                <div class="col-xs-12 col-sm-10">
+                                                    <h5>This is a secure 256-bit SSL encrypted payment</h5>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+{% endblock %}

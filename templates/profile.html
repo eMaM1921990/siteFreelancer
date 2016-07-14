@@ -1,0 +1,301 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+{% include 'login_header.html' %}
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container-fluid">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="homeAbout profilePage">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                {% if user.cover %}
+                                    <div class="aboutPageBack"  style="background-image:url({{ user.cover }}); background-size: cover;">
+                                {% else %}
+                                    <div class="aboutPageBack" style="background-image:url(/static/cover.png); background-size: cover;">
+                                {% endif %}
+
+                                     <form action="/uploadCover/" method="post" id="uploadCover" enctype="multipart/form-data"> {% csrf_token %}
+                                            <input type="number" name="user_id" value="{{ user.pk }}" hidden>
+                                            <input type="file" name="cover" id="coverSubmit" style="display:none">
+                                        </form>
+                                    <div class="captionText">
+                                        {% if user.image %}
+                                            <img src="{{ user.image }}" class="" id="userPict" alt="userPic" />
+                                        {% else %}
+                                            <img src="/static/defaultUserPic.png" class="" id="userPict" alt="userPic" />
+                                        {% endif %}
+                                        <form action="/uploadImage/" method="post" id="uploadForm" enctype="multipart/form-data"> {% csrf_token %}
+                                            <input type="number" name="user_id" value="{{ user.pk }}" hidden>
+                                            <input type="file" name="image" id="imgSubmit" style="display:none">
+                                            <!--<button type="submit" class="btn btn-default" id="uploadButton" style="display:none"> Save</button>-->
+                                        </form>
+                                        <i class="fa fa-circle"></i>
+                                        <h5>{{ user.username }}</h5>
+                                        <h5 class="teenType">{{ user_plan }}</h5>
+                                        <h6 class="teenJob">{{ user.title }}</h6>
+                                        <a href="#!" class="permalink">teenlancer.co/USERNAME</a>
+                                    </div>
+                                    <h6 id="coverPict">Edit cover!</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container cardCont">
+                            <div class="row">
+
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="card firstCard">
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12">
+                                                <h5 class="myHeadLine">Summary</h5>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- <textarea class="myBioArea" placeholder="Edit here..."></textarea>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8">
+
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <a href="#!" class="bioSave">Save</a>
+                                            </div>
+                                        </div> -->
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h5 class="subItem">Rating</h5>
+                                            </div>
+                                            <div class="col-xs-6 subRight">
+                                                <i class="fa fa-star starActive"></i>
+                                                <i class="fa fa-star starActive"></i>
+                                                <i class="fa fa-star starActive"></i>
+                                                <i class="fa fa-star starActive"></i>
+                                                <i class="fa fa-star "></i>
+                                                <span class="rating">{{rating}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h5 class="subItem">Review</h5>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <h5 class="subItem subRight">{{reviews}}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h5 class="subItem">Teensies Sold</h5>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <h5 class="subItem subRight">0</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h5 class="subItem">Teensies Bought</h5>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <h5 class="subItem subRight">0</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h5 class="subItem">Member Since</h5>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <h5 class="subItem subRight">{{ user.date }}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h5 class="subItem">Last Online</h5>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <h5 class="subItem subRight" id="time">{{ value }}</h5>
+                                                <script>
+                                                    var x = new Date();
+                                                    var currentTimeZoneOffsetInHours = x.getTimezoneOffset() / 60;
+                                                    var time = $("#time").html();
+                                                    var start = time.length - 10;
+                                                    var hours = time.substring(start,start+2) ;
+                                                    local_hours = hours - currentTimeZoneOffsetInHours;
+                                                    if (time[time.length-4] == 'p'){
+                                                        local_hours+=12;
+                                                    }
+                                                    var time1 = time.substring(0,start) ;
+                                                    var time2 = time.substring(start+2,time.length-4) ;
+                                                    $("#time").html(time1+local_hours+time2);
+
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 myButtonCont">
+                                                <a href="#!" class="myButton">Hire Me</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="card secondCard">
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8">
+                                                <h5 class="myHeadLine">About Me</h5>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <a id="edit_de" class="editButton">Edit</a>
+                                            </div>
+                                        </div>
+                                        <form action='/edit_description/' method='post' id="descriptionForm"> {% csrf_token %}
+                                         <input type="number" name="user_id" value="{{ user.pk }}" hidden>
+
+                                        <textarea class="myTextArea" id="desc_aria"name="description" placeholder="Edit here..."  maxlength="500">{{ user.description }}</textarea>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8">
+
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <a id="edit_description" class="saveButton">Save</a>
+                                            </div>
+                                        </div>
+                                         </form>
+                                        <p id="desc">{{ user.description }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="card mySkillsCard">
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8">
+                                                <h5 class="myHeadLine">My Top Skills(max 20)</h5>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <a id="edit_sk" class="skillEdit">Edit</a>
+                                            </div>
+                                        </div>
+                                         <form action='/edit_skills/' method='post' id="skillsForm"> {% csrf_token %}
+                                          <input type="number" name="user_id" value="{{ user.pk }}" hidden>
+                                        <textarea class="mySkillArea" name="skills" id="skills"  placeholder="Edit here..."> {{ user.skills }} </textarea>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8">
+
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <a id="edit_skills" class="skillSave" data-dismiss="modal">Save</a>
+                                            </div>
+                                        </div>
+                                        </form>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                {% for skill in skills %}
+                                                    <span>{{ skill }}</span>
+                                                {% endfor %}
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container teensiesCont">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h3 class="myHeadLine">My Teensies</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container cardCont">
+                            <div class="row">
+                                {% for teensie in teensies %}
+                                <div class="col-xs-12 col-sm-4">
+                                    <a href="/teensie/{{ teensie.pk }}/" class="myTeensieLink leftTeensie">
+                                        <img src="{% static 'defaultTeensie.png' %}" alt="teensie" class="img-responsive" />
+                                    </a>
+                                </div>
+                                {% endfor %}
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+
+    <script>
+
+        // $("#edit_de").click(function(){
+        //     $("#desc_aria").val($("#desc").html());
+        // });
+
+        // $("#edit_sk").click(function(){
+        //     $("#skills_aria").val($("#desc").html());
+        // });
+
+
+        $("#edit_description").click(function(){
+            $("#descriptionForm").submit();
+        });
+
+
+        $("#edit_skills").click(function(){
+
+            var tags = $("#skills").val();
+            var re = /\s*,\s*/
+            var tagList = tags.split(re);
+            if (tagList.length < 20){
+                 $("#skillsForm").submit();
+            }
+
+
+        });
+
+
+        $("#coverPict").click(function(){
+            $("#coverSubmit").click();
+            setInterval(function(){
+                if ( $("#coverSubmit").val() != "" ){
+                    $("#uploadCover").submit();
+                }
+
+            }, 1000);
+            // $("#uploadButton").show();
+        });
+
+        $("#userPict").click(function(){
+            $("#imgSubmit").click();
+            setInterval(function(){
+                if ( $("#imgSubmit").val() != "" ){
+                    $("#uploadForm").submit();
+                }
+
+            }, 1000);
+            // $("#uploadButton").show();
+        });
+
+
+
+
+    </script>
+
+{% endblock %}

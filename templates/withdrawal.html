@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'login_header.html' %}
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="myMessages countries withdrawal">
+                        <div class="row orderButtons">
+                            <div class="col-xs-12 col-sm-6 text-center">
+                                <a href="/balance/">Balance</a>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 text-center">
+                                <a href="/withdrawal/">Withdraw</a>
+                            </div>
+                        </div>
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <h3 class="myHeadLine">Withdrawal Request</h3>
+                            </div>
+                        </div>
+                        <!--<div class="row orderButtons">-->
+                        <!--    <div class="col-xs-12 col-sm-6 text-center">-->
+                        <!--        <a href="#!">Skrill Withdrawal</a>-->
+                        <!--    </div>-->
+
+                        <!--    <div class="col-xs-12 col-sm-6 text-center">-->
+                        <!--        <a href="#!">Other Withdrawal</a>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        <form action="/withdrawal/" id="submitForm" method="POST"> {%csrf_token%}
+                        <div class="row inputRow">
+                            <div class="col-xs-12 col-sm-12 client">
+                                <input type="text" name="email" id="email" class="form-group myInput" placeholder="Payza Email Account" />
+                            </div>
+                        </div>
+                        <div class="row inputRow">
+                            <div class="col-xs-12 col-sm-1 client">
+                                <h5 class="myLabel left">$</h5>
+                            </div>
+                            <div class="col-xs-12 col-sm-10 client">
+                                <input type="number" name="amount" id="amount" class="form-group myInput amount" placeholder="Withdrawal Amount" />
+                            </div>
+                            <div class="col-xs-12 col-sm-1 client">
+                                <h5 class="myLabel right">USD</h5>
+                            </div>
+                        </div>
+                        <div class="row accSetting">
+                            <div class="col-xs-12 col-sm-12 client text-center">
+                                <h3 class="myHeadLine">NOTE: While withdrawals are processed twice a weak, the minimum amount that can be withdrawn is $20.00 and the maximum is put at $5,000.00</h3>
+                            </div>
+                        </div>
+                        </form>
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <a id="submitButton" class="myButton">Withdraw Funds</a>
+                            </div>
+                        </div>
+                        <div class="row accSetting">
+                            <div class="col-xs-12 col-sm-12 client text-center">
+                                <h1 class="myHeadLine">{{ result }}</h1>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+    <script>
+        $(".myInput").click(function () {
+            $(this).css("border", "2px solid rgba(226, 228, 229, 0.44)")
+        });
+
+        $("#submitButton").click(function(){
+            var flag = true;
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var elems = document.getElementsByClassName("myInput");
+            for(var i = 0; i < elems.length; i++) {
+                if ( elems[i].value == ""){
+                    elems[i].style.border = "1px solid red";
+                    flag = false;
+                } else {
+                    elems[i].style.border = "2px solid rgba(226, 228, 229, 0.44)";
+                }
+            }
+            if (!re.test($("#email").val())){
+                $("#email").css("border","1px solid red");
+                flag = false;
+            }
+            if ( $("#amount").val() < 20 || $("#amount").val() > 5000 ){
+                $("#amount").css("border","1px solid red");
+                flag = false;
+            }
+
+            if (flag) {
+                $("#submitForm").submit();
+            }
+        });
+
+
+    </script>
+
+{% endblock %}

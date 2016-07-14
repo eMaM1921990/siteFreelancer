@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'login_header.html' %}
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="myMessages countries giveFeedback">
+
+
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <h3 class="myHeadLine">Give Feedback</h3>
+                            </div>
+                        </div>
+                        <form action="/feedback/" method="post" id="submitForm">{% csrf_token %}
+
+
+                        <div class="row inputRow checkBox">
+                            <div class="col-xs-12 col-sm-12 text-center">
+                                <textarea class="myInput" name="review" placeholder="Please enter your review here"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row accSetting">
+                            <div class="col-xs-12 col-sm-12 client ">
+                                <h3 class="myHeadLine lower">
+                                Please rate your level of satisfaction with the outcome of this teenlancer's work
+
+                                <span class="pull-right">
+                                    <input type="number" name="pk" value={{teensie.pk}} hidden/>
+                                    <input type="number" class="rating myInput" name="rating" />
+                                    <div id="rateYo"></div>
+                                    <!--<span class="rating">0.0</span>-->
+                                </span>
+                                </h3>
+                            </div>
+                        </div>
+                        </form>
+
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <a id="submitButton" class="myButton">Submit Feedback</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+    <script>
+        $(".myInput").click(function () {
+                $(this).css("border", "2px solid rgba(226, 228, 229, 0.44)")
+            });
+
+         $("#submitButton").click(function(){
+                var flag = true;
+                var elems = document.getElementsByClassName("myInput");
+                for(var i = 0; i < elems.length; i++) {
+                    if ( elems[i].value == ""){
+                        elems[i].style.border = "1px solid red";
+                        flag = false;
+                    } else {
+                        elems[i].style.border = "2px solid rgba(226, 228, 229, 0.44)";
+                    }
+                }
+                if (flag){
+                    $("#submitForm").submit();
+                }
+
+            });
+    </script>
+{% endblock %}

@@ -1,0 +1,192 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+{% include 'login_header.html' %}
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+    <div class="mainContent">
+        <div class="container-fluid">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+
+
+
+                    <div class="modals">
+                        <div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="container modalCont">
+                                  <div class="row">
+                                      <div class="col-xs-12 text-center">
+                                        <div class="skull"><img src="{% static 'Skull.png' %}" class="img-responsive myImage" /></div>
+                                      </div>
+                                  </div>
+                                  <div class="row modalBody">
+                                      <div class="col-xs-12 text-center">
+                                          <i class="fa fa-caret-down fa-1x"></i>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-xs-12 text-center">
+                                              <h5>Just Making Sure if you really wanna continue with this action</h5>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-xs-12 text-center">
+                                          <a href="/register" class="myButton yeah">Okie</a>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-xs-12 text-center">
+                                          <a href="#!" class="myButton nope" data-dismiss="modal">Nope</a>
+                                      </div>
+                                  </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="modal fade" id="releasePaymentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="container modalCont">
+                                  <div class="row">
+                                      <div class="col-xs-12 text-center">
+                                          <div class="skull"><img src="{% static 'Wallet.png' %}" class="img-responsive myImage" /></div>
+                                      </div>
+                                  </div>
+                                  <div class="row modalBody">
+                                      <div class="col-xs-12 text-center">
+                                          <i class="fa fa-caret-down fa-1x"></i>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-xs-12 text-center">
+                                              <h5>Only release payments when you're 100% satisfied with your teenlancer's work. Payments Cannot be returned once released. By clicking on the Release Payment button below, you agree that your teenlancer has delivered satisfactory work.</h5>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-xs-12 text-center">
+                                          <a href="#!" class="myButton yeah" data-dismiss="modal">Release Payment</a>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-xs-12 text-center">
+                                          <a href="#!" class="myButton nope" data-dismiss="modal">Cancel</a>
+                                      </div>
+                                  </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="container modalCont">
+                                  <div class="row">
+                                      <div class="col-xs-12 text-center">
+                                      </div>
+                                  </div>
+                                  <div class="row modalBody">
+                                      <div class="col-xs-12 text-center">
+                                          <i class="fa fa-caret-down fa-1x"></i>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-xs-12 text-center">
+                                              <h5>We've just sent a new password to your registered email address</h5>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-xs-12 text-center">
+                                          <a href="#!" class="myButton yeah" data-dismiss="modal">Okie</a>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-xs-12 text-center">
+                                          <a href="#!" class="myButton nope" data-dismiss="modal">UM</a>
+                                      </div>
+                                  </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="homeSlider">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <!-- Slider main container -->
+                                <div class="swiper-container">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+                                        <div class="swiper-slide" style="background-image: url('/static/sliderImage1.png'); background-size: cover;">
+                                            <div class="captionText">
+                                                <h1>Find Teen Artists</h1>
+                                                <h3><span>Sketching</span> . <span>Drawing</span> . <span>Painting</span> . <span>Modeling</span></h3>
+                                                <a href="#!">See Samples Here</a>
+                                            </div>
+
+                                        </div>
+                                        <div class="swiper-slide" style="background-image: url('/static/sliderImage2.png'); background-size: cover;">
+                                            <div class="captionText">
+                                                <h1>Find Teen Designers</h1>
+                                                <h3><span>Graphics</span> . <span>Logos</span> . <span>Avatars</span> . <span>Illustrations</span></h3>
+                                                <a href="#!">See Samples Here</a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide" style="background-image: url('/static/sliderImage3.png'); background-size: cover;">
+                                            <div class="captionText">
+                                                <h1>Find Teen Developers</h1>
+                                                <h3><span>HTML5</span> . <span>Javascript</span> . <span>PHP</span> . <span>Python</span></h3>
+                                                <a href="#!">See Samples Here</a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide" style="background-image: url('/static/sliderImage4.png'); background-size: cover;">
+                                            <div class="captionText">
+                                                <h1>Find Teen Marketers</h1>
+                                                <h3><span>SEO</span> . <span>SMM</span> . <span>PPC</span> . <span>Digital</span></h3>
+                                                <a href="#!">See Samples Here</a>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide" style="background-image: url('/static/sliderImage5.png'); background-size: cover;">
+                                            <div class="captionText">
+                                                <h1>Find Teen Writers</h1>
+                                                <h3><span>CMS</span> . <span>Blogs</span> . <span>Articles</span> . <span>Analysis</span></h3>
+                                                <a href="#!">See Samples Here</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- If we need pagination -->
+                                    <div class="swiper-pagination"></div>
+
+                                    <!-- If we need navigation buttons -->
+                                    <!-- <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div> -->
+
+                                    <!-- If we need scrollbar -->
+                                    <div class="swiper-scrollbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+{% endblock %}

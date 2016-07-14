@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'login_header.html' %}
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="myMessages countries ordersPlaced">
+                        <div class="row orderButtons">
+                            <!--<div class="col-xs-12 col-sm-6 text-center">-->
+                            <!--    <a href="#!">Placed</a>-->
+                            <!--</div>-->
+                            <!--<div class="col-xs-12 col-sm-6 text-center">-->
+                            <!--    <a href="#!">Received</a>-->
+                            <!--</div>-->
+                        </div>
+                        <div class="row orderTable">
+                            <div class="col-xs-12 orderTableDiv">
+                                <table class="table table-hover">
+                                    <tr class="tableHeader">
+                                        <th class="teensieName">Teensie Name</th>
+                                        <th>Teenlancer</th>
+                                        <th>Price</th>
+                                        <th>Timeframe</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th class="action">Action</th>
+                                    </tr>
+                                    <h1>{{check}}</h1>
+                                    {% for t in teensies %}
+                                    <tr class="tableData">
+                                        <td>{{ t.teensie.teensie_name }}</td>
+                                        <td>{{ t.teensie.user }}</td>
+                                        <td>${{ t.teensie.price }} USD</td>
+                                        <td>{{ t.teensie.timeframe}} Days</td>
+                                        <td>{{ t.teensie.status}}</td>
+                                        <td>{{ t.teensie.date }}</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a id="action1" href="#!" class="dropToggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Action&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+                                                <ul class="dropdown-menu" aria-labelledby="action1">
+                                                    <li><a href="/releasePayment/{{ user.pk }}/{{t.pk}}/">Send Payment</a></li>
+                                                    <li><a href="/giveFeedback/{{ user.pk }}/{{t.pk}}/">Give Feedback</a></li>
+                                                    <li><a href="/dispute/{{t.teensie.pk}}/">Raise Dispute</a></li>
+                                                    <li><a href="/cancel/{{ user.pk }}/{{t.pk}}/">Cancel</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row orderPagination">
+                            <div class="col-xs-12">
+                                <nav>
+                                  <ul class="pagination">
+                                    <li>
+                                      <a href="#" aria-label="First">
+                                        First
+                                      </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                           Previous
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li><a href="#">9</a></li>
+                                    <li><a href="#">10</a></li>
+                                    <li><a href="#">11</a></li>
+                                    <li><a href="#">12</a></li>
+                                    <li><a href="#">13</a></li>
+                                    <li><a href="#">14</a></li>
+                                    <li><a href="#">15</a></li>
+                                    <li><a href="#">16</a></li>
+                                    <li><a href="#">17</a></li>
+                                    <li>
+                                      <a href="#" aria-label="Next">
+                                        Next
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" aria-label="Last">
+                                        Last
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+{% endblock %}

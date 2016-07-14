@@ -1,0 +1,72 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Start: Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- End: Meta Tags -->
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'animate.css' %}">
+    <link href="{% static 'font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'swiper.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'myStyle.css' %}">
+    <title>myStarter</title>
+
+    <script type="text/javascript" src="{% static 'jquery-1.12.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'swiper.jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'myScript.js' %}"></script>
+    <script src="{% static 'jquery-2.2.3.min.js' %}"></script>
+    <script src="{% static 'jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'dataTables.bootstrap.min.js' %}"></script>
+    <script src="{% static 'jquery.slimscroll.min.js' %}"></script>
+    <script src="{% static 'fastclick.js' %}"></script>
+
+<script src="{% static 'demo.js'%}"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'app.min.js' %}"></script>
+  <!--<link rel="stylesheet" href="/static/bootstrap.min.css">-->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'AdminLTE.min.css' %}">
+  <!-- AdminLTE Skins. We have chosen the skin-purple for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect.
+  -->
+  <link rel="stylesheet" href="{% static 'skin-purple.min.css' %}">
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'bootstrap3-wysihtml5.min.css' %}">
+  <link rel="stylesheet" href="{% static 'myStyle1.css' %}">
+
+
+</head>
+<body>
+
+<style>
+    a{
+        cursor:pointer;
+    }
+</style>
+<div class="container-fluid">
+  {% block content %}
+
+  {% endblock %}
+{% include 'footer.html' %}
+</div>
+
+
+
+</body>
+</html>

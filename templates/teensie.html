@@ -1,0 +1,165 @@
+
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+{% include 'login_header.html' %}
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent teensieContent">
+                <div class="col-xs-12 col-sm-8">
+                    <div class="teensie">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <img src="{% static '15.jpg' %}" alt="teensie" class="img-responsive" />
+                                <!--<h6 class="featuredLabel">Posted</h6>-->
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 teensieText">
+                                <h5 class="myHeadLine">{{ teensie.teensie_name }}</h5>
+                                <p>
+                                    {{ teensie.description }}
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 teensieText">
+                                <h4>Skills Required: </h4>
+                                <p>
+                                    {% for skill in skills %}
+                                        <span>{{ skill }}</span>
+                                    {% endfor %}
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="myChat myContactsVIP ">
+                        <div class="row chatHistory addMileStones">
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="card firstCard">
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12">
+                                            <h5 class="myHeadLine">Summary</h5>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <h5 class="subItem"><i class="fa fa-star myIcon"></i>Rating</h5>
+                                        </div>
+                                        <div class="col-xs-6 subRight">
+                                            <i class="fa fa-star starActive"></i>
+                                            <i class="fa fa-star starActive"></i>
+                                            <i class="fa fa-star starActive"></i>
+                                            <i class="fa fa-star starActive"></i>
+                                            <i class="fa fa-star "></i>
+                                            <span class="rating">{{teensie.rating}}</span>
+                                        </div>
+                                    </div>
+                                    <!--<div class="row">-->
+                                    <!--    <div class="col-xs-6">-->
+                                    <!--        <h5 class="subItem"><i class="fa fa-commenting myIcon"></i>Reviews</h5>-->
+                                    <!--    </div>-->
+                                    <!--    <div class="col-xs-6">-->
+                                    <!--        <h5 class="subItem subRight">0</h5>-->
+                                    <!--    </div>-->
+                                    <!--</div>-->
+                                    <!--<div class="row">-->
+                                    <!--    <div class="col-xs-8">-->
+                                    <!--        <h5 class="subItem"><i class="fa fa-shopping-cart myIcon"></i>Quantity sold</h5>-->
+                                    <!--    </div>-->
+                                    <!--    <div class="col-xs-4">-->
+                                    <!--        <h5 class="subItem subRight">0</h5>-->
+                                    <!--    </div>-->
+                                    <!--</div>-->
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <h5 class="subItem"><i class="fa fa-clock-o myIcon"></i>Timeframe</h5>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <h5 class="subItem subRight">{{ teensie.timeframe }} Days</h5>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 myButtonCont">
+                                            {% if user.account_type.type == "Client" %}
+                                                <a href="/placeOrder/{{teensie.pk}}/" class="myButton">Order Now (${{teensie.price}})</a>
+                                            {% else %}
+                                                <a  class="myButton">Order Now (${{teensie.price}})</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="myFooter">
+                        {% if user1 %}
+                        <div class="myChat teensieSide">
+                        {% else %}
+                            <div class="myChat teensieSide" style="display:none">
+                        {% endif %}
+                        <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="coverImg"></div>
+                                </div>
+                            </div>
+                            <div class="row mainChatPic">
+                                <div class="col-xs-4">
+                                    <img src="{{ user1.image }}" alt="userPic" class="img-responsive" />
+
+                                </div>
+                                <div class="col-xs-8">
+                                    <h5>&nbsp;&nbsp; {{ user1.username }}, <span>{{ user1.title }}</span><i class="fa fa-circle-o"></i></h5>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 contactCont">
+                                    <form action="/myMessages/" method="POST" id="sendForm"> {% csrf_token %}
+                                    <input type="number" hidden name="user_id" value="{{user1.pk}}"/>
+                                    <a id="sendMessage" class="contactTeenlancer">Send Message</a>
+                                    </form>
+                                    <script>
+
+                                        $("#sendMessage").click(function(){
+                                            $("#sendForm").submit();
+                                        });
+
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+    <script>
+
+
+
+
+    </script>
+
+{% endblock %}

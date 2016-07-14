@@ -1,0 +1,272 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Start: Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- End: Meta Tags -->
+
+    <title>myStarter</title>
+
+    <!-- Start: Favicon Icon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- End: Favicon Icon -->
+
+    <!-- Start: CSS Files Include -->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'animate.css' %}">
+    <link href="{% static 'font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'myStyle.css' %}">
+
+    <!-- End: CSS Files Include -->
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <!-- ====================================================================== -->
+    <!-- Start: Header -->
+    <!-- ====================================================================== -->
+
+    <div class="header">
+        <div class="row">
+
+            <!-- ====================================================================== -->
+            <!-- Start: Navbar -->
+            <!-- ====================================================================== -->
+
+            <nav class="navbar navbar-default navUpper" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#"><img src="{% static 'Logo.png' %}" alt="logo" class="logo"/></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="myNav">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Client<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Teenlancer</a></li>
+                    <li><a href="#">Hire</a></li>
+                    
+                  </ul>
+
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="IconUpper"><img src="{% static 'contactIcon.png' %}" alt="teeniesIcon" class="userPic navIcons" /></a></li>
+                    <li><a href="#" class="IconUpper"><img src="{% static 'messagesIcon.png' %}" alt="teeniesIcon" class="userPic navIcons" /></a></li>
+                    <li><a href="#" class="IconUpper IconTeensie"><img src="{% static 'teeniesIcon.png' %}" alt="teeniesIcon" class="userPic navIcons" /></a></li>
+                    <li><a href="#" class="IconAvatar"><img src="{% static 'defaultUserPic.png' %}" alt="userPic" class="userPic" /></a></li>
+                    <li><a href="#" class="postTeen"><span class="hidden-sm hidden-md">Post a Teensie</span></a></li>
+
+                  </ul>
+                  
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+
+
+
+            <nav class="navbar navbar-default navLower navIndex">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myLowerNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="myLowerNav">
+                  <ul class="nav navbar-nav">
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#passwordModal" role="button">We're Hiring Teens</a></li>                 
+                  </ul>
+                  
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+
+            <!-- ====================================================================== -->
+            <!-- End: Navbar -->
+            <!-- ====================================================================== -->
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Header -->
+    <!-- ====================================================================== -->
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent checkoutSkrillCont silverPlanCont">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="checkoutSkrill silverPlan">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h5 class="subTitle">You have selected the 14-Day Membership Plan which costs $14.99/monthly</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="myCard">
+                                            <h5 class="headTitle">Select Payment</h5>
+                                            <h5 class="subTitle">Credit Card <span class="myCardType">Skrill</span> <span class="myCardType activeCard">Payza</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <img src="img/Payza.png" alt="Payza" class="img-responsive skrillImage" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <h5 class="subHead">Deposit Amount</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-1 leftXS">
+                                        <h5 class="dollar">$</h5>
+                                    </div>
+                                    <div class="col-xs-10">
+                                        <h5 class="price">10.65</h5>
+                                    </div>
+                                    <div class="col-xs-1 rightXS">
+                                        <h5 class="usd">USD</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <a href="#!" class="myButton">Continue</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 rightSideCont">
+                                <div class="row">
+                                    <div class="col-xs-12 rightSide">
+                                        <div class="myCard">
+                                            
+                                            <div class="row cardHead">
+                                                <div class="col-xs-12 col-sm-8 leftAlign">
+                                                    <h5 class="">Payment Breakdown</h5>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 rightAlign">
+                                                    <h5 class="">(USD)</h5>
+                                                </div>
+                                            </div>
+                                            <div class="row cardBody">
+                                                <div class="col-xs-12 col-sm-8 leftAlign">
+                                                    <h5 class="">Deposit Amount</h5>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 rightAlign">
+                                                    <h5 class="">$9.99</h5>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-8 leftAlign">
+                                                    <h5 class="">Deposit Fee</h5>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 rightAlign">
+                                                    <h5 class="">$0.66</h5>
+                                                </div>
+                                            </div>
+
+                                            <div class="row cardFooter">
+                                                <div class="col-xs-12 col-sm-8 leftAlign">
+                                                    <h5 class="orange">Total</h5>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 rightAlign">
+                                                    <h5 class="">$10.65</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row rightBottom">
+                                    <div class="col-xs-12 sslCard">
+                                        <div class="">
+                                            
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-2">
+                                                    <img src="{% static 'SSL.png' %}" class="img-responsive mySSLImage" />
+                                                </div>
+                                                <div class="col-xs-12 col-sm-10">
+                                                    <h5>This is a secure 256-bit SSL encrypted payment</h5>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+    <!-- ====================================================================== -->
+    <!-- Start: Footer -->
+    <!-- ====================================================================== -->
+
+
+    <div class="footer">
+        <div class="row">
+
+        </div>
+        <div class="row">
+
+        </div>
+
+    </div>
+
+
+    <!-- ====================================================================== -->
+    <!-- End: Footer -->
+    <!-- ====================================================================== -->
+
+
+</div>
+
+
+
+<!-- Start: JS Files Include -->
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="js/myScript.js"></script>
+<!-- End: JS Files Include -->
+</body>
+</html>

@@ -1,0 +1,97 @@
+{% load staticfiles %}
+ <div class="header">
+        <div class="row">
+
+            <!-- ====================================================================== -->
+            <!-- Start: Navbar -->
+            <!-- ====================================================================== -->
+
+            <nav class="navbar navbar-default navUpper" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                    <a class="navbar-brand" href="/index/"><img src="/static/Logo.png" alt="logo" class="logo"/></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="myNav">
+                  <ul class="nav navbar-nav">
+                    {% if user.account_type.type == "Client" %}
+                    <li class="active"><a >Client<span class="sr-only">(current)</span></a></li>
+                    {% else %}
+                        <li class="active"><a id="type">Teenlancer</a></li>
+                    {% endif %}
+
+                    <!--<li><a href="#">Hire</a></li>-->
+
+                  </ul>
+
+                   <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/myContacts/" class="IconUpper"><img src="{% static 'contactIcon1.png' %}" alt="teeniesIcon" class="userPic navIcons" /></a></li>
+                    <li><a href="/myMessages/" class="IconUpper"><img src="{% static 'messagesIcon1.png' %}" alt="teeniesIcon" class="userPic navIcons" /></a></li>
+                    <li><a href="/myTeensies/" class="IconUpper IconTeensie"><img src="{% static 'teeniesIcon1.png' %}" alt="teeniesIcon" class="userPic navIcons" /></a></li>
+                    {% if user.image %}
+                        <li><a href="/profile/" class="IconAvatar"><img src="{{ user.image }}" alt="userPic" class="userPic" /></a></li>
+                    {% else %}
+                        <li><a href="/profile/" class="IconAvatar"><img src="{% static 'defaultUserPic.png' %}" id="picture" alt="userPic" class="userPic" /></a></li>
+                    {% endif %}
+
+                    {% if user.account_type.type == "Client" %}
+                        <li><a class="postTeen"><span class="hidden-sm hidden-md">Post a Teensie</span></a></li>
+                    {% else %}
+                         <li><a href="/postTeensie/" id="href" class="postTeen"><span class="hidden-sm hidden-md" id="post">Post a Teensie</span></a></li>
+                    {% endif %}
+                  </ul>
+
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+
+
+
+            <nav class="navbar navbar-default navLower navIndex">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myLowerNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="myLowerNav">
+                  <ul class="nav navbar-nav">
+                    <li><a href="/dashboard/">Dashboard</a></li>
+                    <li><a href="/profile/">Profile</a></li>
+                    <li><a href="/membership/">Membership</a></li>
+                    <li><a href="/orders/">Orders</a></li>
+                    <li><a href="/balance/">Revenues</a></li>
+                    <li><a href="/accountSettings/">Settings</a></li>
+                    <li><a href='/logout/' >Logout</a></li>
+                  </ul>
+
+                  <form class="navbar-form navbar-right" role="search" action="/results/" method="post"> {% csrf_token %}
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search "></i></button>
+                    <div class="form-group">
+                      <input type="text" name="skills" class="form-control" placeholder="Browse Teensies..">
+                    </div>
+                  </form>
+
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+
+            <!-- ====================================================================== -->
+            <!-- End: Navbar -->
+            <!-- ====================================================================== -->
+        </div>
+    </div>

@@ -1,0 +1,174 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+{% include 'login_header.html' %}
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+    <form action="/feature/" method="post" id="featureForm"> {% csrf_token %}
+        <input type="number" id="feature_teensie_pk" name="pk" hidden>
+    </form>
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="myMessages countries ordersReceived">
+                        <div class="row orderButtons">
+                            <!--<div class="col-xs-12 col-sm-6 text-center">-->
+                            <!--    <a href="#!">Placed</a>-->
+                            <!--</div>-->
+                            <!--<div class="col-xs-12 col-sm-6 text-center">-->
+                            <!--    <a href="#!">Received</a>-->
+                            <!--</div>-->
+                        </div>
+                        <div class="row orderTable">
+                            <div class="col-xs-12 orderTableDiv">
+                                <table class="table table-hover">
+                                    <tr class="tableHeader">
+                                        <th class="teensieName">Teensie Name</th>
+                                        <th>Sold</th>
+                                        <th>Price</th>
+                                        <th>Timeframe</th>
+                                        <th>Status</th>
+                                        <th class="action">Action</th>
+                                    </tr>
+                                    {% for teensie in teensies %}
+                                    <tr class="tableData">
+                                        <td>{{ teensie.teensie_name }}</td>
+                                        <td>{{ teensie.ordered }}</td>
+                                        <td>${{ teensie.price }} USD</td>
+                                        <td>{{ teensie.timeframe }} Days</td>
+                                        <td>{{ teensie.status }}</td>
+
+                                        <td>
+                                            <div class="dropdown">
+                                                <a id="action1" href="#!" class="dropToggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Action&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+                                                <ul class="dropdown-menu" aria-labelledby="action1">
+                                                    <!--<li><a href="#">Select</a></li>-->
+                                                    <li><a class="featureButton" id="{{ teensie.pk}}">Feature</a></li>
+                                                    <li><a href="/editTeensie/{{teensie.pk}}/">Edit</a></li>
+                                                    <li><a  class="deleteButton" id="{{ teensie.pk}}">Delete</a></li>
+                                                    <li><a href="/dispute/{{teensie.pk}}/">Raise Dispute</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="modals">
+                                             <div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="container modalCont">
+                                                      <div class="row">
+                                                          <div class="col-xs-12 text-center">
+                                                            <div class="skull"><img src="{% static 'Skull.png' %}" class="img-responsive myImage" /></div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="row modalBody">
+                                                          <div class="col-xs-12 text-center">
+                                                              <i class="fa fa-caret-down fa-1x"></i>
+                                                          </div>
+                                                          <div class="row">
+                                                              <div class="col-xs-12 text-center">
+                                                                  <h5>Just Making Sure if you really wanna continue with this action</h5>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="row">
+                                                          <div class="col-xs-12 text-center">
+                                                              <a href="" id="yeah" class="myButton yeah">Okie</a>
+                                                          </div>
+                                                      </div>
+                                                      <div class="row">
+                                                          <div class="col-xs-12 text-center">
+                                                              <a  class="myButton nope" data-dismiss="modal">Nope</a>
+                                                          </div>
+                                                      </div>
+
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            </div>
+                                            <button  type="button" data-toggle="modal" data-target="#warningModal" id="warning" role="button" hidden></button>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row orderPagination">
+                            <div class="col-xs-12">
+                                <nav>
+                                  <ul class="pagination">
+                                    <li>
+                                      <a href="#" aria-label="First">
+                                        First
+                                      </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                           Previous
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li><a href="#">9</a></li>
+                                    <li><a href="#">10</a></li>
+                                    <li><a href="#">11</a></li>
+                                    <li><a href="#">12</a></li>
+                                    <li><a href="#">13</a></li>
+                                    <li><a href="#">14</a></li>
+                                    <li><a href="#">15</a></li>
+                                    <li><a href="#">16</a></li>
+                                    <li><a href="#">17</a></li>
+                                    <li>
+                                      <a href="#" aria-label="Next">
+                                        Next
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" aria-label="Last">
+                                        Last
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+
+    <script>
+        $(".deleteButton").click(function(){
+            var id = $(this).attr('id');
+            var link = "/deleteTeensie/" + id + "/";
+            $("#yeah").attr('href',link);
+            $("#warning").click();
+        });
+
+        $(".featureButton").click(function(){
+            $("#feature_teensie_pk").val($(this).attr('id'));
+            $("#featureForm").submit();
+        });
+
+
+
+    </script>
+
+{% endblock %}

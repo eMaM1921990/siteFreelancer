@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'login_header.html' %}
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="myMessages countries membershipSetting">
+                        <div class="row orderButtons">
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/accountSettings/">Account</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/profileSettings/">Profile</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/membershipSettings/">Membership</a>
+                            </div>
+                            <!--<div class="col-xs-12 col-sm-3 text-center">-->
+                            <!--    <a href="#!">Payment</a>-->
+                            <!--</div>-->
+                        </div>
+
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <h3 class="myHeadLine">Membership Type</h3>
+                            </div>
+                        </div>
+
+                        <div class="row accSetting">
+                            <div class="col-xs-12 col-sm-1 pull-left">
+                                <span class="myCheckbox bronzeCheck pull-left"></span>
+                                <span class="clearfix"></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-10 client">
+                                <h3 class="myHeadLine ">Bronze</h3>
+                            </div>
+                            <div class="col-xs-12 col-sm-1 pull-right">
+                                <span class="priceBox pull-right">Free</span>
+                                <span class="clearfix"></span>
+                            </div>
+                        </div>
+                        <div class="row accSetting">
+                            <div class="col-xs-12 col-sm-1 pull-left">
+                                <span class="myCheckbox silverCheck pull-left"></span>
+                                <span class="clearfix"></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-10 client">
+                                <h3 class="myHeadLine ">Silver</h3>
+                            </div>
+                            <div class="col-xs-12 col-sm-1 pull-right">
+                                <span class="priceBox pull-right">$9.99</span>
+                                <span class="clearfix"></span>
+                            </div>
+                        </div>
+                        <div class="row accSetting">
+                            <div class="col-xs-12 col-sm-1 pull-left">
+                                <span class="myCheckbox goldCheck pull-left"></span>
+                                <span class="clearfix"></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-10 client">
+                                <h3 class="myHeadLine ">Gold</h3>
+                            </div>
+                            <div class="col-xs-12 col-sm-1 pull-right">
+                                <span class="priceBox pull-right">$14.95</span>
+                                <span class="clearfix"></span>
+                            </div>
+                        </div>
+                        <div class="row accSetting">
+                            <div class="col-xs-12 col-sm-1 pull-left">
+                                <span class="myCheckbox platinumCheck pull-left"></span>
+                                <span class="clearfix"></span>
+                            </div>
+                            <div class="col-xs-12 col-sm-10 client">
+                                <h3 class="myHeadLine ">Platinum</h3>
+                            </div>
+                            <div class="col-xs-12 col-sm-1 pull-right">
+                                <span class="priceBox pull-right">$19.90</span>
+                                <span class="clearfix"></span>
+                            </div>
+                        </div>
+
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <a href="/membership/" class="myButton">Save Changes</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+{% endblock %}

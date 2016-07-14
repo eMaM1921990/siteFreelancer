@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'login_header.html' %}
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-8">
+                    <div class="myMessages">
+                        <div class="row">
+                            <div class="col-xs-12 headParent">
+                                <h4 class="myHeadLine">My Contacts</h4>
+                            </div>
+
+                        </div>
+                        {% for u in users %}
+                        <div class="row singleMessage">
+                            <div class="col-xs-2">
+                                <img src="{{ u.image }}" alt="userPic" class="userPic img-responsive" />
+                            </div>
+                            <div class="col-xs-10 messageContent">
+                                <h5>{{ u.username }} <i class="fa fa-circle"></i></h5>
+                                <h6>Beauty Care</h6>
+                                <a href="/u/{{u.username}}/" class="viewProfile">View Profile</a> . <a href="/myMessages/" class="sendMessage">Send Message</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="myChat myContactsVIP">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="coverImg"></div>
+                            </div>
+                        </div>
+                        <div class="row mainChatPic">
+                            <div class="col-xs-4">
+                                <img src="http://4.bp.blogspot.com/-D6D0gyZhlL4/UCqTmzAMAII/AAAAAAAABy0/tDnFNtQgbvE/s1600/cute-girls-pictures-for-orkut-myspace-facebook-01.jpg" alt="userPic" class="img-responsive" />
+
+                            </div>
+                            <div class="col-xs-8">
+                                <h5>Windies, <span>Fashion Store</span>&nbsp;&nbsp;<i class="fa fa-circle"></i></h5>
+                            </div>
+
+                        </div>
+                        <div class="row chatHistory myContactsGoPremium">
+                            <div class="col-xs-12">
+                                <h3>Go Premium!</h3>
+                                <h5><i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Get Custom URL</h5>
+                                <h5><i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Add Cover Photo</h5>
+                                <h5><i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Create Milestones</h5>
+                                <h5 class="lastH"><i class="fa fa-dot-circle-o"></i>&nbsp;&nbsp;Add Featured Teensies</h5>
+                            </div>
+                        </div>
+
+                        <div class="row chatAdd myContactsUpgradeNow">
+                            <div class="col-xs-12">
+                                <a href="/membership/" class="btn btn-default">Upgrade Now</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="myFooter">
+                        <ul>
+                            <li><a>&copy; Teenlancer</a></li>
+                            <li><a href="#!">About</a></li>
+                            <li><a href="#!">Team</a></li>
+                            <li><a href="#!">Carees</a></li>
+                            <li><a href="#!">Fees and Charges</a></li>
+                            <li><a href="#!">Trust and Safety</a></li>
+                            <li><a href="#!">Contact</a></li>
+                        </ul>
+
+                        <a href="#!" class="contactTeenlancer">Contact Teenlacer</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+{% endblock %}

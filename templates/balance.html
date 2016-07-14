@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'login_header.html' %}
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="myMessages countries balance">
+                        <div class="row orderButtons">
+                            <div class="col-xs-12 col-sm-6 text-center">
+                                <a href="/balance/">Balance</a>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 text-center">
+                                <a href="/withdrawal/">Withdraw</a>
+                            </div>
+                        </div>
+                        <div class="row headline">
+                            <div class="col-xs-12">
+                                <h3 class="myHeadLine specialHead">Balance: <span>$0.00 USD</span><span class="pull-right">Your current balance = working + available + pending</span></h3>
+                            </div>
+                        </div>
+                        <div class="row orderTable balaceUp">
+                            <div class="col-xs-12 orderTableDiv">
+                                <table class="table table-hover">
+                                    <tr class="tableHeader">
+                                        <th class="">Working</th>
+                                        <th>Available</th>
+                                        <th>Pending</th>
+                                        <th>Withdrawn</th>
+                                        <th>Balance</th>
+                                    </tr>
+                                    <tr class="tableData">
+                                        <td>${{balance.0}}</td>
+                                        <td>${{balance.1}}</td>
+                                        <td>${{balance.2}}</td>
+                                        <td>${{balance.3}}</td>
+                                        <td>${{balance.4}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row headline">
+                            <div class="col-xs-12">
+                                <h3 class="myHeadLine">Withdrawn History:<span class="pull-right"></span></h3>
+                                <!--<a href="#!">Change your payment method</a>-->
+                            </div>
+                        </div>
+                        <div class="row orderTable balaceDown">
+                            <div class="col-xs-12 orderTableDiv">
+                                <table class="table table-hover">
+                                    <tr class="tableHeader">
+                                        <th class="">Payment method</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                    </tr>
+                                    <!--<tr class="tableData">-->
+                                    <!--    <td>Paypal</td>-->
+                                    <!--    <td>$0.00</td>-->
+                                    <!--    <td></td>-->
+                                    <!--    <td></td>-->
+                                    <!--</tr>-->
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+{% endblock %}

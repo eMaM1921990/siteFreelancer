@@ -1,0 +1,297 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Start: Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- End: Meta Tags -->
+
+    <title>myStarter</title>
+
+    <!-- Start: Favicon Icon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- End: Favicon Icon -->
+
+    <!-- Start: CSS Files Include -->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'animate.css' %}">
+    <link href="{% static 'font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'myStyle.css' %}">
+
+    <!-- End: CSS Files Include -->
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <!-- ====================================================================== -->
+    <!-- Start: Header -->
+    <!-- ====================================================================== -->
+
+    <div class="header">
+        <div class="row">
+
+            <!-- ====================================================================== -->
+            <!-- Start: Navbar -->
+            <!-- ====================================================================== -->
+
+            <nav class="navbar navbar-default navUpper" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#"><img src="{% static 'Logo.png' %}" alt="logo" class="logo"/></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="myNav">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Client<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Teenlancer</a></li>
+                    <li><a href="#">Hire</a></li>
+                    
+                  </ul>
+
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="IconUpper"><img src="{% static 'contactIcon.png' %}" alt="teeniesIcon" class="userPic navIcons" /></a></li>
+                    <li><a href="#" class="IconUpper"><img src="{% static 'messagesIcon.png' %}" alt="teeniesIcon" class="userPic navIcons" /></a></li>
+                    <li><a href="#" class="IconUpper IconTeensie"><img src="{% static 'teeniesIcon.png' %}" alt="teeniesIcon" class="userPic navIcons" /></a></li>
+                    <li><a href="#" class="IconAvatar"><img src="{% static 'defaultUserPic.png' %}" alt="userPic" class="userPic" /></a></li>
+                    <li><a href="#" class="postTeen"><span class="hidden-sm hidden-md">Post a Teensie</span></a></li>
+
+                  </ul>
+                  
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+
+
+
+            <nav class="navbar navbar-default navLower">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myLowerNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="myLowerNav">
+                  <ul class="nav navbar-nav">
+                    <li><a class="myActive">Hire Teenlancers by</a></li>
+                    <li><a href="#">Country</a></li>
+                    <li><a href="#">Niche</a></li>
+                    <li><a href="#">Skills</a></li>                  
+                  </ul>
+                  
+                  <form class="navbar-form navbar-right" role="search">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search "></i></button> 
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Browse Teensies..">
+                    </div>
+                  </form>
+                  
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+
+            <!-- ====================================================================== -->
+            <!-- End: Navbar -->
+            <!-- ====================================================================== -->
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Header -->
+    <!-- ====================================================================== -->
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-8">
+                    <div class="myMessages countries niche">
+                        <div class="row">
+                            <div class="col-xs-12 headParent">
+                                <h4 class="myHeadLine">Mobile Development</h4>
+                            </div>
+
+                        </div>
+                        <div class="row singleMessage">
+                            <div class="col-xs-2">
+                                <img src="{% static 'defaultTeensie.png' %}" class="userPic img-responsive" />
+                                <h6 class="featuredLabel">Featured</h6>
+                            </div>
+                            <div class="col-xs-10 messageContent">
+                                <h5><span class="name">I need a mobile app wallet</span><!-- , <span class="job"> by Intuitive</span>&nbsp;&nbsp;<i class="fa fa-circle"></i> --></h5>
+                                <h6 class="skills"><span>Objective C</span><span>Mobile Phone</span><span>Android</span><span>iPhone</span><span>Swift</span></h6>
+                                <a href="#!" class="viewProfile">$450.00 USD</a> . <a href="#!" class="sendMessage">14 Days</a>
+                                <!-- <p class="pull-right messageRating">
+                                    <i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star"></i>
+                                    <span class="rating">4.4</span>
+                                </p>
+                                <p class="pull-right messageReviews">15 Reviews</p>
+                                <p class="pull-right messageTeensies">7 Bought</p> -->
+                            </div>
+                        </div>
+                        <div class="row singleMessage singleMessageActive">
+                            <div class="col-xs-2">
+                                <img src="{% static 'defaultTeensie.png' %}" class="userPic img-responsive" />
+                                <h6 class="featuredLabel">Featured</h6>
+                            </div>
+                            <div class="col-xs-10 messageContent">
+                                <h5><span class="name">I need a mobile app wallet</span><!-- , <span class="job"> by Intuitive</span>&nbsp;&nbsp;<i class="fa fa-circle"></i> --></h5>
+                                <h6 class="skills"><span>Objective C</span><span>Mobile Phone</span><span>Android</span><span>iPhone</span><span>Swift</span></h6>
+                                <a href="#!" class="viewProfile">$450.00 USD</a> . <a href="#!" class="sendMessage">14 Days</a>
+                                <!-- <p class="pull-right messageRating">
+                                    <i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star"></i>
+                                    <span class="rating">4.4</span>
+                                </p>
+                                <p class="pull-right messageReviews">15 Reviews</p>
+                                <p class="pull-right messageTeensies">7 Bought</p> -->
+                            </div>
+                        </div>
+                        <div class="row singleMessage ">
+                            <div class="col-xs-2">
+                                <img src="{% static 'defaultTeensie.png' %}" class="userPic img-responsive" />
+                            </div>
+                            <div class="col-xs-10 messageContent">
+                                <h5><span class="name">I need a mobile app wallet</span><!-- , <span class="job"> by Intuitive</span>&nbsp;&nbsp;<i class="fa fa-circle"></i> --></h5>
+                                <h6 class="skills"><span>Objective C</span><span>Mobile Phone</span><span>Android</span><span>iPhone</span><span>Swift</span></h6>
+                                <a href="#!" class="viewProfile">$450.00 USD</a> . <a href="#!" class="sendMessage">14 Days</a>
+                                <!-- <p class="pull-right messageRating">
+                                    <i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star"></i>
+                                    <span class="rating">4.4</span>
+                                </p>
+                                <p class="pull-right messageReviews">15 Reviews</p>
+                                <p class="pull-right messageTeensies">7 Bought</p> -->
+                            </div>
+                        </div>
+                        <div class="row singleMessage singleMessageActive">
+                            <div class="col-xs-2">
+                                <img src="{% static 'defaultTeensie.png' %}" class="userPic img-responsive" />
+                            </div>
+                            <div class="col-xs-10 messageContent">
+                                <h5><span class="name">I need a mobile app wallet</span><!-- , <span class="job"> by Intuitive</span>&nbsp;&nbsp;<i class="fa fa-circle"></i> --></h5>
+                                <h6 class="skills"><span>Objective C</span><span>Mobile Phone</span><span>Android</span><span>iPhone</span><span>Swift</span></h6>
+                                <a href="#!" class="viewProfile">$450.00 USD</a> . <a href="#!" class="sendMessage">14 Days</a>
+                                <!-- <p class="pull-right messageRating">
+                                    <i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star"></i>
+                                    <span class="rating">4.4</span>
+                                </p>
+                                <p class="pull-right messageReviews">15 Reviews</p>
+                                <p class="pull-right messageTeensies">7 Bought</p> -->
+                            </div>
+                        </div>
+                        <div class="row singleMessage ">
+                            <div class="col-xs-2">
+                                <img src="{% static 'defaultTeensie.png' %}" class="userPic img-responsive" />
+                            </div>
+                            <div class="col-xs-10 messageContent">
+                                <h5><span class="name">I need a mobile app wallet</span><!-- , <span class="job"> by Intuitive</span>&nbsp;&nbsp;<i class="fa fa-circle"></i> --></h5>
+                                <h6 class="skills"><span>Objective C</span><span>Mobile Phone</span><span>Android</span><span>iPhone</span><span>Swift</span></h6>
+                                <a href="#!" class="viewProfile">$450.00 USD</a> . <a href="#!" class="sendMessage">14 Days</a>
+                                <!-- <p class="pull-right messageRating">
+                                    <i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star starActive"></i><i class="fa fa-star"></i>
+                                    <span class="rating">4.4</span>
+                                </p>
+                                <p class="pull-right messageReviews">15 Reviews</p>
+                                <p class="pull-right messageTeensies">7 Bought</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="myChat myContactsVIP countriesRight">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h1 class="myHeadLine">Top 10 Categories</h1>
+                            </div>
+                        </div>
+                        
+                        <div class="row chatHistory myContactsGoPremium">
+                            <div class="col-xs-12">
+                                <a href="#!">All</a>
+                                <a href="#!">Content Writing</a>
+                                <a href="#!">Game Development</a>
+                                <a href="#!">Graphic Design</a>
+                                <a href="#!">Logo Design</a>
+                                <a href="#!">Mobile Development</a>
+                                <a href="#!">SEO Marketing</a>
+                                <a href="#!">Social Media</a>
+                                <a href="#!">Transcription</a>
+                                <a href="#!">Translation</a>
+                                <a href="#!">Web Development</a>
+                            </div>
+                        </div>
+                        
+                        <div class="row chatAdd myContactsUpgradeNow">
+                            <div class="col-xs-12">
+                                <input type="text" placeholder="Search a niche... (e.g. Mobile App Design)">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+    <!-- ====================================================================== -->
+    <!-- Start: Footer -->
+    <!-- ====================================================================== -->
+
+
+    <div class="footer">
+        <div class="row">
+
+        </div>
+        <div class="row">
+
+        </div>
+
+    </div>
+
+
+    <!-- ====================================================================== -->
+    <!-- End: Footer -->
+    <!-- ====================================================================== -->
+
+
+</div>
+
+
+
+<!-- Start: JS Files Include -->
+<script type="text/javascript" src="{% static 'jquery-1.12.3.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'swiper.jquery.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'myScript.js' %}"></script>
+<!-- End: JS Files Include -->
+</body>
+</html>

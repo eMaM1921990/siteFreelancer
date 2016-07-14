@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'header.html' %}
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent" style="margin-top:2%">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="myMessages countries registerSetting">
+                        <div class="row orderButtons">
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/register/">Register</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/login/">Login</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/forgot/">Reset Password</a>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <a  id="loginBtn" class="myButton myFacebookColor">Register With Facebook</a>
+                            </div>
+                        </div>
+                        <form action="/register/" method="post" class="registerForm" > {% csrf_token %}
+
+                            <div class="row inputRow">
+                                <div class="col-xs-12 col-sm-6 pull-left">
+                                    <input type="text" class="form-group myInput" name="username" placeholder="Username or business name" />
+                                </div>
+                                <div class="col-xs-12 col-sm-6 pull-right ">
+                                    <input type="text" class="form-group myInput" name="email" id="email" placeholder="Email Adress" />
+                                </div>
+                            </div>
+                            <div class="row inputRow">
+                                <div class="col-xs-12 col-sm-6 pull-left">
+                                    <input type="password" id="pass" name="password" class="form-group myInput" placeholder="Create Password" />
+                                </div>
+                                <div class="col-xs-12 col-sm-6 pull-right ">
+                                    <input type="password" id="confirmedPass" class="form-group myInput" placeholder="Confirm Password" />
+                                </div>
+                            </div>
+                            <div class="row inputRow checkBox">
+                                <div class="col-xs-12 col-sm-6 text-center">
+                                    <h3 class="myHeadLine headClient">I'm a client</h3>
+                                     <input type="number" name="client" value=0 class="myCheckboxClient" hidden>
+                                    <span class="myCheckbox" id="myCheckboxClient"></span>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 text-center">
+                                    <h3 class="myHeadLine headTeen">I'm a Teenlancer</h3>
+                                    <input type="number" name="teenlancer" value=0  class="myCheckboxTeenlancer" hidden>
+                                    <span class="myCheckbox" id="myCheckboxTeenlancer"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="row headline">
+                                <div class="col-xs-12 text-center">
+                                    <button type="button" style="border: none;" id="registerButton" class="myButton" >Register</button>
+                                </div>
+                            </div>
+
+                        </form>
+                        <form action='/facebook_login/' id="facebook_login" method='POST'> {% csrf_token %}
+
+                            <input type="text" id="userF" name="id" hidden>
+                            <input type="text" id="emailF" name="email" hidden>
+                            <input type="text" id="nameF" name="name" hidden>
+
+
+                        </form>
+
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <h4 style="color: red;margin-left:8%">{{ error }}</h4>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+
+
+</div>
+<script type="text/javascript" >
+
+    $(document).ready(function () {
+        $(".myInput").click(function () {
+            $(this).css("border", "2px solid rgba(226, 228, 229, 0.44)")
+        });
+
+        $("#myCheckboxTeenlancer").click(function () {
+            $(".myCheckbox").css("border", "2px solid rgba(226, 228, 229, 0.44)");
+            if ( $(".myCheckboxTeenlancer").val() == 1 ){
+                    $(this).css("background-image", "none");
+                     $(".myCheckboxTeenlancer").val(0);
+            } else {
+                if ( $(".myCheckboxClient").val() == 1){
+                    $(".myCheckbox").css("background-image", "none");
+                    $(".myCheckboxClient").val(0);
+                }
+                $(this).css("background-image", "url(/static/galka.png)");
+                $(this).css("background-size", "100%");
+                $(this).css("background-repeat", "no-repeat");
+                $(".myCheckboxTeenlancer").val(1);
+            }
+        });
+
+         $("#myCheckboxClient").click(function () {
+             $(".myCheckbox").css("border", "2px solid rgba(226, 228, 229, 0.44)");
+            if ( $(".myCheckboxClient").val() == 1){
+                    $(this).css("background-image", "none");
+                     $(".myCheckboxClient").val(0);
+            } else {
+
+                if ( $(".myCheckboxTeenlancer").val() == 1){
+                    $(".myCheckbox").css("background-image", "none");
+                    $(".myCheckboxTeenlancer").val(0);
+                }
+                $(this).css("background-image", "url(/static/galka.png)");
+                $(this).css("background-size", "100%");
+                $(this).css("background-repeat", "no-repeat");
+                $(".myCheckboxClient").val(1);
+            }
+        });
+
+
+        $("#registerButton").click(function () {
+            var flag = true;
+             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var elems = document.getElementsByClassName("myInput");
+            for(var i = 0; i < elems.length; i++) {
+                if ( elems[i].value == ""){
+                    elems[i].style.border = "1px solid red";
+                    flag = false;
+                } else {
+                    elems[i].style.border = "2px solid rgba(226, 228, 229, 0.44)";
+                }
+            }
+            if ($(".myCheckboxTeenlancer").val() == 0 && $(".myCheckboxClient").val() == 0 ){
+                $(".myCheckbox").css("border", "1px solid red");
+                flag = false;
+            }
+
+            if ($("#pass").val() != $("#confirmedPass").val()) {
+                $("#pass").css("border","1px solid red");
+                $("#confirmedPass").css("border","1px solid red");
+                flag = false;
+            }
+            if (!re.test($("#email").val())){
+                $("#email").css("border","1px solid red");
+                flag = false;
+            }
+            if (flag) {
+                $(".registerForm").submit();
+            }
+
+        });
+
+
+    });
+
+
+      window.fbAsyncInit = function() {
+      FB.init({
+          appId      : '1637566919895038',
+          xfbml      : true,
+          version    : 'v2.6'
+        });
+      };
+
+      // Load the SDK asynchronously
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+
+    document.getElementById('loginBtn').addEventListener('click', function() {
+        //do the login
+        FB.login(function(response) {
+            if (response.status === 'connected') {
+                 FB.api('/me?fields=name,email,id', function(response) {
+                    $("#userF").val(response.id);
+                    $("#emailF").val(response.email);
+                    $("#nameF").val(response.name);
+                    $("#facebook_login").submit();
+                });
+            }
+            else if (response.status === 'not_authorized') {
+              // The person is logged into Facebook, but not your app.
+              document.getElementById('status').innerHTML = 'Please log ' +
+                'into this app.';
+            } else {
+              // The person is not logged into Facebook, so we're not sure if
+              // they are logged into this app or not.
+              document.getElementById('status').innerHTML = 'Please log ' +
+                'into Facebook.';
+            }
+        }, {scope: 'email,public_profile', return_scopes: true});
+    }, false);
+
+</script>
+{% endblock %}

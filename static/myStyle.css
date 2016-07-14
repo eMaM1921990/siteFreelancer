@@ -1,0 +1,2362 @@
+#sliderImage1{
+  background-image: url('/img/sliderImage1.png');
+}
+
+
+
+body {
+  background-color: #F6F7F8;
+  font-family: "Montserrat", sans-serif; }
+
+html, body {
+  position: relative;
+  height: 93%; }
+
+html.fullHeight, body.fullHeight {
+  height: 95%; }
+
+html.logoutPage, body.logoutPage {
+  height: 96%; }
+
+html.myFooter, body.myFooter {
+  height: 88.2%; }
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  height: 100%; }
+  .container-fluid .mainContent {
+    height: 100%; }
+    .container-fluid .mainContent .container-fluid {
+      height: 100%; }
+      .container-fluid .mainContent .container-fluid .myContent {
+        height: 100%; }
+        .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 {
+          height: 100%; }
+          .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .homeSlider, .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .homeAbout, .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .map {
+            height: 100%; }
+            .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .homeSlider .row, .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .homeAbout .row, .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .map .row {
+              height: 100%; }
+              .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .homeSlider .row .col-xs-12, .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .homeAbout .row .col-xs-12, .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .map .row .col-xs-12 {
+                height: 100%; }
+                .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .homeSlider .row .col-xs-12 .aboutPageBack, .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .homeAbout .row .col-xs-12 .aboutPageBack, .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .map .row .col-xs-12 .aboutPageBack {
+                  height: 100%; }
+          .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .map {
+            height: 100%; }
+            .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .map .row {
+              height: 100%; }
+              .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .map .row .col-xs-12.text-center {
+                height: 100%; }
+            .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .map .lowerContent {
+              max-height: 200px; }
+          .container-fluid .mainContent .container-fluid .myContent .col-xs-12.col-sm-12 .profilePage {
+            height: auto; }
+      .container-fluid .mainContent .container-fluid .footerContent {
+        height: 100%; }
+
+.col-xs-2 {
+  padding-left: 0; }
+
+.col-xs-10 {
+  padding-left: 0;
+  margin-left: -15px; }
+
+input::-webkit-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: lighter; }
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none; }
+
+.navbar-default {
+  border: 0;
+  border-radius: 0; }
+
+.navUpper {
+  background-color: #fff;
+  margin-bottom: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: 999; }
+
+.navUpper.affix {
+  width: 102.5%;
+  border-bottom: 3px solid #7c4dff; }
+
+.navLower {
+  background-color: #263238; }
+
+.navbar-brand {
+  font-size: 2vmax; }
+
+@media(min-width: 768px) {
+  .navbar-brand {
+    line-height: 1.5em; } }
+@media(min-width: 1150px) {
+  .navbar-brand {
+    line-height: 3vmax; } }
+@media(max-width: 990px) {
+  .navbar-brand {
+    line-height: 5vmax; } }
+@media(max-width: 768px) {
+  .navbar-brand {
+    line-height: 1em;
+    font-size: 1.5em; } }
+.navbar-default .navbar-brand {
+  color: #263238;
+  font-weight: bolder; }
+
+.navUpper .navbar-nav > li > a {
+  color: #263238;
+  text-transform: uppercase;
+  line-height: 1.5em; }
+
+.navUpper .navbar-nav > .active > a, .navUpper .navbar-nav > .active > a:focus, .navUpper .navbar-nav > .active > a:hover {
+  background-color: transparent;
+  color: #3600cc; }
+
+.navUpper .navbar-nav > li > a:focus, .navUpper .navbar-nav > li > a:hover {
+  background-color: transparent;
+  color: #3600cc; }
+
+.navLower .navbar-collapse {
+  padding: 0; }
+
+.navLower .container {
+  padding-left: 0; }
+
+.navLower .navbar-nav > li > a {
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1em; }
+
+.navLower .navbar-nav > .active > a, .navLower .navbar-nav > .active > a:focus, .navLower .navbar-nav > .active > a:hover {
+  background-color: transparent;
+  color: #3600cc; }
+
+.navLower .navbar-nav > li > a:focus, .navLower .navbar-nav > li > a:hover {
+  background-color: transparent;
+  color: gray; }
+
+@media(max-width: 991px) and (min-width: 768px) {
+  .navLower .navbar-nav > li > a {
+    padding: 15px 4px; } }
+.navLower {
+  min-height: 0; }
+  .navLower .navbar-form {
+    margin: 0;
+    padding: 0;
+    margin-top: -13px; }
+    .navLower .navbar-form button.btn {
+      padding: 5px 15px;
+      border-radius: 0;
+      background-color: #7C4DFF;
+      border: none;
+      color: #fff;
+      font-size: 1.5em; }
+    .navLower .navbar-form input.form-control {
+      padding: 20px 10px 20px 10px;
+      width: 310px;
+      border-radius: 0;
+      border: none;
+      margin-left: -4px;
+      background-color: #ECEFF1; }
+@media(max-width: 991px) and (min-width: 768px) {
+  .navLower .navbar-form input.form-control {
+    padding: 31px 10px; } }
+@media(min-width: 768px) {
+  .navUpper {
+    max-height: 50px; }
+
+  .navLower {
+    max-height: 40px; } }
+.navUpper .fa.fa-1x {
+  font-size: 1.5em;
+  line-height: 1em; }
+.navUpper .userPic {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-top: -7px; }
+.navUpper .navIcons {
+  width: 45px;
+  height: 45px;
+  margin-top: -12px;
+  -webkit-filter: grayscale(0%); }
+.navUpper .navIcons:hover {
+  -webkit-filter: grayscale(75%); }
+.navUpper .IconUpper {
+  padding-right: 0;
+  padding-left: 0; }
+.navUpper .IconTeensie {
+  padding-right: 5px;
+  padding-left: 0; }
+.navUpper .IconAvatar {
+  padding-left: 3px;
+  padding-right: 20px; }
+.navUpper .postTeen {
+  background-color: #002E8C;
+  color: #fff !important; }
+.navUpper .postTeen:hover, .navUpper .postTeen:focus {
+  background-color: #002E8C !important; }
+.navUpper .logo {
+  max-width: 120px;
+  height: auto; }
+
+.navLower {
+  margin-bottom: 30px !important; }
+  .navLower .navbar-nav > li > a.myActive {
+    font-weight: bolder; }
+
+.navIndex {
+  margin-bottom: 0 !important; }
+  .navIndex .navbar-nav > li > a {
+    padding-bottom: 11px; }
+
+.navCheckout {
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+
+.myContent .myHeadLine {
+  padding: 0 20px;
+  text-transform: uppercase;
+  color: #455b66;
+  font-weight: bolder;
+  border-bottom: 1px solid #eee;
+  font-size: 1.2em;
+  padding-bottom: 15px;
+  margin-bottom: 0; }
+.myContent .myMessages {
+  padding: 10px 15px;
+  padding-bottom: 0;
+  background-color: #fff;
+  min-height: 565px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-bottom: 30px;
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+  .myContent .myMessages .headParent {
+    padding-right: 0;
+    padding-left: 0; }
+  .myContent .myMessages .messageContent h5 {
+    font-weight: bolder;
+    font-size: 15px;
+    color: #263238;
+    margin: 0; }
+    .myContent .myMessages .messageContent h5 i {
+      color: grey;
+      font-size: 12px;
+      margin-left: 3px; }
+  .myContent .myMessages .messageContent h6 {
+    color: #93999C;
+    margin: 3px 0;
+    font-size: 12px;
+    margin-top: 6px; }
+  .myContent .myMessages .messageContent h6.skills span {
+    border-left: 1px solid #93999C;
+    border-right: 1px solid #93999C;
+    padding-left: 10px;
+    padding-right: 10px; }
+  .myContent .myMessages .messageContent h6.skills span:first-child {
+    border-left: none;
+    padding-left: 0; }
+  .myContent .myMessages .messageContent h6.skills span:last-child {
+    border-right: none;
+    padding-right: 0; }
+  .myContent .myMessages .messageContent p {
+    color: #73787b;
+    margin: 0;
+    font-size: 12px; }
+  .myContent .myMessages .messageContent .messageTime {
+    position: relative;
+    top: -65px;
+    font-size: 12px; }
+  .myContent .myMessages .messageContent .viewProfile {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #7c4dff;
+    font-size: 12px; }
+  .myContent .myMessages .messageContent .sendMessage {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #7c4dff;
+    font-size: 12px; }
+  .myContent .myMessages .singleMessage {
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    .myContent .myMessages .singleMessage .featuredLabel {
+      position: absolute;
+      top: -25px;
+      left: 0;
+      background-color: #FFAB00;
+      color: #fff;
+      padding: 3px 10px;
+      z-index: 998;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      text-transform: uppercase;
+      font-weight: bolder; }
+    .myContent .myMessages .singleMessage img.userPic.img-responsive {
+      height: 60px;
+      width: 60px;
+      margin: 0 auto; }
+  .myContent .myMessages .singleMessageActive {
+    background-color: #eceff1; }
+.myContent .niche {
+  min-height: 555px; }
+.myContent .myChat {
+  background-color: #fff;
+  min-height: 500px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+  .myContent .myChat .coverImg {
+    background: url("../img/cover.png");
+    background-size: cover;
+    min-height: 100px; }
+  .myContent .myChat .mainChatPic {
+    position: relative;
+    top: -32px;
+    left: 20px; }
+    .myContent .myChat .mainChatPic .col-xs-8 {
+      position: static; }
+    .myContent .myChat .mainChatPic img {
+      border: 3px solid #fff;
+      border-radius: 5px;
+      max-height: 60px; }
+    .myContent .myChat .mainChatPic h5 {
+      color: #263238;
+      position: absolute;
+      bottom: 0;
+      left: 22%;
+      top: 32px;
+      font-weight: bolder; }
+      .myContent .myChat .mainChatPic h5 span {
+        font-weight: normal; }
+      .myContent .myChat .mainChatPic h5 i {
+        color: grey; }
+@media(max-width: 1200px) and (min-width: 768px) {
+  .myContent .myChat .mainChatPic h5 {
+    bottom: -10px; } }
+@media(max-width: 992px) and (min-width: 768px) {
+  .myContent .myChat .mainChatPic {
+    top: -15px; } }
+@media(max-width: 365px) {
+  .myContent .myChat .mainChatPic {
+    top: -25px; } }
+  .myContent .myChat .chatHistory {
+    padding: 20px;
+    position: relative;
+    border-bottom: 2px solid rgba(226, 228, 229, 0.44);
+    padding-bottom: 15px; }
+    .myContent .myChat .chatHistory .timeChat {
+      position: absolute;
+      bottom: -5px;
+      right: 10px;
+      color: #73787b; }
+    .myContent .myChat .chatHistory .typingState {
+      color: #73787b;
+      line-height: 5em; }
+@media(max-width:768px) {
+  .myContent .myChat .chatHistory .typingState {
+    line-height: 10em; } }
+  .myContent .myChat .myContactsGoPremium {
+    padding: 0 40px;
+    border: none;
+    position: relative;
+    border-radius: 0; }
+    .myContent .myChat .myContactsGoPremium div {
+      background-color: #F7F6FD;
+      padding: 0 20px;
+      border-radius: 3px;
+      border: 1px solid #dde3e6;
+      margin-bottom: 0;
+      padding-bottom: 0; }
+      .myContent .myChat .myContactsGoPremium div h3 {
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 1.2em;
+        margin-top: 20px; }
+      .myContent .myChat .myContactsGoPremium div h5 {
+        color: #2F3B41;
+        opacity: 0.8;
+        font-size: 0.9em; }
+      .myContent .myChat .myContactsGoPremium div .lastH {
+        margin-bottom: 20px; }
+  .myContent .myChat .chatAdd {
+    padding: 20px; }
+    .myContent .myChat .chatAdd input {
+      padding: 16px 5px;
+      border: none;
+      width: 75%; }
+    .myContent .myChat .chatAdd input:focus {
+      outline: none; }
+    .myContent .myChat .chatAdd input::-webkit-input-placeholder {
+      font-family: "Montserrat", sans-serif;
+      font-style: italic; }
+    .myContent .myChat .chatAdd a.btn {
+      padding: 16px 20px;
+      text-transform: uppercase;
+      transition: all 0.2s ease; }
+    .myContent .myChat .chatAdd a.btn:hover {
+      background-color: #3600cc;
+      color: #fff; }
+  .myContent .myChat .myContactsUpgradeNow {
+    padding: 30px 25px;
+    position: relative; }
+    .myContent .myChat .myContactsUpgradeNow a.btn {
+      width: 100%;
+      text-align: center;
+      background-color: #FFAB00;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 0;
+      font-weight: bolder;
+      font-size: 0.9em; }
+    .myContent .myChat .myContactsUpgradeNow a.btn:hover {
+      background-color: #805600;
+      color: #fff; }
+.myContent .myContactsVIP {
+  min-height: 0;
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+.myContent .myFooter {
+  margin-top: 20px;
+  background-color: #fff;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+  .myContent .myFooter ul {
+    list-style: none;
+    padding: 20px 20px;
+    position: relative;
+    margin: 0; }
+    .myContent .myFooter ul li {
+      display: inline; }
+  .myContent .myFooter p, .myContent .myFooter a {
+    color: #9a9ea0;
+    margin-right: 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 0.9em;
+    display: inline; }
+  .myContent .myFooter a:hover {
+    color: #263238; }
+  .myContent .myFooter .contactTeenlancer {
+    display: block;
+    background-color: #ECEFF1;
+    width: 100%;
+    padding: 13px 0;
+    text-align: center;
+    color: #7c4dff;
+    position: relative;
+    margin: 0;
+    margin-bottom: 30px; }
+.myContent .dashboard .singleMessage:not(:last-child) {
+  border-bottom: 1px solid #eee; }
+.myContent .dashboard .messageContent .messageTime {
+  top: -40px !important; }
+.myContent .countries .messageContent .name {
+  font-weight: bolder; }
+.myContent .countries .messageContent .job {
+  font-weight: normal;
+  color: #263238;
+  font-style: italic;
+  font-size: 0.8em; }
+.myContent .countries .messageContent .skills {
+  color: #93999C; }
+  .myContent .countries .messageContent .skills span {
+    border-left: 1px solid #93999C;
+    border-right: 1px solid #93999C;
+    padding-left: 10px;
+    padding-right: 10px; }
+  .myContent .countries .messageContent .skills span:first-child {
+    border-left: none;
+    padding-left: 0; }
+  .myContent .countries .messageContent .skills span:last-child {
+    border-right: none;
+    padding-right: 0; }
+.myContent .countries .messageContent p {
+  display: block; }
+.myContent .countries .messageContent .messageRating {
+  position: absolute;
+  top: 0;
+  right: 0; }
+.myContent .countries .messageContent .messageReviews {
+  position: absolute;
+  top: 25px;
+  right: 0; }
+.myContent .countries .messageContent .messageTeensies {
+  position: absolute;
+  bottom: -2px;
+  right: 0; }
+.myContent .countries .starActive {
+  color: #FFAB00; }
+.myContent .countries .fa-star {
+  font-size: 1.5em;
+  margin-right: 1px; }
+.myContent .countries .rating {
+  background-color: #FFAB00;
+  padding: 2px 5px;
+  color: #fff;
+  border-radius: 5px;
+  position: relative;
+  font-size: 1.2em;
+  display: inline-block;
+  top: -2px; }
+.myContent .countriesRight a {
+  display: block;
+  padding: 8px 0px;
+  text-decoration: none;
+  color: #93999C; }
+.myContent .countriesRight a:hover {
+  color: #7c4dff; }
+.myContent .countriesRight .myContactsGoPremium div {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+.myContent .countriesRight .myContactsUpgradeNow {
+  padding: 0 15px; }
+  .myContent .countriesRight .myContactsUpgradeNow input {
+    padding: 22px 20px;
+    width: 100%;
+    background-color: #ECEFF1; }
+  .myContent .countriesRight .myContactsUpgradeNow .col-xs-12 {
+    padding-left: 0;
+    padding-right: 0; }
+.myContent .realOne .messageContent .messageTime {
+  top: -40px !important; }
+.myContent .realOne .msgText {
+  color: #A1A6A9;
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: 12px; }
+.myContent .newChatHistory {
+  max-height: 330px;
+  overflow-y: scroll;
+  width: 104.2%;
+  padding: 0px 20px 0 40px !important; }
+  .myContent .newChatHistory div:first-child, .myContent .newChatHistory .msgImg, .myContent .newChatHistory .msgText {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0;
+    margin-left: 0; }
+  .myContent .newChatHistory .msgReceived, .myContent .newChatHistory .msgSent {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0; }
+    .myContent .newChatHistory .msgReceived .msgImg img, .myContent .newChatHistory .msgSent .msgImg img {
+      max-width: 50px;
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+      margin-left: -5px; }
+    .myContent .newChatHistory .msgReceived .msgText p, .myContent .newChatHistory .msgSent .msgText p {
+      padding: 20px 20px;
+      background-color: #eceff1;
+      color: #263238;
+      margin-left: 10px;
+      font-size: 13px;
+      border-radius: 5px;
+      margin: 0;
+      margin-bottom: 20px; }
+    .myContent .newChatHistory .msgReceived .msgTyping, .myContent .newChatHistory .msgSent .msgTyping {
+      opacity: 0.4; }
+    .myContent .newChatHistory .msgReceived .msgTypingText, .myContent .newChatHistory .msgSent .msgTypingText {
+      opacity: 0.4; }
+      .myContent .newChatHistory .msgReceived .msgTypingText p, .myContent .newChatHistory .msgSent .msgTypingText p {
+        padding: 15px 20px; }
+      .myContent .newChatHistory .msgReceived .msgTypingText i, .myContent .newChatHistory .msgSent .msgTypingText i {
+        font-size: 1.5em; }
+  .myContent .newChatHistory .msgSent .msgImg img {
+    margin-left: 10px; }
+  .myContent .newChatHistory .msgSent .msgText p {
+    background-color: #daccff;
+    color: #263238; }
+  .myContent .newChatHistory .msgFirst {
+    margin-top: 20px !important; }
+.myContent .mainChatHeader {
+  position: static !important; }
+  .myContent .mainChatHeader .myHeadLine {
+    background-color: transparent;
+    margin-top: 0;
+    padding: 15px 20px;
+    border: none;
+    text-transform: none;
+    font-size: 17px;
+    color: #fff; }
+  .myContent .mainChatHeader .upperHeader .cont {
+    border-bottom: 5px solid #eee;
+    background-color: #263238;
+    padding: 10px 0; }
+  .myContent .mainChatHeader .upperHeader i {
+    color: green; }
+  .myContent .mainChatHeader .upperHeader i.fa-ellipsis-h {
+    font-size: 1.3em;
+    color: #fff; }
+  .myContent .mainChatHeader .upperHeader .dropdown-menu {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    top: 97%;
+    left: 32%; }
+  .myContent .mainChatHeader .upperHeader .job {
+    margin: 0;
+    font-size: 12px;
+    color: #fff; }
+  .myContent .mainChatHeader .upperHeader #dLabel {
+    margin: 15px 0;
+    display: inline-block; }
+  .myContent .mainChatHeader .lowerHeader {
+    padding: 0 15px; }
+    .myContent .mainChatHeader .lowerHeader h3 {
+      margin: 0;
+      padding: 20px 0; }
+      .myContent .mainChatHeader .lowerHeader h3 .chat {
+        text-transform: uppercase; }
+      .myContent .mainChatHeader .lowerHeader h3 i {
+        font-size: 0.8em; }
+      .myContent .mainChatHeader .lowerHeader h3 .dropToggle {
+        background-color: #eee;
+        padding: 5px; }
+.myContent .newChatInput {
+  padding: 0 15px !important; }
+  .myContent .newChatInput textarea {
+    padding: 25px 50px 5px 20px !important;
+    width: 100% !important;
+    background-color: #ECEFF1 !important;
+    border: none;
+    resize: none;
+    margin-top: 20px;
+    margin-bottom: -5px; }
+  .myContent .newChatInput .attachIcon {
+    position: absolute;
+    right: 20px;
+    top: 45%;
+    font-size: 1.8em;
+    color: rgba(128, 128, 128, 0.66); }
+  .myContent .newChatInput textarea:focus {
+    outline: none; }
+  .myContent .newChatInput .col-xs-12 {
+    padding-left: 0;
+    padding-right: 0; }
+.myContent .ordersPlaced, .myContent .ordersReceived, .myContent .balance, .myContent .accountSetting, .myContent .profileSetting, .myContent .membershipSetting, .myContent .registerSetting, .myContent .loginSetting, .myContent .passwordSetting, .myContent .postATeensie, .myContent .raiseDispute, .myContent .giveFeedback, .myContent .paymentSetting, .myContent .withdrawal {
+  background-color: transparent;
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 0;
+  margin-bottom: 0;
+  border: none; }
+  .myContent .ordersPlaced .orderButtons, .myContent .ordersReceived .orderButtons, .myContent .balance .orderButtons, .myContent .accountSetting .orderButtons, .myContent .profileSetting .orderButtons, .myContent .membershipSetting .orderButtons, .myContent .registerSetting .orderButtons, .myContent .loginSetting .orderButtons, .myContent .passwordSetting .orderButtons, .myContent .postATeensie .orderButtons, .myContent .raiseDispute .orderButtons, .myContent .giveFeedback .orderButtons, .myContent .paymentSetting .orderButtons, .myContent .withdrawal .orderButtons {
+    padding-bottom: 30px; }
+    .myContent .ordersPlaced .orderButtons a, .myContent .ordersReceived .orderButtons a, .myContent .balance .orderButtons a, .myContent .accountSetting .orderButtons a, .myContent .profileSetting .orderButtons a, .myContent .membershipSetting .orderButtons a, .myContent .registerSetting .orderButtons a, .myContent .loginSetting .orderButtons a, .myContent .passwordSetting .orderButtons a, .myContent .postATeensie .orderButtons a, .myContent .raiseDispute .orderButtons a, .myContent .giveFeedback .orderButtons a, .myContent .paymentSetting .orderButtons a, .myContent .withdrawal .orderButtons a {
+      font-size: 17px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #263238; }
+    .myContent .ordersPlaced .orderButtons a:hover, .myContent .ordersReceived .orderButtons a:hover, .myContent .balance .orderButtons a:hover, .myContent .accountSetting .orderButtons a:hover, .myContent .profileSetting .orderButtons a:hover, .myContent .membershipSetting .orderButtons a:hover, .myContent .registerSetting .orderButtons a:hover, .myContent .loginSetting .orderButtons a:hover, .myContent .passwordSetting .orderButtons a:hover, .myContent .postATeensie .orderButtons a:hover, .myContent .raiseDispute .orderButtons a:hover, .myContent .giveFeedback .orderButtons a:hover, .myContent .paymentSetting .orderButtons a:hover, .myContent .withdrawal .orderButtons a:hover {
+      color: #7c4dff; }
+  .myContent .ordersPlaced .orderTable table, .myContent .ordersReceived .orderTable table, .myContent .balance .orderTable table, .myContent .accountSetting .orderTable table, .myContent .profileSetting .orderTable table, .myContent .membershipSetting .orderTable table, .myContent .registerSetting .orderTable table, .myContent .loginSetting .orderTable table, .myContent .passwordSetting .orderTable table, .myContent .postATeensie .orderTable table, .myContent .raiseDispute .orderTable table, .myContent .giveFeedback .orderTable table, .myContent .paymentSetting .orderTable table, .myContent .withdrawal .orderTable table {
+    margin-bottom: 0; }
+  .myContent .ordersPlaced .orderTable .orderTableDiv, .myContent .ordersReceived .orderTable .orderTableDiv, .myContent .balance .orderTable .orderTableDiv, .myContent .accountSetting .orderTable .orderTableDiv, .myContent .profileSetting .orderTable .orderTableDiv, .myContent .membershipSetting .orderTable .orderTableDiv, .myContent .registerSetting .orderTable .orderTableDiv, .myContent .loginSetting .orderTable .orderTableDiv, .myContent .passwordSetting .orderTable .orderTableDiv, .myContent .postATeensie .orderTable .orderTableDiv, .myContent .raiseDispute .orderTable .orderTableDiv, .myContent .giveFeedback .orderTable .orderTableDiv, .myContent .paymentSetting .orderTable .orderTableDiv, .myContent .withdrawal .orderTable .orderTableDiv {
+    padding-right: 0;
+    padding-left: 0; }
+  .myContent .ordersPlaced .orderTable tr.tableHeader th, .myContent .ordersReceived .orderTable tr.tableHeader th, .myContent .balance .orderTable tr.tableHeader th, .myContent .accountSetting .orderTable tr.tableHeader th, .myContent .profileSetting .orderTable tr.tableHeader th, .myContent .membershipSetting .orderTable tr.tableHeader th, .myContent .registerSetting .orderTable tr.tableHeader th, .myContent .loginSetting .orderTable tr.tableHeader th, .myContent .passwordSetting .orderTable tr.tableHeader th, .myContent .postATeensie .orderTable tr.tableHeader th, .myContent .raiseDispute .orderTable tr.tableHeader th, .myContent .giveFeedback .orderTable tr.tableHeader th, .myContent .paymentSetting .orderTable tr.tableHeader th, .myContent .withdrawal .orderTable tr.tableHeader th {
+    padding: 15px 15px;
+    line-height: 1.4;
+    background-color: #ECEFF1;
+    color: #767879;
+    text-transform: uppercase; }
+  .myContent .ordersPlaced .orderTable tr.tableHeader th.teensieName, .myContent .ordersReceived .orderTable tr.tableHeader th.teensieName, .myContent .balance .orderTable tr.tableHeader th.teensieName, .myContent .accountSetting .orderTable tr.tableHeader th.teensieName, .myContent .profileSetting .orderTable tr.tableHeader th.teensieName, .myContent .membershipSetting .orderTable tr.tableHeader th.teensieName, .myContent .registerSetting .orderTable tr.tableHeader th.teensieName, .myContent .loginSetting .orderTable tr.tableHeader th.teensieName, .myContent .passwordSetting .orderTable tr.tableHeader th.teensieName, .myContent .postATeensie .orderTable tr.tableHeader th.teensieName, .myContent .raiseDispute .orderTable tr.tableHeader th.teensieName, .myContent .giveFeedback .orderTable tr.tableHeader th.teensieName, .myContent .paymentSetting .orderTable tr.tableHeader th.teensieName, .myContent .withdrawal .orderTable tr.tableHeader th.teensieName {
+    width: 35%; }
+  .myContent .ordersPlaced .orderTable tr.tableHeader th.action, .myContent .ordersReceived .orderTable tr.tableHeader th.action, .myContent .balance .orderTable tr.tableHeader th.action, .myContent .accountSetting .orderTable tr.tableHeader th.action, .myContent .profileSetting .orderTable tr.tableHeader th.action, .myContent .membershipSetting .orderTable tr.tableHeader th.action, .myContent .registerSetting .orderTable tr.tableHeader th.action, .myContent .loginSetting .orderTable tr.tableHeader th.action, .myContent .passwordSetting .orderTable tr.tableHeader th.action, .myContent .postATeensie .orderTable tr.tableHeader th.action, .myContent .raiseDispute .orderTable tr.tableHeader th.action, .myContent .giveFeedback .orderTable tr.tableHeader th.action, .myContent .paymentSetting .orderTable tr.tableHeader th.action, .myContent .withdrawal .orderTable tr.tableHeader th.action {
+    width: 15.4%; }
+  .myContent .ordersPlaced .orderTable tr.tableData td, .myContent .ordersReceived .orderTable tr.tableData td, .myContent .balance .orderTable tr.tableData td, .myContent .accountSetting .orderTable tr.tableData td, .myContent .profileSetting .orderTable tr.tableData td, .myContent .membershipSetting .orderTable tr.tableData td, .myContent .registerSetting .orderTable tr.tableData td, .myContent .loginSetting .orderTable tr.tableData td, .myContent .passwordSetting .orderTable tr.tableData td, .myContent .postATeensie .orderTable tr.tableData td, .myContent .raiseDispute .orderTable tr.tableData td, .myContent .giveFeedback .orderTable tr.tableData td, .myContent .paymentSetting .orderTable tr.tableData td, .myContent .withdrawal .orderTable tr.tableData td {
+    padding: 10px 15px;
+    background-color: #fff;
+    color: #93999C; }
+    .myContent .ordersPlaced .orderTable tr.tableData td a, .myContent .ordersReceived .orderTable tr.tableData td a, .myContent .balance .orderTable tr.tableData td a, .myContent .accountSetting .orderTable tr.tableData td a, .myContent .profileSetting .orderTable tr.tableData td a, .myContent .membershipSetting .orderTable tr.tableData td a, .myContent .registerSetting .orderTable tr.tableData td a, .myContent .loginSetting .orderTable tr.tableData td a, .myContent .passwordSetting .orderTable tr.tableData td a, .myContent .postATeensie .orderTable tr.tableData td a, .myContent .raiseDispute .orderTable tr.tableData td a, .myContent .giveFeedback .orderTable tr.tableData td a, .myContent .paymentSetting .orderTable tr.tableData td a, .myContent .withdrawal .orderTable tr.tableData td a {
+      color: #93999C;
+      text-decoration: none;
+      padding-right: 60%; }
+      .myContent .ordersPlaced .orderTable tr.tableData td a i, .myContent .ordersReceived .orderTable tr.tableData td a i, .myContent .balance .orderTable tr.tableData td a i, .myContent .accountSetting .orderTable tr.tableData td a i, .myContent .profileSetting .orderTable tr.tableData td a i, .myContent .membershipSetting .orderTable tr.tableData td a i, .myContent .registerSetting .orderTable tr.tableData td a i, .myContent .loginSetting .orderTable tr.tableData td a i, .myContent .passwordSetting .orderTable tr.tableData td a i, .myContent .postATeensie .orderTable tr.tableData td a i, .myContent .raiseDispute .orderTable tr.tableData td a i, .myContent .giveFeedback .orderTable tr.tableData td a i, .myContent .paymentSetting .orderTable tr.tableData td a i, .myContent .withdrawal .orderTable tr.tableData td a i {
+        float: right;
+        vertical-align: middle; }
+    .myContent .ordersPlaced .orderTable tr.tableData td ul, .myContent .ordersReceived .orderTable tr.tableData td ul, .myContent .balance .orderTable tr.tableData td ul, .myContent .accountSetting .orderTable tr.tableData td ul, .myContent .profileSetting .orderTable tr.tableData td ul, .myContent .membershipSetting .orderTable tr.tableData td ul, .myContent .registerSetting .orderTable tr.tableData td ul, .myContent .loginSetting .orderTable tr.tableData td ul, .myContent .passwordSetting .orderTable tr.tableData td ul, .myContent .postATeensie .orderTable tr.tableData td ul, .myContent .raiseDispute .orderTable tr.tableData td ul, .myContent .giveFeedback .orderTable tr.tableData td ul, .myContent .paymentSetting .orderTable tr.tableData td ul, .myContent .withdrawal .orderTable tr.tableData td ul {
+      padding: 0;
+      border-radius: 0;
+      border: none;
+      margin-top: 8px; }
+      .myContent .ordersPlaced .orderTable tr.tableData td ul li a, .myContent .ordersReceived .orderTable tr.tableData td ul li a, .myContent .balance .orderTable tr.tableData td ul li a, .myContent .accountSetting .orderTable tr.tableData td ul li a, .myContent .profileSetting .orderTable tr.tableData td ul li a, .myContent .membershipSetting .orderTable tr.tableData td ul li a, .myContent .registerSetting .orderTable tr.tableData td ul li a, .myContent .loginSetting .orderTable tr.tableData td ul li a, .myContent .passwordSetting .orderTable tr.tableData td ul li a, .myContent .postATeensie .orderTable tr.tableData td ul li a, .myContent .raiseDispute .orderTable tr.tableData td ul li a, .myContent .giveFeedback .orderTable tr.tableData td ul li a, .myContent .paymentSetting .orderTable tr.tableData td ul li a, .myContent .withdrawal .orderTable tr.tableData td ul li a {
+        padding: 10px 20px;
+        border-top: 2px solid #eee; }
+  .myContent .ordersPlaced .orderPagination div.col-xs-12, .myContent .ordersReceived .orderPagination div.col-xs-12, .myContent .balance .orderPagination div.col-xs-12, .myContent .accountSetting .orderPagination div.col-xs-12, .myContent .profileSetting .orderPagination div.col-xs-12, .myContent .membershipSetting .orderPagination div.col-xs-12, .myContent .registerSetting .orderPagination div.col-xs-12, .myContent .loginSetting .orderPagination div.col-xs-12, .myContent .passwordSetting .orderPagination div.col-xs-12, .myContent .postATeensie .orderPagination div.col-xs-12, .myContent .raiseDispute .orderPagination div.col-xs-12, .myContent .giveFeedback .orderPagination div.col-xs-12, .myContent .paymentSetting .orderPagination div.col-xs-12, .myContent .withdrawal .orderPagination div.col-xs-12 {
+    padding-left: 0;
+    padding-right: 0;
+    position: static; }
+  .myContent .ordersPlaced .orderPagination nav, .myContent .ordersReceived .orderPagination nav, .myContent .balance .orderPagination nav, .myContent .accountSetting .orderPagination nav, .myContent .profileSetting .orderPagination nav, .myContent .membershipSetting .orderPagination nav, .myContent .registerSetting .orderPagination nav, .myContent .loginSetting .orderPagination nav, .myContent .passwordSetting .orderPagination nav, .myContent .postATeensie .orderPagination nav, .myContent .raiseDispute .orderPagination nav, .myContent .giveFeedback .orderPagination nav, .myContent .paymentSetting .orderPagination nav, .myContent .withdrawal .orderPagination nav {
+    text-align: center; }
+    .myContent .ordersPlaced .orderPagination nav .pagination, .myContent .ordersReceived .orderPagination nav .pagination, .myContent .balance .orderPagination nav .pagination, .myContent .accountSetting .orderPagination nav .pagination, .myContent .profileSetting .orderPagination nav .pagination, .myContent .membershipSetting .orderPagination nav .pagination, .myContent .registerSetting .orderPagination nav .pagination, .myContent .loginSetting .orderPagination nav .pagination, .myContent .passwordSetting .orderPagination nav .pagination, .myContent .postATeensie .orderPagination nav .pagination, .myContent .raiseDispute .orderPagination nav .pagination, .myContent .giveFeedback .orderPagination nav .pagination, .myContent .paymentSetting .orderPagination nav .pagination, .myContent .withdrawal .orderPagination nav .pagination {
+      border-radius: 0;
+      margin: 30px 0; }
+      .myContent .ordersPlaced .orderPagination nav .pagination li a, .myContent .ordersReceived .orderPagination nav .pagination li a, .myContent .balance .orderPagination nav .pagination li a, .myContent .accountSetting .orderPagination nav .pagination li a, .myContent .profileSetting .orderPagination nav .pagination li a, .myContent .membershipSetting .orderPagination nav .pagination li a, .myContent .registerSetting .orderPagination nav .pagination li a, .myContent .loginSetting .orderPagination nav .pagination li a, .myContent .passwordSetting .orderPagination nav .pagination li a, .myContent .postATeensie .orderPagination nav .pagination li a, .myContent .raiseDispute .orderPagination nav .pagination li a, .myContent .giveFeedback .orderPagination nav .pagination li a, .myContent .paymentSetting .orderPagination nav .pagination li a, .myContent .withdrawal .orderPagination nav .pagination li a {
+        margin: 0 6px;
+        color: #7c4dff;
+        padding: 10px 12px !important;
+        border: 1px solid #eee; }
+      .myContent .ordersPlaced .orderPagination nav .pagination li:first-child > a, .myContent .ordersReceived .orderPagination nav .pagination li:first-child > a, .myContent .balance .orderPagination nav .pagination li:first-child > a, .myContent .accountSetting .orderPagination nav .pagination li:first-child > a, .myContent .profileSetting .orderPagination nav .pagination li:first-child > a, .myContent .membershipSetting .orderPagination nav .pagination li:first-child > a, .myContent .registerSetting .orderPagination nav .pagination li:first-child > a, .myContent .loginSetting .orderPagination nav .pagination li:first-child > a, .myContent .passwordSetting .orderPagination nav .pagination li:first-child > a, .myContent .postATeensie .orderPagination nav .pagination li:first-child > a, .myContent .raiseDispute .orderPagination nav .pagination li:first-child > a, .myContent .giveFeedback .orderPagination nav .pagination li:first-child > a, .myContent .paymentSetting .orderPagination nav .pagination li:first-child > a, .myContent .withdrawal .orderPagination nav .pagination li:first-child > a {
+        border-radius: 0; }
+      .myContent .ordersPlaced .orderPagination nav .pagination li:last-child > a, .myContent .ordersReceived .orderPagination nav .pagination li:last-child > a, .myContent .balance .orderPagination nav .pagination li:last-child > a, .myContent .accountSetting .orderPagination nav .pagination li:last-child > a, .myContent .profileSetting .orderPagination nav .pagination li:last-child > a, .myContent .membershipSetting .orderPagination nav .pagination li:last-child > a, .myContent .registerSetting .orderPagination nav .pagination li:last-child > a, .myContent .loginSetting .orderPagination nav .pagination li:last-child > a, .myContent .passwordSetting .orderPagination nav .pagination li:last-child > a, .myContent .postATeensie .orderPagination nav .pagination li:last-child > a, .myContent .raiseDispute .orderPagination nav .pagination li:last-child > a, .myContent .giveFeedback .orderPagination nav .pagination li:last-child > a, .myContent .paymentSetting .orderPagination nav .pagination li:last-child > a, .myContent .withdrawal .orderPagination nav .pagination li:last-child > a {
+        border-radius: 0; }
+.myContent .ordersReceived .orderTable tr.tableHeader th.action {
+  width: 15.4%; }
+.myContent .balance .orderButtons a, .myContent .accountSetting .orderButtons a, .myContent .profileSetting .orderButtons a, .myContent .membershipSetting .orderButtons a, .myContent .registerSetting .orderButtons a, .myContent .loginSetting .orderButtons a, .myContent .passwordSetting .orderButtons a, .myContent .postATeensie .orderButtons a, .myContent .raiseDispute .orderButtons a, .myContent .giveFeedback .orderButtons a, .myContent .paymentSetting .orderButtons a, .myContent .withdrawal .orderButtons a {
+  color: #939cb7;
+  font-size: 15px; }
+.myContent .balance .balaceUp tr.tableData td, .myContent .accountSetting .balaceUp tr.tableData td, .myContent .profileSetting .balaceUp tr.tableData td, .myContent .membershipSetting .balaceUp tr.tableData td, .myContent .registerSetting .balaceUp tr.tableData td, .myContent .loginSetting .balaceUp tr.tableData td, .myContent .passwordSetting .balaceUp tr.tableData td, .myContent .postATeensie .balaceUp tr.tableData td, .myContent .raiseDispute .balaceUp tr.tableData td, .myContent .giveFeedback .balaceUp tr.tableData td, .myContent .paymentSetting .balaceUp tr.tableData td, .myContent .withdrawal .balaceUp tr.tableData td {
+  padding: 25px 15px; }
+.myContent .balance .myHeadLine, .myContent .accountSetting .myHeadLine, .myContent .profileSetting .myHeadLine, .myContent .membershipSetting .myHeadLine, .myContent .registerSetting .myHeadLine, .myContent .loginSetting .myHeadLine, .myContent .passwordSetting .myHeadLine, .myContent .postATeensie .myHeadLine, .myContent .raiseDispute .myHeadLine, .myContent .giveFeedback .myHeadLine, .myContent .paymentSetting .myHeadLine, .myContent .withdrawal .myHeadLine, .myContent .balance .specialHead, .myContent .accountSetting .specialHead, .myContent .profileSetting .specialHead, .myContent .membershipSetting .specialHead, .myContent .registerSetting .specialHead, .myContent .loginSetting .specialHead, .myContent .passwordSetting .specialHead, .myContent .postATeensie .specialHead, .myContent .raiseDispute .specialHead, .myContent .giveFeedback .specialHead, .myContent .paymentSetting .specialHead, .myContent .withdrawal .specialHead {
+  padding-bottom: 0;
+  padding: 0;
+  margin: 30px 0;
+  border: none;
+  font-size: 1.7em;
+  font-weight: normal; }
+.myContent .balance .specialHead, .myContent .accountSetting .specialHead, .myContent .profileSetting .specialHead, .myContent .membershipSetting .specialHead, .myContent .registerSetting .specialHead, .myContent .loginSetting .specialHead, .myContent .passwordSetting .specialHead, .myContent .postATeensie .specialHead, .myContent .raiseDispute .specialHead, .myContent .giveFeedback .specialHead, .myContent .paymentSetting .specialHead, .myContent .withdrawal .specialHead {
+  margin-top: 0; }
+.myContent .balance .headline div.col-xs-12, .myContent .accountSetting .headline div.col-xs-12, .myContent .profileSetting .headline div.col-xs-12, .myContent .membershipSetting .headline div.col-xs-12, .myContent .registerSetting .headline div.col-xs-12, .myContent .loginSetting .headline div.col-xs-12, .myContent .passwordSetting .headline div.col-xs-12, .myContent .postATeensie .headline div.col-xs-12, .myContent .raiseDispute .headline div.col-xs-12, .myContent .giveFeedback .headline div.col-xs-12, .myContent .paymentSetting .headline div.col-xs-12, .myContent .withdrawal .headline div.col-xs-12 {
+  padding-right: 0;
+  padding-left: 0; }
+.myContent .balance .myHeadLine, .myContent .accountSetting .myHeadLine, .myContent .profileSetting .myHeadLine, .myContent .membershipSetting .myHeadLine, .myContent .registerSetting .myHeadLine, .myContent .loginSetting .myHeadLine, .myContent .passwordSetting .myHeadLine, .myContent .postATeensie .myHeadLine, .myContent .raiseDispute .myHeadLine, .myContent .giveFeedback .myHeadLine, .myContent .paymentSetting .myHeadLine, .myContent .withdrawal .myHeadLine {
+  font-size: 1.3em; }
+  .myContent .balance .myHeadLine span.pull-right, .myContent .accountSetting .myHeadLine span.pull-right, .myContent .profileSetting .myHeadLine span.pull-right, .myContent .membershipSetting .myHeadLine span.pull-right, .myContent .registerSetting .myHeadLine span.pull-right, .myContent .loginSetting .myHeadLine span.pull-right, .myContent .passwordSetting .myHeadLine span.pull-right, .myContent .postATeensie .myHeadLine span.pull-right, .myContent .raiseDispute .myHeadLine span.pull-right, .myContent .giveFeedback .myHeadLine span.pull-right, .myContent .paymentSetting .myHeadLine span.pull-right, .myContent .withdrawal .myHeadLine span.pull-right {
+    font-size: 13px; }
+    .myContent .balance .myHeadLine span.pull-right a, .myContent .accountSetting .myHeadLine span.pull-right a, .myContent .profileSetting .myHeadLine span.pull-right a, .myContent .membershipSetting .myHeadLine span.pull-right a, .myContent .registerSetting .myHeadLine span.pull-right a, .myContent .loginSetting .myHeadLine span.pull-right a, .myContent .passwordSetting .myHeadLine span.pull-right a, .myContent .postATeensie .myHeadLine span.pull-right a, .myContent .raiseDispute .myHeadLine span.pull-right a, .myContent .giveFeedback .myHeadLine span.pull-right a, .myContent .paymentSetting .myHeadLine span.pull-right a, .myContent .withdrawal .myHeadLine span.pull-right a {
+      text-decoration: none;
+      color: #7c4dff;
+      vertical-align: middle; }
+.myContent .balance .specialHead, .myContent .accountSetting .specialHead, .myContent .profileSetting .specialHead, .myContent .membershipSetting .specialHead, .myContent .registerSetting .specialHead, .myContent .loginSetting .specialHead, .myContent .passwordSetting .specialHead, .myContent .postATeensie .specialHead, .myContent .raiseDispute .specialHead, .myContent .giveFeedback .specialHead, .myContent .paymentSetting .specialHead, .myContent .withdrawal .specialHead {
+  color: #FEAB00;
+  font-size: 1.7em; }
+  .myContent .balance .specialHead span.pull-right, .myContent .accountSetting .specialHead span.pull-right, .myContent .profileSetting .specialHead span.pull-right, .myContent .membershipSetting .specialHead span.pull-right, .myContent .registerSetting .specialHead span.pull-right, .myContent .loginSetting .specialHead span.pull-right, .myContent .passwordSetting .specialHead span.pull-right, .myContent .postATeensie .specialHead span.pull-right, .myContent .raiseDispute .specialHead span.pull-right, .myContent .giveFeedback .specialHead span.pull-right, .myContent .paymentSetting .specialHead span.pull-right, .myContent .withdrawal .specialHead span.pull-right {
+    color: #8E9598;
+    font-size: 13px; }
+.myContent .accountSetting, .myContent .profileSetting, .myContent .membershipSetting, .myContent .registerSetting, .myContent .loginSetting, .myContent .passwordSetting, .myContent .postATeensie, .myContent .raiseDispute, .myContent .giveFeedback, .myContent .paymentSetting, .myContent .withdrawal {
+  box-shadow: none; }
+  .myContent .accountSetting .headline .myHeadLine, .myContent .profileSetting .headline .myHeadLine, .myContent .membershipSetting .headline .myHeadLine, .myContent .registerSetting .headline .myHeadLine, .myContent .loginSetting .headline .myHeadLine, .myContent .passwordSetting .headline .myHeadLine, .myContent .postATeensie .headline .myHeadLine, .myContent .raiseDispute .headline .myHeadLine, .myContent .giveFeedback .headline .myHeadLine, .myContent .paymentSetting .headline .myHeadLine, .myContent .withdrawal .headline .myHeadLine {
+    font-weight: bolder;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px 0; }
+  .myContent .accountSetting .headline .myHeadLine:before, .myContent .profileSetting .headline .myHeadLine:before, .myContent .membershipSetting .headline .myHeadLine:before, .myContent .registerSetting .headline .myHeadLine:before, .myContent .loginSetting .headline .myHeadLine:before, .myContent .passwordSetting .headline .myHeadLine:before, .myContent .postATeensie .headline .myHeadLine:before, .myContent .raiseDispute .headline .myHeadLine:before, .myContent .giveFeedback .headline .myHeadLine:before, .myContent .paymentSetting .headline .myHeadLine:before, .myContent .withdrawal .headline .myHeadLine:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    height: 3px;
+    width: 35%;
+    background-color: rgba(226, 228, 229, 0.44); }
+  .myContent .accountSetting .headline .myHeadLine:after, .myContent .profileSetting .headline .myHeadLine:after, .myContent .membershipSetting .headline .myHeadLine:after, .myContent .registerSetting .headline .myHeadLine:after, .myContent .loginSetting .headline .myHeadLine:after, .myContent .passwordSetting .headline .myHeadLine:after, .myContent .postATeensie .headline .myHeadLine:after, .myContent .raiseDispute .headline .myHeadLine:after, .myContent .giveFeedback .headline .myHeadLine:after, .myContent .paymentSetting .headline .myHeadLine:after, .myContent .withdrawal .headline .myHeadLine:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+    height: 3px;
+    width: 35%;
+    background-color: rgba(226, 228, 229, 0.44); }
+  .myContent .accountSetting .accSetting, .myContent .profileSetting .accSetting, .myContent .membershipSetting .accSetting, .myContent .registerSetting .accSetting, .myContent .loginSetting .accSetting, .myContent .passwordSetting .accSetting, .myContent .postATeensie .accSetting, .myContent .raiseDispute .accSetting, .myContent .giveFeedback .accSetting, .myContent .paymentSetting .accSetting, .myContent .withdrawal .accSetting {
+    margin: 32px -15px; }
+    .myContent .accountSetting .accSetting div.col-sm-6, .myContent .profileSetting .accSetting div.col-sm-6, .myContent .membershipSetting .accSetting div.col-sm-6, .myContent .registerSetting .accSetting div.col-sm-6, .myContent .loginSetting .accSetting div.col-sm-6, .myContent .passwordSetting .accSetting div.col-sm-6, .myContent .postATeensie .accSetting div.col-sm-6, .myContent .raiseDispute .accSetting div.col-sm-6, .myContent .giveFeedback .accSetting div.col-sm-6, .myContent .paymentSetting .accSetting div.col-sm-6, .myContent .withdrawal .accSetting div.col-sm-6 {
+      padding-right: 0;
+      padding-left: 0; }
+    .myContent .accountSetting .accSetting .myHeadLine, .myContent .profileSetting .accSetting .myHeadLine, .myContent .membershipSetting .accSetting .myHeadLine, .myContent .registerSetting .accSetting .myHeadLine, .myContent .loginSetting .accSetting .myHeadLine, .myContent .passwordSetting .accSetting .myHeadLine, .myContent .postATeensie .accSetting .myHeadLine, .myContent .raiseDispute .accSetting .myHeadLine, .myContent .giveFeedback .accSetting .myHeadLine, .myContent .paymentSetting .accSetting .myHeadLine, .myContent .withdrawal .accSetting .myHeadLine {
+      border: 2px solid rgba(226, 228, 229, 0.44);
+      padding: 22px 60% 22px 30px;
+      display: inline-block;
+      margin: 0;
+      margin-top: -2px;
+      margin-bottom: 2px;
+      color: #8E9598; }
+    .myContent .accountSetting .accSetting .myCheckbox, .myContent .profileSetting .accSetting .myCheckbox, .myContent .membershipSetting .accSetting .myCheckbox, .myContent .registerSetting .accSetting .myCheckbox, .myContent .loginSetting .accSetting .myCheckbox, .myContent .passwordSetting .accSetting .myCheckbox, .myContent .postATeensie .accSetting .myCheckbox, .myContent .raiseDispute .accSetting .myCheckbox, .myContent .giveFeedback .accSetting .myCheckbox, .myContent .paymentSetting .accSetting .myCheckbox, .myContent .withdrawal .accSetting .myCheckbox {
+      margin-left: 10px;
+      border: 2px solid rgba(226, 228, 229, 0.44);
+      background-color: transparent;
+      transition: all 0.2s ease-in-out;
+      margin-top: -2px;
+      margin-bottom: 2px;
+      padding: 30px 31px;
+      cursor: pointer; }
+    .myContent .accountSetting .accSetting .myCheckboxActive, .myContent .profileSetting .accSetting .myCheckboxActive, .myContent .membershipSetting .accSetting .myCheckboxActive, .myContent .registerSetting .accSetting .myCheckboxActive, .myContent .loginSetting .accSetting .myCheckboxActive, .myContent .passwordSetting .accSetting .myCheckboxActive, .myContent .postATeensie .accSetting .myCheckboxActive, .myContent .raiseDispute .accSetting .myCheckboxActive, .myContent .giveFeedback .accSetting .myCheckboxActive, .myContent .paymentSetting .accSetting .myCheckboxActive, .myContent .withdrawal .accSetting .myCheckboxActive {
+      background-color: #7c4dff; }
+    .myContent .accountSetting .accSetting .client h3, .myContent .profileSetting .accSetting .client h3, .myContent .membershipSetting .accSetting .client h3, .myContent .registerSetting .accSetting .client h3, .myContent .loginSetting .accSetting .client h3, .myContent .passwordSetting .accSetting .client h3, .myContent .postATeensie .accSetting .client h3, .myContent .raiseDispute .accSetting .client h3, .myContent .giveFeedback .accSetting .client h3, .myContent .paymentSetting .accSetting .client h3, .myContent .withdrawal .accSetting .client h3 {
+      font-size: 15px; }
+    .myContent .accountSetting .accSetting .client span, .myContent .profileSetting .accSetting .client span, .myContent .membershipSetting .accSetting .client span, .myContent .registerSetting .accSetting .client span, .myContent .loginSetting .accSetting .client span, .myContent .passwordSetting .accSetting .client span, .myContent .postATeensie .accSetting .client span, .myContent .raiseDispute .accSetting .client span, .myContent .giveFeedback .accSetting .client span, .myContent .paymentSetting .accSetting .client span, .myContent .withdrawal .accSetting .client span {
+      position: relative;
+      right: 15px; }
+    .myContent .accountSetting .accSetting .teenlancer h3, .myContent .profileSetting .accSetting .teenlancer h3, .myContent .membershipSetting .accSetting .teenlancer h3, .myContent .registerSetting .accSetting .teenlancer h3, .myContent .loginSetting .accSetting .teenlancer h3, .myContent .passwordSetting .accSetting .teenlancer h3, .myContent .postATeensie .accSetting .teenlancer h3, .myContent .raiseDispute .accSetting .teenlancer h3, .myContent .giveFeedback .accSetting .teenlancer h3, .myContent .paymentSetting .accSetting .teenlancer h3, .myContent .withdrawal .accSetting .teenlancer h3 {
+      padding: 20px 51% 20px 30px;
+      font-size: 15px;
+      margin-left: 15px; }
+    .myContent .accountSetting .accSetting .teenlancer span, .myContent .profileSetting .accSetting .teenlancer span, .myContent .membershipSetting .accSetting .teenlancer span, .myContent .registerSetting .accSetting .teenlancer span, .myContent .loginSetting .accSetting .teenlancer span, .myContent .passwordSetting .accSetting .teenlancer span, .myContent .postATeensie .accSetting .teenlancer span, .myContent .raiseDispute .accSetting .teenlancer span, .myContent .giveFeedback .accSetting .teenlancer span, .myContent .paymentSetting .accSetting .teenlancer span, .myContent .withdrawal .accSetting .teenlancer span {
+      position: relative;
+      right: 0; }
+  .myContent .accountSetting .inputRow div.pull-left, .myContent .profileSetting .inputRow div.pull-left, .myContent .membershipSetting .inputRow div.pull-left, .myContent .registerSetting .inputRow div.pull-left, .myContent .loginSetting .inputRow div.pull-left, .myContent .passwordSetting .inputRow div.pull-left, .myContent .postATeensie .inputRow div.pull-left, .myContent .raiseDispute .inputRow div.pull-left, .myContent .giveFeedback .inputRow div.pull-left, .myContent .paymentSetting .inputRow div.pull-left, .myContent .withdrawal .inputRow div.pull-left, .myContent .accountSetting .inputRow div.pull-left, .myContent .profileSetting .inputRow div.pull-left, .myContent .membershipSetting .inputRow div.pull-left, .myContent .registerSetting .inputRow div.pull-left, .myContent .loginSetting .inputRow div.pull-left, .myContent .passwordSetting .inputRow div.pull-left, .myContent .postATeensie .inputRow div.pull-left, .myContent .raiseDispute .inputRow div.pull-left, .myContent .giveFeedback .inputRow div.pull-left, .myContent .paymentSetting .inputRow div.pull-left, .myContent .withdrawal .inputRow div.pull-left, .myContent .accountSetting .inputRow div.pull-left, .myContent .profileSetting .inputRow div.pull-left, .myContent .membershipSetting .inputRow div.pull-left, .myContent .registerSetting .inputRow div.pull-left, .myContent .loginSetting .inputRow div.pull-left, .myContent .passwordSetting .inputRow div.pull-left, .myContent .postATeensie .inputRow div.pull-left, .myContent .raiseDispute .inputRow div.pull-left, .myContent .giveFeedback .inputRow div.pull-left, .myContent .paymentSetting .inputRow div.pull-left, .myContent .withdrawal .inputRow div.pull-left {
+    padding-left: 0;
+    padding-right: 15px; }
+  .myContent .accountSetting .inputRow div.pull-right, .myContent .profileSetting .inputRow div.pull-right, .myContent .membershipSetting .inputRow div.pull-right, .myContent .registerSetting .inputRow div.pull-right, .myContent .loginSetting .inputRow div.pull-right, .myContent .passwordSetting .inputRow div.pull-right, .myContent .postATeensie .inputRow div.pull-right, .myContent .raiseDispute .inputRow div.pull-right, .myContent .giveFeedback .inputRow div.pull-right, .myContent .paymentSetting .inputRow div.pull-right, .myContent .withdrawal .inputRow div.pull-right, .myContent .accountSetting .inputRow div.pull-right, .myContent .profileSetting .inputRow div.pull-right, .myContent .membershipSetting .inputRow div.pull-right, .myContent .registerSetting .inputRow div.pull-right, .myContent .loginSetting .inputRow div.pull-right, .myContent .passwordSetting .inputRow div.pull-right, .myContent .postATeensie .inputRow div.pull-right, .myContent .raiseDispute .inputRow div.pull-right, .myContent .giveFeedback .inputRow div.pull-right, .myContent .paymentSetting .inputRow div.pull-right, .myContent .withdrawal .inputRow div.pull-right, .myContent .accountSetting .inputRow div.pull-right, .myContent .profileSetting .inputRow div.pull-right, .myContent .membershipSetting .inputRow div.pull-right, .myContent .registerSetting .inputRow div.pull-right, .myContent .loginSetting .inputRow div.pull-right, .myContent .passwordSetting .inputRow div.pull-right, .myContent .postATeensie .inputRow div.pull-right, .myContent .raiseDispute .inputRow div.pull-right, .myContent .giveFeedback .inputRow div.pull-right, .myContent .paymentSetting .inputRow div.pull-right, .myContent .withdrawal .inputRow div.pull-right {
+    padding-right: 0;
+    padding-left: 15px; }
+  .myContent .accountSetting .inputRow .pull-right input, .myContent .profileSetting .inputRow .pull-right input, .myContent .membershipSetting .inputRow .pull-right input, .myContent .registerSetting .inputRow .pull-right input, .myContent .loginSetting .inputRow .pull-right input, .myContent .passwordSetting .inputRow .pull-right input, .myContent .postATeensie .inputRow .pull-right input, .myContent .raiseDispute .inputRow .pull-right input, .myContent .giveFeedback .inputRow .pull-right input, .myContent .paymentSetting .inputRow .pull-right input, .myContent .withdrawal .inputRow .pull-right input {
+    float: right; }
+  .myContent .accountSetting .inputRow .myInput, .myContent .profileSetting .inputRow .myInput, .myContent .membershipSetting .inputRow .myInput, .myContent .registerSetting .inputRow .myInput, .myContent .loginSetting .inputRow .myInput, .myContent .passwordSetting .inputRow .myInput, .myContent .postATeensie .inputRow .myInput, .myContent .raiseDispute .inputRow .myInput, .myContent .giveFeedback .inputRow .myInput, .myContent .paymentSetting .inputRow .myInput, .myContent .withdrawal .inputRow .myInput {
+    border: 2px solid rgba(226, 228, 229, 0.44);
+    padding: 20px 0 20px 20px;
+    width: 98%;
+    display: inline-block;
+    margin: 15px 0;
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: #8E9598;
+    background-color: transparent; }
+  .myContent .accountSetting .inputRow .myInput::-webkit-input-placeholder, .myContent .profileSetting .inputRow .myInput::-webkit-input-placeholder, .myContent .membershipSetting .inputRow .myInput::-webkit-input-placeholder, .myContent .registerSetting .inputRow .myInput::-webkit-input-placeholder, .myContent .loginSetting .inputRow .myInput::-webkit-input-placeholder, .myContent .passwordSetting .inputRow .myInput::-webkit-input-placeholder, .myContent .postATeensie .inputRow .myInput::-webkit-input-placeholder, .myContent .raiseDispute .inputRow .myInput::-webkit-input-placeholder, .myContent .giveFeedback .inputRow .myInput::-webkit-input-placeholder, .myContent .paymentSetting .inputRow .myInput::-webkit-input-placeholder, .myContent .withdrawal .inputRow .myInput::-webkit-input-placeholder {
+    text-transform: uppercase;
+    font-style: normal; }
+  .myContent .accountSetting .myButton, .myContent .profileSetting .myButton, .myContent .membershipSetting .myButton, .myContent .registerSetting .myButton, .myContent .loginSetting .myButton, .myContent .passwordSetting .myButton, .myContent .postATeensie .myButton, .myContent .raiseDispute .myButton, .myContent .giveFeedback .myButton, .myContent .paymentSetting .myButton, .myContent .withdrawal .myButton {
+    background-color: #7c4dff;
+    color: #fff;
+    width: 100%;
+    margin: 15px 0 30px 0;
+    margin-top: 30px;
+    padding: 20px 30px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px; }
+.myContent .profileSetting, .myContent .membershipSetting, .myContent .registerSetting, .myContent .loginSetting, .myContent .passwordSetting, .myContent .postATeensie, .myContent .raiseDispute, .myContent .giveFeedback {
+  box-shadow: none; }
+  .myContent .profileSetting .inputRow .myInput, .myContent .membershipSetting .inputRow .myInput, .myContent .registerSetting .inputRow .myInput, .myContent .loginSetting .inputRow .myInput, .myContent .passwordSetting .inputRow .myInput, .myContent .postATeensie .inputRow .myInput, .myContent .raiseDispute .inputRow .myInput, .myContent .giveFeedback .inputRow .myInput {
+    padding: 20px 0 20px 20px;
+    width: 100%; }
+  .myContent .profileSetting .inputRow .dropdown, .myContent .membershipSetting .inputRow .dropdown, .myContent .registerSetting .inputRow .dropdown, .myContent .loginSetting .inputRow .dropdown, .myContent .passwordSetting .inputRow .dropdown, .myContent .postATeensie .inputRow .dropdown, .myContent .raiseDispute .inputRow .dropdown, .myContent .giveFeedback .inputRow .dropdown {
+    padding: 20px;
+    border: 2px solid #eee;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    margin-top: 30px; }
+    .myContent .profileSetting .inputRow .dropdown a, .myContent .membershipSetting .inputRow .dropdown a, .myContent .registerSetting .inputRow .dropdown a, .myContent .loginSetting .inputRow .dropdown a, .myContent .passwordSetting .inputRow .dropdown a, .myContent .postATeensie .inputRow .dropdown a, .myContent .raiseDispute .inputRow .dropdown a, .myContent .giveFeedback .inputRow .dropdown a {
+      text-decoration: none;
+      color: #8E9598; }
+  .myContent .profileSetting .inputRow .dropdown-menu, .myContent .membershipSetting .inputRow .dropdown-menu, .myContent .registerSetting .inputRow .dropdown-menu, .myContent .loginSetting .inputRow .dropdown-menu, .myContent .passwordSetting .inputRow .dropdown-menu, .myContent .postATeensie .inputRow .dropdown-menu, .myContent .raiseDispute .inputRow .dropdown-menu, .myContent .giveFeedback .inputRow .dropdown-menu {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    margin-bottom: 50px; }
+  .myContent .profileSetting .myButton, .myContent .membershipSetting .myButton, .myContent .registerSetting .myButton, .myContent .loginSetting .myButton, .myContent .passwordSetting .myButton, .myContent .postATeensie .myButton, .myContent .raiseDispute .myButton, .myContent .giveFeedback .myButton {
+    margin: 30px 0 30px 0; }
+.myContent .membershipSetting {
+  box-shadow: none; }
+  .myContent .membershipSetting .myButton {
+    margin: 0px 0 30px 0; }
+  .myContent .membershipSetting .accSetting {
+    margin: 30px -15px; }
+    .myContent .membershipSetting .accSetting div.pull-left {
+      padding-left: 0; }
+    .myContent .membershipSetting .accSetting div.pull-right {
+      padding-right: 0; }
+    .myContent .membershipSetting .accSetting .myHeadLine {
+      border: 2px solid rgba(226, 228, 229, 0.44);
+      width: 100%;
+      display: inline-block;
+      margin: 0;
+      color: #8E9598; }
+    .myContent .membershipSetting .accSetting .myCheckbox {
+      margin-left: 0;
+      border: 2px solid rgba(226, 228, 229, 0.44);
+      background-color: transparent;
+      transition: all 0.2s ease-in-out;
+      padding: 30px 31px;
+      cursor: pointer;
+      width: 100%;
+      margin: 0; }
+    .myContent .membershipSetting .accSetting .myCheckboxActive {
+      background-color: #7c4dff; }
+    .myContent .membershipSetting .accSetting .client h3 {
+      font-size: 15px; }
+    .myContent .membershipSetting .accSetting .client span {
+      position: relative;
+      right: 15px; }
+    .myContent .membershipSetting .accSetting .teenlancer h3 {
+      padding: 20px 51% 20px 30px;
+      font-size: 15px;
+      margin-left: 15px; }
+    .myContent .membershipSetting .accSetting .teenlancer span {
+      position: relative;
+      right: 0; }
+    .myContent .membershipSetting .accSetting .priceBox {
+      margin-left: 10px;
+      border: 2px solid rgba(226, 228, 229, 0.44);
+      background-color: transparent;
+      transition: all 0.2s ease-in-out;
+      padding: 18px 0;
+      color: #8E9598;
+      width: 100%;
+      text-align: center; }
+.myContent .paymentSetting, .myContent .withdrawal {
+  box-shadow: none; }
+  .myContent .paymentSetting .inputRow .client, .myContent .withdrawal .inputRow .client {
+    padding-right: 0;
+    padding-left: 0; }
+  .myContent .paymentSetting .inputRow .myInput, .myContent .withdrawal .inputRow .myInput {
+    width: 100%;
+    margin: 218px 0 0 0; }
+  .myContent .paymentSetting .accSetting, .myContent .withdrawal .accSetting {
+    padding: 20px 0; }
+    .myContent .paymentSetting .accSetting .client h3, .myContent .withdrawal .accSetting .client h3 {
+      text-transform: none; }
+    .myContent .paymentSetting .accSetting .myHeadLine, .myContent .withdrawal .accSetting .myHeadLine {
+      border: none;
+      padding: 0;
+      text-transform: none; }
+  .myContent .paymentSetting .myButton, .myContent .withdrawal .myButton {
+    margin-top: 0; }
+.myContent .withdrawal .myHeadLine {
+  margin-top: 0;
+  margin-bottom: 30px !important; }
+.myContent .withdrawal .myHeadLine:before, .myContent .withdrawal .myHeadLine:after {
+  bottom: 65% !important; }
+.myContent .withdrawal .myInput {
+  margin: 0 !important; }
+.myContent .withdrawal .myInput.amount {
+  margin-top: 30px !important; }
+.myContent .withdrawal .myLabel {
+  margin: 0;
+  margin-top: 30px;
+  padding: 22px;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid rgba(226, 228, 229, 0.44);
+  color: #8E9598; }
+.myContent .withdrawal .myLabel.left {
+  margin-right: 15px; }
+.myContent .withdrawal .myLabel.right {
+  margin-left: 15px; }
+.myContent .withdrawal .accSetting .myHeadLine {
+  font-size: 13px !important;
+  margin-bottom: 0 !important; }
+.myContent .withdrawal .myButton {
+  margin-bottom: 45px; }
+.myContent .registerSetting, .myContent .loginSetting, .myContent .passwordSetting, .myContent .postATeensie, .myContent .raiseDispute, .myContent .giveFeedback {
+  box-shadow: none; }
+  .myContent .registerSetting .myButton.myFacebookColor, .myContent .loginSetting .myButton.myFacebookColor, .myContent .passwordSetting .myButton.myFacebookColor, .myContent .postATeensie .myButton.myFacebookColor, .myContent .raiseDispute .myButton.myFacebookColor, .myContent .giveFeedback .myButton.myFacebookColor {
+    background-color: #003399;
+    margin-bottom: 0; }
+  .myContent .registerSetting .myButton, .myContent .loginSetting .myButton, .myContent .passwordSetting .myButton, .myContent .postATeensie .myButton, .myContent .raiseDispute .myButton, .myContent .giveFeedback .myButton {
+    margin-top: 0; }
+  .myContent .registerSetting .headline .myHeadLine, .myContent .loginSetting .headline .myHeadLine, .myContent .passwordSetting .headline .myHeadLine, .myContent .postATeensie .headline .myHeadLine, .myContent .raiseDispute .headline .myHeadLine, .myContent .giveFeedback .headline .myHeadLine {
+    margin-top: 0; }
+  .myContent .registerSetting .headline .myHeadLine:before, .myContent .loginSetting .headline .myHeadLine:before, .myContent .passwordSetting .headline .myHeadLine:before, .myContent .postATeensie .headline .myHeadLine:before, .myContent .raiseDispute .headline .myHeadLine:before, .myContent .giveFeedback .headline .myHeadLine:before, .myContent .registerSetting .headline .myHeadLine:after, .myContent .loginSetting .headline .myHeadLine:after, .myContent .passwordSetting .headline .myHeadLine:after, .myContent .postATeensie .headline .myHeadLine:after, .myContent .raiseDispute .headline .myHeadLine:after, .myContent .giveFeedback .headline .myHeadLine:after {
+    bottom: 75%; }
+  .myContent .registerSetting .checkBox div.col-xs-12.col-sm-6.text-center, .myContent .loginSetting .checkBox div.col-xs-12.col-sm-6.text-center, .myContent .passwordSetting .checkBox div.col-xs-12.col-sm-6.text-center, .myContent .postATeensie .checkBox div.col-xs-12.col-sm-6.text-center, .myContent .raiseDispute .checkBox div.col-xs-12.col-sm-6.text-center, .myContent .giveFeedback .checkBox div.col-xs-12.col-sm-6.text-center {
+    text-align: left;
+    padding-left: 0;
+    padding-right: 0; }
+    .myContent .registerSetting .checkBox div.col-xs-12.col-sm-6.text-center .headTeen, .myContent .loginSetting .checkBox div.col-xs-12.col-sm-6.text-center .headTeen, .myContent .passwordSetting .checkBox div.col-xs-12.col-sm-6.text-center .headTeen, .myContent .postATeensie .checkBox div.col-xs-12.col-sm-6.text-center .headTeen, .myContent .raiseDispute .checkBox div.col-xs-12.col-sm-6.text-center .headTeen, .myContent .giveFeedback .checkBox div.col-xs-12.col-sm-6.text-center .headTeen {
+      margin-left: 15px; }
+  .myContent .registerSetting .checkBox .myInput, .myContent .loginSetting .checkBox .myInput, .myContent .passwordSetting .checkBox .myInput, .myContent .postATeensie .checkBox .myInput, .myContent .raiseDispute .checkBox .myInput, .myContent .giveFeedback .checkBox .myInput {
+    border: 2px solid rgba(226, 228, 229, 0.44);
+    padding: 20px 0 20px 20px;
+    width: 98%;
+    display: inline-block;
+    margin: 15px 0 15px 0;
+    color: #8E9598;
+    background-color: transparent; }
+  .myContent .registerSetting .checkBox .myInput::-webkit-input-placeholder, .myContent .loginSetting .checkBox .myInput::-webkit-input-placeholder, .myContent .passwordSetting .checkBox .myInput::-webkit-input-placeholder, .myContent .postATeensie .checkBox .myInput::-webkit-input-placeholder, .myContent .raiseDispute .checkBox .myInput::-webkit-input-placeholder, .myContent .giveFeedback .checkBox .myInput::-webkit-input-placeholder {
+    text-transform: uppercase;
+    font-style: normal; }
+  .myContent .registerSetting .checkBox .myHeadLine, .myContent .loginSetting .checkBox .myHeadLine, .myContent .passwordSetting .checkBox .myHeadLine, .myContent .postATeensie .checkBox .myHeadLine, .myContent .raiseDispute .checkBox .myHeadLine, .myContent .giveFeedback .checkBox .myHeadLine {
+    border: 2px solid rgba(226, 228, 229, 0.44);
+    background-color: transparent;
+    padding: 20px 20px 20px 20px;
+    width: 83%;
+    display: inline-block;
+    font-size: 15px;
+    color: #8E9598;
+    margin-top: 15px;
+    font-weight: normal; }
+  .myContent .registerSetting .checkBox .headClient, .myContent .loginSetting .checkBox .headClient, .myContent .passwordSetting .checkBox .headClient, .myContent .postATeensie .checkBox .headClient, .myContent .raiseDispute .checkBox .headClient, .myContent .giveFeedback .checkBox .headClient, .myContent .registerSetting .checkBox .headTeen, .myContent .loginSetting .checkBox .headTeen, .myContent .passwordSetting .checkBox .headTeen, .myContent .postATeensie .checkBox .headTeen, .myContent .raiseDispute .checkBox .headTeen, .myContent .giveFeedback .checkBox .headTeen {
+    margin-top: 30px; }
+  .myContent .registerSetting .checkBox .myCheckbox, .myContent .loginSetting .checkBox .myCheckbox, .myContent .passwordSetting .checkBox .myCheckbox, .myContent .postATeensie .checkBox .myCheckbox, .myContent .raiseDispute .checkBox .myCheckbox, .myContent .giveFeedback .checkBox .myCheckbox {
+    margin-left: 10px;
+    border: 2px solid rgba(226, 228, 229, 0.44);
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    padding: 19px 31px;
+    cursor: pointer;
+    width: 100%;
+    position: static;
+    top: 0; }
+  .myContent .registerSetting .checkBox .myCheckboxActive, .myContent .loginSetting .checkBox .myCheckboxActive, .myContent .passwordSetting .checkBox .myCheckboxActive, .myContent .postATeensie .checkBox .myCheckboxActive, .myContent .raiseDispute .checkBox .myCheckboxActive, .myContent .giveFeedback .checkBox .myCheckboxActive {
+    background-color: #7c4dff; }
+.myContent .loginSetting, .myContent .passwordSetting {
+  box-shadow: none; }
+  .myContent .loginSetting div.col-xs-12.col-sm-12, .myContent .passwordSetting div.col-xs-12.col-sm-12 {
+    padding-right: 0;
+    padding-left: 0; }
+  .myContent .loginSetting .myButton, .myContent .passwordSetting .myButton {
+    margin-top: 15px; }
+  .myContent .loginSetting .myButton.myFacebookColor, .myContent .passwordSetting .myButton.myFacebookColor {
+    margin-top: 0; }
+  .myContent .loginSetting .accSetting, .myContent .passwordSetting .accSetting {
+    margin: 30px -15px;
+    padding: 20px 0;
+    margin-top: 30px; }
+    .myContent .loginSetting .accSetting div.pull-left, .myContent .passwordSetting .accSetting div.pull-left {
+      padding-left: 0; }
+    .myContent .loginSetting .accSetting div.pull-right, .myContent .passwordSetting .accSetting div.pull-right {
+      padding-right: 0; }
+    .myContent .loginSetting .accSetting .myHeadLine, .myContent .passwordSetting .accSetting .myHeadLine {
+      border: 2px solid rgba(226, 228, 229, 0.44);
+      width: 100%;
+      display: inline-block;
+      margin: 0;
+      color: #8E9598; }
+    .myContent .loginSetting .accSetting .myCheckbox, .myContent .passwordSetting .accSetting .myCheckbox {
+      margin-left: 0;
+      border: 2px solid rgba(226, 228, 229, 0.44);
+      background-color: transparent;
+      transition: all 0.2s ease-in-out;
+      padding: 28px 31px;
+      cursor: pointer;
+      width: 100%; }
+    .myContent .loginSetting .accSetting .myCheckboxActive, .myContent .passwordSetting .accSetting .myCheckboxActive {
+      background-color: #7c4dff; }
+    .myContent .loginSetting .accSetting .client h3, .myContent .passwordSetting .accSetting .client h3 {
+      font-size: 15px; }
+    .myContent .loginSetting .accSetting .client span, .myContent .passwordSetting .accSetting .client span {
+      position: relative;
+      right: 15px; }
+    .myContent .loginSetting .accSetting .teenlancer h3, .myContent .passwordSetting .accSetting .teenlancer h3 {
+      padding: 20px 51% 20px 30px;
+      font-size: 15px;
+      margin-left: 15px; }
+    .myContent .loginSetting .accSetting .teenlancer span, .myContent .passwordSetting .accSetting .teenlancer span {
+      position: relative;
+      right: 0; }
+    .myContent .loginSetting .accSetting .priceBox, .myContent .passwordSetting .accSetting .priceBox {
+      margin-left: 10px;
+      border: 2px solid rgba(226, 228, 229, 0.44);
+      background-color: transparent;
+      transition: all 0.2s ease-in-out;
+      padding: 18px 0;
+      color: #8E9598;
+      width: 100%;
+      text-align: center; }
+  .myContent .loginSetting .accSetting, .myContent .passwordSetting .accSetting {
+    margin-top: 30px;
+    margin-bottom: 15px; }
+    .myContent .loginSetting .accSetting .client h3, .myContent .passwordSetting .accSetting .client h3 {
+      text-transform: none; }
+    .myContent .loginSetting .accSetting .myHeadLine, .myContent .passwordSetting .accSetting .myHeadLine {
+      border: none;
+      padding: 0;
+      text-transform: none; }
+.myContent .passwordSetting {
+  box-shadow: none; }
+  .myContent .passwordSetting .accSetting {
+    margin-top: 16px;
+    margin-bottom: 38px;
+    padding: 20px 0;
+    margin: 0; }
+    .myContent .passwordSetting .accSetting .client h3 {
+      font-size: 1.3em;
+      text-transform: uppercase;
+      color: #455b66;
+      font-weight: bolder;
+      letter-spacing: 0.1rem; }
+    .myContent .passwordSetting .accSetting .client h3:before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 45%;
+      left: -15px;
+      height: 3px;
+      width: 40%;
+      background-color: rgba(226, 228, 229, 0.44); }
+    .myContent .passwordSetting .accSetting .client h3:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 45%;
+      right: -15px;
+      height: 3px;
+      width: 40%;
+      background-color: rgba(226, 228, 229, 0.44); }
+  .myContent .passwordSetting .headline .myHeadLine {
+    margin-top: 30px;
+    margin-bottom: 0px; }
+  .myContent .passwordSetting .headline .myHeadLine:before, .myContent .passwordSetting .headline .myHeadLine:after {
+    bottom: 35%; }
+  .myContent .passwordSetting .inputRow .topItem {
+    margin-top: 30px; }
+  .myContent .passwordSetting .myButton {
+    margin-top: 30px; }
+.myContent .postATeensie .headline .myHeadLine, .myContent .raiseDispute .headline .myHeadLine, .myContent .giveFeedback .headline .myHeadLine {
+  font-size: 23px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0; }
+.myContent .postATeensie .headline .myHeadLine:before, .myContent .raiseDispute .headline .myHeadLine:before, .myContent .giveFeedback .headline .myHeadLine:before, .myContent .postATeensie .headline .myHeadLine:after, .myContent .raiseDispute .headline .myHeadLine:after, .myContent .giveFeedback .headline .myHeadLine:after {
+  bottom: 50%; }
+.myContent .postATeensie .myInputLabel, .myContent .raiseDispute .myInputLabel, .myContent .giveFeedback .myInputLabel {
+  border: 2px solid rgba(226, 228, 229, 0.44);
+  padding: 20px;
+  margin-top: 30px;
+  width: 83%;
+  display: inline-block;
+  color: #a19e9b;
+  font-size: 15px; }
+.myContent .postATeensie .myLabelInput, .myContent .raiseDispute .myLabelInput, .myContent .giveFeedback .myLabelInput {
+  display: inline-block !important;
+  width: 80px !important;
+  padding: 18px !important;
+  text-align: center; }
+.myContent .postATeensie .myButton, .myContent .raiseDispute .myButton, .myContent .giveFeedback .myButton {
+  margin-top: 15px;
+  margin-bottom: 75px; }
+.myContent .postATeensie .inputRow .dropdown, .myContent .raiseDispute .inputRow .dropdown, .myContent .giveFeedback .inputRow .dropdown {
+  padding: 19px 20px; }
+  .myContent .postATeensie .inputRow .dropdown a, .myContent .raiseDispute .inputRow .dropdown a, .myContent .giveFeedback .inputRow .dropdown a {
+    color: #a19e9b;
+    text-transform: uppercase; }
+.myContent .postATeensie .inputRow textarea, .myContent .raiseDispute .inputRow textarea, .myContent .giveFeedback .inputRow textarea {
+  resize: none;
+  min-height: 150px;
+  margin-top: 0 !important; }
+.myContent .postATeensie .inputRow .myUploadLabel, .myContent .raiseDispute .inputRow .myUploadLabel, .myContent .giveFeedback .inputRow .myUploadLabel {
+  margin-left: 15px;
+  border: 2px solid rgba(226, 228, 229, 0.44);
+  padding: 14px 27px 13px 27px;
+  margin-top: 0px;
+  cursor: pointer;
+  color: #a19e9b;
+  margin-bottom: 0;
+  float: right; }
+  .myContent .postATeensie .inputRow .myUploadLabel i, .myContent .raiseDispute .inputRow .myUploadLabel i, .myContent .giveFeedback .inputRow .myUploadLabel i {
+    font-size: 2em; }
+.myContent .postATeensie .inputRow .labelAttachment, .myContent .raiseDispute .inputRow .labelAttachment, .myContent .giveFeedback .inputRow .labelAttachment {
+  margin: 0;
+  margin-left: 15px;
+  padding: 18px 20px 17px 20px;
+  font-size: 15px;
+  color: #8E9598;
+  text-transform: uppercase;
+  font-weight: lighter;
+  width: 80.7%;
+  border: 2px solid rgba(226, 228, 229, 0.44); }
+.myContent .postATeensie .inputRow .smallH, .myContent .raiseDispute .inputRow .smallH, .myContent .giveFeedback .inputRow .smallH {
+  margin: 0;
+  margin-left: 15px;
+  padding: 18px 20px 20px 20px;
+  border: 2px solid rgba(226, 228, 229, 0.44);
+  display: inline-block;
+  font-size: 17px;
+  color: #8E9598; }
+.myContent .postATeensie .checkBox .myHeadLine, .myContent .raiseDispute .checkBox .myHeadLine, .myContent .giveFeedback .checkBox .myHeadLine {
+  width: 68.5%;
+  margin-left: 10px; }
+.myContent .postATeensie .checkBox .headClient, .myContent .raiseDispute .checkBox .headClient, .myContent .giveFeedback .checkBox .headClient {
+  margin-top: 30px;
+  width: auto; }
+.myContent .postATeensie .checkBox .myInput, .myContent .raiseDispute .checkBox .myInput, .myContent .giveFeedback .checkBox .myInput {
+  margin: 30px 0 26px 0; }
+.myContent .postATeensie .myNewInput, .myContent .raiseDispute .myNewInput, .myContent .giveFeedback .myNewInput {
+  width: 69% !important;
+  margin-left: 10px !important;
+  text-align: left; }
+.myContent .raiseDispute, .myContent .giveFeedback {
+  box-shadow: none; }
+  .myContent .raiseDispute .inputRow, .myContent .giveFeedback .inputRow {
+    margin-top: 30px; }
+    .myContent .raiseDispute .inputRow textarea, .myContent .giveFeedback .inputRow textarea {
+      min-height: 156px; }
+  .myContent .raiseDispute .checkBox div.col-xs-12.col-sm-12, .myContent .giveFeedback .checkBox div.col-xs-12.col-sm-12 {
+    padding-left: 0;
+    padding-right: 0; }
+  .myContent .raiseDispute .checkBox .myInput, .myContent .giveFeedback .checkBox .myInput {
+    width: 100%;
+    margin-bottom: 0; }
+  .myContent .raiseDispute .accSetting, .myContent .giveFeedback .accSetting {
+    margin: 30px -15px; }
+    .myContent .raiseDispute .accSetting div.col-xs-12.col-sm-12, .myContent .giveFeedback .accSetting div.col-xs-12.col-sm-12 {
+      padding-left: 0;
+      padding-right: 0; }
+    .myContent .raiseDispute .accSetting .myHeadLine.upper, .myContent .giveFeedback .accSetting .myHeadLine.upper {
+      border: none;
+      padding: 22px 0;
+      padding-bottom: 21px;
+      display: block; }
+      .myContent .raiseDispute .accSetting .myHeadLine.upper span, .myContent .giveFeedback .accSetting .myHeadLine.upper span {
+        display: block;
+        position: static;
+        font-size: 15px; }
+    .myContent .raiseDispute .accSetting .myHeadLine.lower, .myContent .giveFeedback .accSetting .myHeadLine.lower {
+      border: none;
+      padding: 16px 0;
+      padding-top: 0;
+      display: block;
+      text-transform: none;
+      font-size: 13px; }
+.myContent .giveFeedback {
+  box-shadow: none; }
+  .myContent .giveFeedback .inputRow {
+    margin-top: 30px; }
+    .myContent .giveFeedback .inputRow textarea {
+      min-height: 236px; }
+  .myContent .giveFeedback .accSetting .myHeadLine.lower {
+    padding: 20px 0;
+    padding-top: 19px; }
+    .myContent .giveFeedback .accSetting .myHeadLine.lower .jq-ry-container {
+      display: inline-block; }
+    .myContent .giveFeedback .accSetting .myHeadLine.lower span.pull-right {
+      position: relative;
+      right: auto;
+      top: -5px; }
+      .myContent .giveFeedback .accSetting .myHeadLine.lower span.pull-right i.starActive {
+        color: #ffd200; }
+      .myContent .giveFeedback .accSetting .myHeadLine.lower span.pull-right i {
+        font-size: 1.2em; }
+      .myContent .giveFeedback .accSetting .myHeadLine.lower span.pull-right span.rating {
+        padding: 5px 5px;
+        background-color: #ffd200;
+        color: #fff;
+        margin-left: 15px;
+        position: relative;
+        top: -3px;
+        font-size: 1em; }
+.myContent .modals .modal .modal-dialog {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%; }
+  .myContent .modals .modal .modal-dialog .modal-content {
+    border-radius: 0;
+    height: 100%;
+    background-color: #F6F7F8; }
+    .myContent .modals .modal .modal-dialog .modal-content .modal-body {
+      padding: 0; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .logoModal img {
+        margin: 30px auto; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .buttonModal .myButton {
+        background-color: #003399;
+        width: 100%;
+        padding: 15px 20px;
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        font-size: 17px;
+        font-weight: bolder; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .formModal .myInput {
+        border: 2px solid rgba(226, 228, 229, 0.44);
+        padding: 20px 0 20px 20px;
+        width: 98%;
+        display: inline-block;
+        margin: 15px 0 15px 0;
+        color: #8E9598;
+        background-color: transparent; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .formModal .myInput::-webkit-input-placeholder {
+        text-transform: uppercase;
+        font-style: normal; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .formModal .myHeadLine {
+        border: 2px solid rgba(226, 228, 229, 0.44);
+        background-color: transparent;
+        padding: 15px 20px 15px 10px;
+        width: 80%;
+        display: inline-block; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .formModal .myCheckbox {
+        margin-left: 0;
+        border: 2px solid rgba(226, 228, 229, 0.44);
+        background-color: transparent;
+        transition: all 0.2s ease-in-out;
+        padding: 15px 31px;
+        cursor: pointer;
+        width: 100%;
+        position: relative;
+        top: -2px; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .formModal .myCheckboxActive {
+        background-color: #7c4dff; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .buttonReg .myButton {
+        background-color: #7C4DFF;
+        margin: 30px 0; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .modalHeadLine .myHeadLine {
+        font-weight: bolder;
+        margin: 0px;
+        padding-bottom: 0;
+        margin-bottom: 30px;
+        border: none; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .modalHeadLine .myHeadLine:before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 77%;
+        left: 15px;
+        height: 3px;
+        width: 40%;
+        background-color: #E2E4E5; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .modalHeadLine .myHeadLine:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 77%;
+        right: 15px;
+        height: 3px;
+        width: 40%;
+        background-color: #E2E4E5; }
+      .myContent .modals .modal .modal-dialog .modal-content .modal-body .buttonLog .myButton {
+        background-color: #ECEFF1;
+        color: #899195;
+        font-weight: bolder;
+        margin-bottom: 30px; }
+    .myContent .modals .modal .modal-dialog .modal-content .modalCont .skull {
+      background-color: transparent;
+      padding: 30px 0; }
+      .myContent .modals .modal .modal-dialog .modal-content .modalCont .skull .myImage {
+        max-width: 170px;
+        min-height: 0;
+        margin: 0 auto; }
+    .myContent .modals .modal .modal-dialog .modal-content .modalCont .modalBody {
+      margin: 0;
+      min-height: 130px;
+      border: 2px solid rgba(238, 238, 238, 0.58); }
+      .myContent .modals .modal .modal-dialog .modal-content .modalCont .modalBody h5 {
+        color: #93999C;
+        font-size: 14px;
+        position: relative;
+        top: -30px; }
+    .myContent .modals .modal .modal-dialog .modal-content .modalCont .fa.fa-caret-down {
+      position: relative;
+      top: -30px;
+      font-size: 5.3em;
+      color: #f6f7f8;
+      margin: 0;
+      padding: 0;
+      vertical-align: top; }
+    .myContent .modals .modal .modal-dialog .modal-content .modalCont .myButton {
+      text-transform: uppercase;
+      font-weight: bolder;
+      width: 100%;
+      display: inline-block;
+      text-decoration: none;
+      padding: 20px 0;
+      margin-top: 30px; }
+    .myContent .modals .modal .modal-dialog .modal-content .modalCont .myButton.yeah {
+      background-color: #7C4DFF;
+      color: #fff;
+      border: 2px solid #7C4DFF;
+      font-size: 20px; }
+    .myContent .modals .modal .modal-dialog .modal-content .modalCont .myButton.nope {
+      background-color: transparent;
+      color: #8E9598;
+      margin-bottom: 30px; }
+    .myContent .modals .modal .modal-dialog .modal-content .modalCont .myButton.nope:before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 50%;
+      left: 0;
+      height: 3px;
+      width: 35%;
+      background-color: rgba(238, 238, 238, 0.58); }
+    .myContent .modals .modal .modal-dialog .modal-content .modalCont .myButton.nope:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 50%;
+      right: 0;
+      height: 3px;
+      width: 35%;
+      background-color: rgba(238, 238, 238, 0.58); }
+    @media (min-width: 1200px) {
+      .myContent .modals .modal .modal-dialog .modal-content .modalCont {
+        width: 800px; } }
+.myContent .modals #releasePaymentModal .modalCont .modalBody {
+  padding: 0 30px; }
+.myContent .modals #releasePaymentModal .modalCont .skull .myImage {
+  max-width: 160px !important; }
+.myContent .homeSlider .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  background-color: transparent;
+  border: 2px solid #fff;
+  padding: 3px; }
+.myContent .homeSlider .swiper-pagination-bullet-active {
+  background-color: #fff !important; }
+.myContent .homeSlider .swiper-container {
+  width: 100%;
+  height: 100%; }
+  .myContent .homeSlider .swiper-container .swiper-slide {
+    text-align: center;
+    background-color: #000;
+    color: #fff; }
+    .myContent .homeSlider .swiper-container .swiper-slide img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      position: absolute;
+      left: 50%;
+      top: 50%; }
+    .myContent .homeSlider .swiper-container .swiper-slide h1, .myContent .homeSlider .swiper-container .swiper-slide h3, .myContent .homeSlider .swiper-container .swiper-slide a {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bolder;
+      text-decoration: none; }
+    .myContent .homeSlider .swiper-container .swiper-slide a {
+      border: 2px solid rgba(128, 128, 128, 0.2);
+      padding: 10px 20px;
+      margin-top: 20px;
+      display: inline-block;
+      transition: all 0.2s ease-in-out; }
+    .myContent .homeSlider .swiper-container .swiper-slide a:hover {
+      color: gray; }
+    .myContent .homeSlider .swiper-container .swiper-slide .captionText {
+      margin-top: 10%; }
+      .myContent .homeSlider .swiper-container .swiper-slide .captionText h1 {
+        font-size: 4em; }
+      .myContent .homeSlider .swiper-container .swiper-slide .captionText h3 {
+        font-size: 1.1em; }
+        .myContent .homeSlider .swiper-container .swiper-slide .captionText h3 span {
+          margin: 0 15px;
+          font-weight: lighter; }
+      .myContent .homeSlider .swiper-container .swiper-slide .captionText a {
+        font-size: 1.3em; }
+.myContent .homeAbout {
+  padding: 0;
+  padding-left: 0;
+  padding-right: 0; }
+  .myContent .homeAbout div.col-xs-12 {
+    padding-right: 0;
+    padding-left: 0; }
+  .myContent .homeAbout h1 {
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0;
+    color: #263238;
+    font-size: 2.1em; }
+  .myContent .homeAbout h3 {
+    color: #73787b;
+    font-size: 0.95em;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 5px; }
+  .myContent .homeAbout h5 {
+    margin: 0;
+    margin-top: 30px;
+    font-weight: bolder;
+    font-size: 15px; }
+  .myContent .homeAbout p {
+    color: rgba(115, 120, 123, 0.93);
+    font-size: 13px; }
+  .myContent .homeAbout img {
+    min-height: 500px; }
+  .myContent .homeAbout a {
+    background-color: #F6F7F8;
+    color: rgba(115, 120, 123, 0.72);
+    border: 1px solid rgba(226, 228, 229, 0.44);
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    text-transform: uppercase; }
+  .myContent .homeAbout a:hover {
+    color: #263238; }
+  .myContent .homeAbout .aboutPageBack {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    background-attachment: fixed; }
+    .myContent .homeAbout .aboutPageBack img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      position: absolute;
+      left: 50%;
+      top: 50%; }
+    .myContent .homeAbout .aboutPageBack h1, .myContent .homeAbout .aboutPageBack h3, .myContent .homeAbout .aboutPageBack a {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bolder;
+      text-decoration: none; }
+    .myContent .homeAbout .aboutPageBack a {
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 20px;
+      margin-top: 20px;
+      display: inline-block; }
+    .myContent .homeAbout .aboutPageBack .captionText {
+      padding-top: 13%; }
+      .myContent .homeAbout .aboutPageBack .captionText h1 {
+        font-size: 4em; }
+      .myContent .homeAbout .aboutPageBack .captionText h3 {
+        font-size: 1em;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        font-weight: lighter; }
+        .myContent .homeAbout .aboutPageBack .captionText h3 span {
+          margin: 0 15px;
+          font-weight: lighter; }
+      .myContent .homeAbout .aboutPageBack .captionText a {
+        font-size: 1.3em;
+        display: inline;
+        background-color: transparent;
+        transition: all 0.2s ease-in-out; }
+      .myContent .homeAbout .aboutPageBack .captionText a:hover {
+        color: gray; }
+      .myContent .homeAbout .aboutPageBack .captionText a.permalink:hover {
+        background-color: transparent;
+        color: #fff; }
+  .myContent .homeAbout .textCont {
+    margin-top: 30px;
+    margin-bottom: 30px; }
+    .myContent .homeAbout .textCont .textHeader {
+      margin-bottom: 30px; }
+    .myContent .homeAbout .textCont p {
+      margin-top: 30px; }
+    .myContent .homeAbout .textCont p:not(:last-child) {
+      margin-bottom: 15px; }
+    .myContent .homeAbout .textCont p:last-child {
+      margin-bottom: 0; }
+    .myContent .homeAbout .textCont ul {
+      margin: 0;
+      margin-top: 30px;
+      padding: 0 15px; }
+      .myContent .homeAbout .textCont ul li {
+        color: rgba(115, 120, 123, 0.93);
+        font-size: 13px; }
+        .myContent .homeAbout .textCont ul li a {
+          color: rgba(115, 120, 123, 0.93); }
+.myContent .findTeensieCont .findTeensie {
+  background-color: #C4B0FF;
+  border-radius: 10px;
+  color: #7E78A7;
+  padding: 20px 30px;
+  width: 65%;
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 16px; }
+.myContent .findTeensieCont .findTeensie::-webkit-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  color: #7E78A7;
+  font-style: normal; }
+.myContent .findTeensieCont .aboutPageBack {
+  height: 539px; }
+  .myContent .findTeensieCont .aboutPageBack .captionText .fa.fa-search {
+    font-size: 1.5em;
+    position: relative;
+    left: -40px;
+    color: #7973A1; }
+.myContent .homeAbout.logout.footer .logoutFooter img {
+  max-width: 140px;
+  height: auto;
+  min-height: 0;
+  display: inline;
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  opacity: 0.5; }
+.myContent .homeAbout.logout.footer .logoutFooter h5 {
+  display: inline-block;
+  color: #93999C;
+  font-size: 12px;
+  font-weight: lighter;
+  margin-top: 25px;
+  margin-left: 30px; }
+.myContent .homeAbout.logout.footer .logoutFooter .links {
+  float: right;
+  width: 40%;
+  margin-top: 19px; }
+.myContent .homeAbout.logout.footer .logoutFooter a {
+  display: inline;
+  background-color: #003399;
+  color: #fff;
+  border: none;
+  padding: 20px 70px;
+  margin-right: -5px; }
+  .myContent .homeAbout.logout.footer .logoutFooter a i {
+    font-size: 1.5em;
+    vertical-align: middle; }
+.myContent .homeAbout.logout.footer .logoutFooter a.aTwitter {
+  background-color: #00B0F0; }
+.myContent .homeAbout.logout.footer .logoutFooter a.aInsta {
+  background-color: #4475A1; }
+.myContent .footer .aboutPageBack {
+  height: 442px; }
+  .myContent .footer .aboutPageBack .captionText {
+    padding-top: 2% !important; }
+    .myContent .footer .aboutPageBack .captionText h1 {
+      font-size: 4em; }
+    .myContent .footer .aboutPageBack .captionText h3 {
+      font-size: 1em;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      font-weight: lighter; }
+      .myContent .footer .aboutPageBack .captionText h3 span {
+        margin: 0 15px;
+        font-weight: lighter; }
+    .myContent .footer .aboutPageBack .captionText * {
+      color: #57489C; }
+    .myContent .footer .aboutPageBack .captionText h5 {
+      color: #263238;
+      font-size: 1.2em;
+      margin: 0;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      font-weight: lighter; }
+    .myContent .footer .aboutPageBack .captionText p {
+      font-size: 12px;
+      line-height: 1.8em;
+      padding-right: 40px;
+      margin-bottom: 30px; }
+    .myContent .footer .aboutPageBack .captionText a {
+      background-color: transparent;
+      border: none;
+      font-size: 12px; }
+    .myContent .footer .aboutPageBack .captionText ul {
+      list-style: none;
+      margin: 0;
+      margin-bottom: 30px;
+      padding: 0; }
+      .myContent .footer .aboutPageBack .captionText ul li a {
+        font-size: 0.9em;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        padding-bottom: 10px;
+        font-size: 12px;
+        font-weight: lighter;
+        text-transform: none;
+        transition: all 0.2s ease-in-out; }
+      .myContent .footer .aboutPageBack .captionText ul li a:hover {
+        color: #fff;
+        background-color: transparent; }
+    .myContent .footer .aboutPageBack .captionText * {
+      text-align: left; }
+    .myContent .footer .aboutPageBack .captionText div.col-xs-12.col-sm-4.col-md-3 {
+      padding-left: 70px; }
+.myContent .logout .aboutPageBack .captionText {
+  padding-top: 15%; }
+.myContent .careerManager .inlineAnchor {
+  display: inline;
+  border: none;
+  color: #00f;
+  font-size: 12px;
+  padding: 0;
+  margin-left: 5px;
+  text-transform: none; }
+.myContent .careerManager .myButton {
+  border-color: rgba(163, 177, 187, 0.54);
+  font-weight: bolder;
+  text-transform: uppercase; }
+.myContent .homeTeam h1 {
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 30px;
+  color: #455b66;
+  font-weight: bolder;
+  font-size: 3em; }
+.myContent .homeTeam h3 {
+  color: #73787b;
+  font-size: 15px;
+  margin: 0;
+  margin-bottom: 30px;
+  margin-top: 5px; }
+.myContent .homeTeam h3.nameTitle {
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+  color: #263238;
+  font-size: 15px;
+  margin-top: 20px; }
+.myContent .homeTeam h5 {
+  font-size: 12px; }
+.myContent .homeTeam p {
+  color: rgba(115, 120, 123, 0.72); }
+.myContent .homeTeam a {
+  background-color: #F6F7F8;
+  color: rgba(115, 120, 123, 0.72);
+  border: 1px solid rgba(226, 228, 229, 0.44);
+  text-decoration: none;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-transform: uppercase; }
+.myContent .homeTeam a:hover {
+  color: #263238; }
+.myContent .homeTeam .row div.col-xs-12.col-sm-4 {
+  padding: 0 15px; }
+  .myContent .homeTeam .row div.col-xs-12.col-sm-4 img {
+    width: 100%;
+    max-height: 300px; }
+.myContent .gettingStarted p {
+  margin-top: 15px; }
+.myContent .profilePage .aboutPageBack {
+  position: relative;
+  height: 400px !important; }
+  .myContent .profilePage .aboutPageBack .captionText img {
+    max-width: 100px;
+    max-height: 100px;
+    min-height: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    padding: 1px;
+    top: 160px; }
+  .myContent .profilePage .aboutPageBack .captionText i {
+    position: relative;
+    color: green;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%; }
+  .myContent .profilePage .aboutPageBack .captionText h5 {
+    font-size: 14px;
+    text-transform: none;
+    border: none;
+    margin-top: 30px;
+    font-weight: bolder; }
+  .myContent .profilePage .aboutPageBack .captionText h5.teenType {
+    text-transform: uppercase;
+    border: none;
+    margin: 0;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    font-weight: lighter; }
+  .myContent .profilePage .aboutPageBack .captionText h6.teenJob {
+    font-size: 13px;
+    text-transform: none;
+    border: none;
+    margin: 0;
+    margin-bottom: 0; }
+  .myContent .profilePage .aboutPageBack .captionText a {
+    text-transform: none;
+    border: none;
+    font-size: 11px;
+    padding: 0;
+    display: inline-block;
+    margin: 0; }
+.myContent .profilePage .cardCont .card {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin: 30px;
+  background-color: #fff;
+  padding: 0 30px;
+  padding-bottom: 30px; }
+  .myContent .profilePage .cardCont .card h5 {
+    padding: 0 15px;
+    margin: 30px 0;
+    border: none; }
+  .myContent .profilePage .cardCont .card a {
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+    background-color: transparent;
+    border: none;
+    color: #7c4dff;
+    padding: 0 15px;
+    text-align: right; }
+  .myContent .profilePage .cardCont .card .myButton {
+    border: 2px solid rgba(226, 228, 229, 0.44);
+    color: #a3b1bb;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0; }
+  .myContent .profilePage .cardCont .card span {
+    background-color: transparent;
+    border: 2px solid rgba(226, 228, 229, 0.44);
+    border-radius: 5px;
+    color: #a3b1bb;
+    font-weight: lighter;
+    margin: 0 5px;
+    font-size: 11px;
+    padding: 3px; }
+.myContent .profilePage .cardCont .mySkillsCard {
+  min-height: 336px;
+  margin-left: 15px;
+  margin-right: 15px;
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+.myContent .profilePage .cardCont .firstCard {
+  margin-right: 15px;
+  margin-left: 15px;
+  min-height: 330px;
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+  .myContent .profilePage .cardCont .firstCard h5.subItem {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: lighter;
+    text-align: left;
+    padding: 0;
+    color: rgba(115, 120, 123, 0.93); }
+  .myContent .profilePage .cardCont .firstCard i, .myContent .profilePage .cardCont .firstCard span.rating {
+    text-align: right;
+    margin-right: 0;
+    color: rgba(115, 120, 123, 0.93); }
+  .myContent .profilePage .cardCont .firstCard i {
+    color: rgba(115, 120, 123, 0.93); }
+  .myContent .profilePage .cardCont .firstCard i.starActive {
+    color: #ffb300; }
+  .myContent .profilePage .cardCont .firstCard span {
+    background-color: #ffb300;
+    border: none;
+    color: #fff !important; }
+  .myContent .profilePage .cardCont .firstCard h5.subItem.subRight {
+    text-align: right; }
+  .myContent .profilePage .cardCont .firstCard .subRight {
+    text-align: right; }
+.myContent .profilePage .cardCont .secondCard {
+  margin-left: 15px;
+  margin-right: 15px;
+  min-height: 336px;
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+.myContent .profilePage .cardCont .myTextArea, .myContent .profilePage .cardCont .mySkillArea {
+  min-height: 200px;
+  resize: none;
+  width: 100%;
+  border: none;
+  padding: 20px; }
+.myContent .profilePage .cardCont .myTextArea:focus, .myContent .profilePage .cardCont .mySkillArea:focus {
+  outline: none;
+  border: 1px solid #7c4dff; }
+.myContent .profilePage .cardCont .saveButton, .myContent .profilePage .cardCont .skillSave {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important; }
+.myContent .profilePage .cardCont .myTeensieLink {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+  border: none;
+  padding: 0 30px; }
+  .myContent .profilePage .cardCont .myTeensieLink img {
+    min-height: 0;
+    width: 100%;
+    height: 250px;
+    background-color: #fff;
+    opacity: 0.7;
+    transition: all 0.2s ease-in-out; }
+  .myContent .profilePage .cardCont .myTeensieLink img:hover {
+    opacity: 1; }
+.myContent .profilePage .cardCont .leftTeensie {
+  padding-left: 15px;
+  padding-right: 15px; }
+  .myContent .profilePage .cardCont .leftTeensie img {
+    box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+.myContent .profilePage .cardCont .centerTeensie {
+  padding-left: 15px;
+  padding-right: 15px; }
+  .myContent .profilePage .cardCont .centerTeensie img {
+    box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+.myContent .profilePage .cardCont .rightTeensie {
+  padding-right: 15px;
+  padding-left: 15px; }
+  .myContent .profilePage .cardCont .rightTeensie img {
+    box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+.myContent .profilePage .cardCont .myButtonCont {
+  padding-left: 15px;
+  padding-right: 15px; }
+.myContent .profilePage .cardCont .myButton {
+  background-color: #7c4dff !important;
+  color: #fff !important;
+  width: 100%;
+  display: inline-block;
+  font-size: 15px;
+  border: 2px solid #fff !important;
+  margin-bottom: 0px !important;
+  margin-top: 10px !important; }
+.myContent .profilePage .teensiesCont .myHeadLine {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 0;
+  margin-bottom: 30px; }
+.myContent .teensie img.img-responsive {
+  margin-top: -1px;
+  width: 100%;
+  min-height: 0;
+  height: 355px;
+  background-color: #fff; }
+.myContent .teensie .featuredLabel {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  background-color: #FFAB00;
+  color: #fff;
+  padding: 5px 1.7vmax;
+  z-index: 998;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  text-transform: uppercase;
+  font-weight: bolder; }
+.myContent .teensie .bottomText {
+  position: relative;
+  bottom: 80px;
+  padding: 25px 15px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .myContent .teensie .bottomText i.fa-cart-plus {
+    margin-left: 15px; }
+  .myContent .teensie .bottomText .starActive {
+    color: #FFAB00; }
+  .myContent .teensie .bottomText .rating {
+    background-color: #FFAB00;
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px; }
+.myContent .teensie .teensieText {
+  position: static;
+  top: -50px;
+  margin-bottom: 30px; }
+  .myContent .teensie .teensieText p {
+    color: rgba(115, 120, 123, 0.72);
+    display: inline; }
+  .myContent .teensie .teensieText h4 {
+    display: inline;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 15px; }
+  .myContent .teensie .teensieText span {
+    border: 1px solid rgba(115, 120, 123, 0.42);
+    border-radius: 5px;
+    padding: 3px;
+    margin-right: 3px;
+    font-size: 12px; }
+  .myContent .teensie .teensieText .myHeadLine {
+    padding-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0; }
+.myContent .addMileStones {
+  padding-bottom: 0 !important;
+  border: none !important;
+  min-height: 350px;
+  padding-left: 15px !important;
+  padding-right: 15px !important; }
+  .myContent .addMileStones h5 {
+    color: rgba(115, 120, 123, 0.72); }
+    .myContent .addMileStones h5 i {
+      margin-right: 10px; }
+  .myContent .addMileStones h4.myHeadLine {
+    margin-top: 20px;
+    border: none; }
+  .myContent .addMileStones .firstCard h5.myHeadLine {
+    padding: 0;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 30px; }
+  .myContent .addMileStones .firstCard h5.subItem {
+    margin: 0;
+    padding-bottom: 15px;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px; }
+  .myContent .addMileStones .firstCard .subRight {
+    text-align: right;
+    padding-right: 30px;
+    padding-left: 30px; }
+    .myContent .addMileStones .firstCard .subRight i {
+      font-size: 12px;
+      color: rgba(115, 120, 123, 0.72157); }
+    .myContent .addMileStones .firstCard .subRight i.starActive {
+      color: orange; }
+    .myContent .addMileStones .firstCard .subRight .rating {
+      background-color: orange;
+      color: #fff;
+      padding: 3px;
+      border-radius: 5px; }
+  .myContent .addMileStones .firstCard .myButtonCont {
+    padding-left: 30px;
+    padding-right: 30px; }
+  .myContent .addMileStones .firstCard .myButton {
+    background-color: orange;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-weight: bolder; }
+  .myContent .addMileStones .firstCard .myIcon {
+    font-size: 20px; }
+.myContent .teensieSide {
+  max-height: none !important; }
+.myContent .orderNow a {
+  background-color: #7C4DFF !important;
+  padding: 20px !important;
+  border-radius: 2px !important; }
+.myContent .myFooter {
+  margin-top: 30px; }
+  .myContent .myFooter .myChat {
+    min-height: 0;
+    max-height: 220px; }
+    .myContent .myFooter .myChat a {
+      position: relative;
+      top: -50px;
+      padding: 15px 20px; }
+@media(max-width: 992px) and (min-width: 768px) {
+  .myContent .myFooter .myChat a {
+    position: static; } }
+@media(max-width: 370px) {
+  .myContent .myFooter .myChat a {
+    position: static; } }
+    .myContent .myFooter .myChat .contactCont {
+      padding-left: 35px;
+      padding-right: 35px; }
+      .myContent .myFooter .myChat .contactCont .contactTeenlancer {
+        background-color: transparent;
+        border: 2px solid rgba(163, 177, 187, 0.54);
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: rgba(95, 114, 128, 0.54);
+        position: static; }
+
+.plansContent .plans div.col-xs-12.col-sm-4.col-md-3.text-center:not(:last-child) {
+  padding-right: 0; }
+.plansContent .plans h1.myHeadLine {
+  font-size: 3em;
+  border: none;
+  padding-bottom: 0;
+  margin-top: 30px;
+  margin-bottom: 15px; }
+.plansContent .plans h3.subHeadLine {
+  margin: 0;
+  font-size: 15px;
+  color: #73787b; }
+.plansContent .plans .planCont {
+  transition: all 0.2s ease-in-out;
+  margin-top: 30px;
+  margin-bottom: 30px; }
+  .plansContent .plans .planCont .upperCont {
+    background-color: #ECEFF1;
+    padding: 30px;
+    transition: all 0.2s ease-in-out; }
+    .plansContent .plans .planCont .upperCont h5.myTitle {
+      transition: all 0.2s ease-in-out;
+      font-size: 1.8em;
+      text-transform: uppercase;
+      color: #263238;
+      margin: 0; }
+    .plansContent .plans .planCont .upperCont h5.mySubTitle {
+      font-size: 3.5em;
+      text-transform: uppercase;
+      color: #899195;
+      font-weight: lighter;
+      margin: 0;
+      margin-top: 15px;
+      margin-bottom: 15px; }
+      .plansContent .plans .planCont .upperCont h5.mySubTitle span {
+        font-size: 18px; }
+    .plansContent .plans .planCont .upperCont h6.myTimeFrame {
+      transition: all 0.2s ease-in-out;
+      text-transform: uppercase;
+      font-size: 15px;
+      margin: 0;
+      margin-bottom: 15px; }
+    .plansContent .plans .planCont .upperCont p {
+      color: #899195;
+      font-style: italic;
+      font-size: 12px;
+      margin: 0; }
+  .plansContent .plans .planCont .lowerCont {
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    .plansContent .plans .planCont .lowerCont .plusFeatures {
+      font-weight: bolder;
+      color: #263238;
+      font-size: 15px;
+      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 20px; }
+    .plansContent .plans .planCont .lowerCont h5 {
+      color: #8E9598;
+      font-size: 12px;
+      margin-bottom: 20px; }
+    .plansContent .plans .planCont .lowerCont .myButton {
+      transition: all 0.2s ease-in-out;
+      background-color: transparent;
+      border: 2px solid rgba(209, 212, 213, 0.26);
+      color: #8E9598;
+      font-weight: bolder;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 15px;
+      width: 100%;
+      padding: 15px;
+      display: inline-block;
+      text-decoration: none;
+      margin: 0;
+      margin-top: 0px; }
+.plansContent .plans .planCont.planActive .upperCont {
+  background-color: #003399; }
+  .plansContent .plans .planCont.planActive .upperCont h5.myTitle {
+    color: #fff; }
+  .plansContent .plans .planCont.planActive .upperCont h5.mySubTitle {
+    color: #eceff1;
+    opacity: 0.5; }
+  .plansContent .plans .planCont.planActive .upperCont h6.myTimeFrame {
+    color: #fff; }
+  .plansContent .plans .planCont.planActive .upperCont p {
+    color: #eceff1;
+    opacity: 0.5; }
+.plansContent .plans .planCont.planActive .lowerCont .myButton {
+  background-color: #7C4DFF;
+  color: #fff;
+  border-color: #7C4DFF; }
+
+.contactCont .map #gmap_canvas {
+  width: 100% important; }
+.contactCont .map .mainHead {
+  color: #263238;
+  font-size: 15px;
+  font-weight: bolder;
+  margin-top: 30px;
+  margin-bottom: 15px; }
+.contactCont .map .subHead {
+  color: #9CA1A5;
+  font-size: 15px;
+  font-weight: bolder;
+  margin-top: 15px;
+  margin-bottom: 15px; }
+.contactCont .map h6 {
+  color: #9CA1A5;
+  margin-top: 15px;
+  margin-bottom: 15px; }
+.contactCont .map h6:last-child {
+  margin-bottom: 30px; }
+.contactCont #map {
+  width: 100%;
+  height: 100%;
+  background-color: grey; }
+
+.feesCont .fees h1.myHeadLine {
+  font-size: 3em;
+  border: none;
+  padding-bottom: 0;
+  margin-top: 30px;
+  margin-bottom: 15px; }
+.feesCont .fees h3.subHeadLine {
+  margin: 0;
+  font-size: 16px;
+  margin-bottom: 0; }
+.feesCont .fees h5.headTitle {
+  color: #263238;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 0;
+  margin-bottom: 20px;
+  margin-top: 30px; }
+.feesCont .fees h5.subHead {
+  color: #A2A7AB;
+  margin: 0;
+  margin-bottom: 20px; }
+.feesCont .fees .rightAlign * {
+  color: #263238 !important; }
+
+.checkoutSkrillCont .checkoutSkrill .subTitle {
+  color: #8E9598;
+  font-size: 13px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  padding: 0; }
+  .checkoutSkrillCont .checkoutSkrill .subTitle .myLink {
+    color: #7C4DFF;
+    text-transform: uppercase; }
+.checkoutSkrillCont .checkoutSkrill .myCard h5.headTitle {
+  background-color: #eee;
+  text-transform: uppercase;
+  color: #263238;
+  font-weight: bolder;
+  padding: 20px 30px;
+  margin: 0;
+  box-shadow: 1px 0px 1px #eee, -1px 0px 1px #eee; }
+.checkoutSkrillCont .checkoutSkrill .myCard h5.subTitle {
+  background-color: #fff;
+  padding: 30px 20px;
+  color: #B6BABD;
+  margin: 0;
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+  .checkoutSkrillCont .checkoutSkrill .myCard h5.subTitle span.myCardType {
+    margin-left: 60px;
+    color: #7C4DFF; }
+.checkoutSkrillCont .checkoutSkrill .skrillImage {
+  min-height: 0;
+  max-width: 175px;
+  margin: 30px 0; }
+.checkoutSkrillCont .checkoutSkrill .subHead {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: #8E9598;
+  font-size: 15px;
+  margin: 0;
+  margin-bottom: 30px; }
+.checkoutSkrillCont .checkoutSkrill .dollar, .checkoutSkrillCont .checkoutSkrill .price, .checkoutSkrillCont .checkoutSkrill .usd {
+  background-color: #fff;
+  color: #343F45;
+  font-weight: bolder;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 12px 20px;
+  font-size: 24px;
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+.checkoutSkrillCont .checkoutSkrill .col-xs-10 {
+  margin-left: 0;
+  padding-left: 15px; }
+.checkoutSkrillCont .checkoutSkrill .col-xs-1.leftXS {
+  padding-right: 0; }
+  .checkoutSkrillCont .checkoutSkrill .col-xs-1.leftXS h5 {
+    font-weight: lighter;
+    font-size: 20px;
+    padding: 14px 0;
+    text-align: center; }
+.checkoutSkrillCont .checkoutSkrill .col-xs-1.rightXS {
+  padding-left: 0; }
+  .checkoutSkrillCont .checkoutSkrill .col-xs-1.rightXS h5 {
+    text-align: center;
+    padding: 17px 0;
+    font-size: 15px; }
+.checkoutSkrillCont .checkoutSkrill .myButton {
+  background-color: #7C4DFF;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-bottom: 30px;
+  font-size: 18px; }
+.checkoutSkrillCont .checkoutSkrill .cardHead {
+  background-color: #eee;
+  padding: 10px 0;
+  box-shadow: 1px 0px 1px #eee, -1px 0px 1px #eee; }
+  .checkoutSkrillCont .checkoutSkrill .cardHead h5 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bolder; }
+.checkoutSkrillCont .checkoutSkrill .cardBody {
+  background-color: #fff;
+  padding: 0;
+  border-bottom: 2px solid #eee;
+  box-shadow: 1px 0px 1px #eee, -1px 0px 1px #eee; }
+  .checkoutSkrillCont .checkoutSkrill .cardBody h5 {
+    color: #93999C;
+    font-size: 12px; }
+  .checkoutSkrillCont .checkoutSkrill .cardBody h5:not(:first-child) {
+    margin-top: 0;
+    margin-bottom: 30px; }
+.checkoutSkrillCont .checkoutSkrill .cardFooter {
+  background-color: #fff;
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+  .checkoutSkrillCont .checkoutSkrill .cardFooter h5.orange {
+    color: orange; }
+  .checkoutSkrillCont .checkoutSkrill .cardFooter h5 {
+    font-weight: bolder;
+    font-size: 17px;
+    text-transform: uppercase; }
+.checkoutSkrillCont .checkoutSkrill .sslCard {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 1px 2px 1px #eee, -1px 0px 1px #eee; }
+  .checkoutSkrillCont .checkoutSkrill .sslCard .mySSLImage {
+    max-width: 45px; }
+  .checkoutSkrillCont .checkoutSkrill .sslCard h5 {
+    color: #93999c; }
+.checkoutSkrillCont .checkoutSkrill .bottomSSL {
+  background-color: transparent; }
+
+.silverPlanCont .silverPlan .myCard h5.subTitle span.myCardType {
+  color: #b6bccb; }
+.silverPlanCont .silverPlan .myCard h5.subTitle span.myCardType.activeCard {
+  color: #7C4DFF; }
+.silverPlanCont .silverPlan .myCard h5.subTitle {
+  padding: 67px 30px; }
+.silverPlanCont .silverPlan .myButton {
+  margin-bottom: 30px; }
+.silverPlanCont .silverPlan .cardFooter {
+  padding: 10px 0; }
+.silverPlanCont .silverPlan .cardBody {
+  padding: 10px 0px !important; }
+  .silverPlanCont .silverPlan .cardBody h5 {
+    font-size: 14px; }
+.silverPlanCont .silverPlan .subTitle {
+  font-size: 14px; }
+.silverPlanCont .silverPlan .rightSideCont .rightSide {
+  padding-left: 30px;
+  padding-right: 30px; }
+  .silverPlanCont .silverPlan .rightSideCont .rightSide .leftAlign {
+    padding-left: 30px; }
+  .silverPlanCont .silverPlan .rightSideCont .rightSide .rightAlign {
+    padding-right: 30px; }
+.silverPlanCont .rightBottom {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.leftAlign {
+  text-align: left; }
+
+.rightAlign {
+  text-align: right; }
+
+.italic {
+  font-style: italic; }
+
+.teensieContent {
+  margin-top: 30px; }
+
+.newVIP {
+  width: 100%; }
+
+.navIndex {
+  margin-bottom: 0; }
+
+body {
+  overflow-x: hidden; }
+
+@media(max-width: 768px) {
+  nav * {
+    text-align: center; } }
+
+/*# sourceMappingURL=myStyle.css.map */

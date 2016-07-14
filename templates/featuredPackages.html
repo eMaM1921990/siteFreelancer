@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'login_header.html' %}
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent plansContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="plans">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <h1 class="myHeadLine">Teenlancer Membership</h1>
+                                <h3 class="subHeadLine">No obligations. Change plans anytime. Maximise your Earnings!</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3 text-center">
+                                <div class="planCont">
+                                    <div class="upperCont">
+                                        <h5 class="myTitle">7-Day<br/>Package</h5>
+                                        <h5 class="mySubTitle">$5.00</h5>
+                                        <h6 class="myTimeFrame">7 Days</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                    </div>
+                                    <div class="lowerCont">
+
+                                        <a href="/7-Day/{{teensie.pk}}/" class="myButton">Select</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 text-center">
+                                <div class="planCont">
+                                    <div class="upperCont">
+                                        <h5 class="myTitle">14-Day<br/>Package</h5>
+                                        <h5 class="mySubTitle">$7.99<span>USD</span></h5>
+                                        <h6 class="myTimeFrame">14 Days</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                    </div>
+                                    <div class="lowerCont">
+
+                                        <a href="/14-Days/{{teensie.pk}}/" class="myButton">Select</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 text-center">
+                                <div class="planCont">
+                                    <div class="upperCont">
+                                        <h5 class="myTitle">21-Day<br/>Package</h5>
+                                        <h5 class="mySubTitle">$8.95<span>USD</span></h5>
+                                        <h6 class="myTimeFrame">21 Days</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                    </div>
+                                    <div class="lowerCont">
+
+                                        <a href="/21-Days/{{teensie.pk}}/" class="myButton">Select</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 text-center">
+                                <div class="planCont">
+                                    <div class="upperCont">
+                                        <h5 class="myTitle">30-Day<br/>Package</h5>
+                                        <h5 class="mySubTitle">$10.90<span>USD</span></h5>
+                                        <h6 class="myTimeFrame">30 Days</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    </div>
+                                    <div class="lowerCont">
+                                        <!--<h5 class="plusFeatures">Plus Gold Features</h5>-->
+                                        <!--<h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;Registration</h5>-->
+                                        <!--<h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;Send Private Messages</h5>-->
+                                        <!--<h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;No Distraction Ads</h5>-->
+                                        <!--<h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;20 Teensies</h5>-->
+                                        <!--<h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;10 Skills</h5>-->
+                                        <!--<h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;200 Messages Storage</h5>-->
+                                        <a href="/30-Days/{{teensie.pk}}/" class="myButton">Select</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'login_header.html' %}
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="myMessages countries postATeensie">
+
+                        <form action="/editTeensie/{{teensie.pk}}/" method="post" id="postForm">{% csrf_token %}
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <h3 class="myHeadLine">Edit a Teensie</h3>
+                            </div>
+                        </div>
+
+                        <div class="row inputRow">
+                            <div class="col-xs-12 col-sm-6 pull-left">
+                                <input type="text" id="name" name="name" class="form-group myInput" value="{{teensie.teensie_name}}" placeholder="Teensie Name" />
+                            </div>
+                            <div class="col-xs-12 col-sm-6 pull-right ">
+                                <input type="text" id="skills" name="skills" class="form-group myInput" value="{{teensie.skills}}" placeholder="Skills Required" />
+                            </div>
+                        </div>
+                        <div class="row inputRow">
+                            <div class="col-xs-12 col-sm-6 pull-left">
+                                <div class="dropdown">
+                                    <a id="action1" href="#!"  class="dropToggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select category&nbsp;&nbsp;<i class="fa fa-caret-down pull-right"></i></a>
+                                    <ul class="dropdown-menu" aria-labelledby="action1">
+                                        {% for category in categories %}
+                                            <li><a>{{ category }}</a></li>
+                                        {% endfor %}
+                                        <input type="text" name="category" id="category"  hidden/>
+                                        <!--<li><a href="#">Develop</a></li>-->
+                                        <!--<li><a href="#">Marketing</a></li>-->
+                                        <!--<li><a href="#">SEO</a></li>-->
+                                        <!--<li><a href="#">Shit</a></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 pull-right ">
+                                <h3 class="myHeadLine headClient myInputLabel">Timeframe</h3>
+                                <input type="text" name="timeframe" id="timeframe" value="{{teensie.timeframe}}" class="myInput myLabelInput" placeholder="days">
+                            </div>
+                        </div>
+                        <div class="row inputRow checkBox">
+                            <div class="col-xs-12 col-sm-6 text-center">
+                                <textarea class="myInput" name="description" id="description" placeholder="Description">{{teensie.description}}</textarea>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 text-center">
+                                <div class="row">
+                                    <!--<div class="col-xs-12 col-sm-12">-->
+
+                                        <!-- Remove the hidden class if you want to show the the filename of the attachment file -->
+                                    <!--    <label class="labelAttachment ">Filename.attachment</label>-->
+
+                                    <!--    <input type="file" name="attachFile" id="attachFile" class="hidden" />-->
+                                    <!--    <label for="attachFile" class="myUploadLabel"><i class="fa fa-plus"></i></label>-->
+                                    <!--</div>-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12">
+                                        <h3 class="smallH">$</h3>
+                                        <input type="text" name="price" id="price" value="{{teensie.price}}" class="myInput myLabelInput myNewInput" placeholder="Price/Budget" />
+                                        <h3 class="myHeadLine headClient myInputLabel">USD</h3>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <a href="#!" id="postButton" class="myButton">Save Changes</a>
+                            </div>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+    <script>
+
+    $(document).ready(function(){
+        $("#category").val($("#action1").text())
+    });
+
+    $(".dropdown").click(function(){
+        $(".dropdown").css("border","2px solid rgba(226, 228, 229, 0.44)")
+    });
+
+    $(".myInput").click(function(){
+        $(this).css("border", "2px solid rgba(226, 228, 229, 0.44)")
+    });
+
+    $("#postButton").click(function(){
+        var flag = true;
+        var elems = document.getElementsByClassName("myInput");
+        for(var i = 0; i < elems.length; i++) {
+            if ( elems[i].value == ""){
+                elems[i].style.border = "1px solid red";
+                flag = false;
+            } else {
+                elems[i].style.border = "2px solid rgba(226, 228, 229, 0.44)";
+            }
+        }
+        if( $("#action1").text() == $("#category").val() ){
+             flag = false;
+             $(".dropdown").css("border","1px solid red")
+        }
+
+        if (flag) {
+            $("#category").val($("#action1").text());
+            // alert($("#category").val());
+            $("#postForm").submit();
+        }
+
+
+    });
+
+
+
+
+</script>
+
+{% endblock %}

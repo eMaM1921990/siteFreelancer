@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'login_header.html' %}
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="myMessages countries profileSetting">
+                        <div class="row orderButtons">
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/accountSettings/">Account</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/profileSettings/">Profile</a>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <a href="/membershipSettings/">Membership</a>
+                            </div>
+                            <!--<div class="col-xs-12 col-sm-3 text-center">-->
+                            <!--    <a href="#!">Payment</a>-->
+                            <!--</div>-->
+                        </div>
+                    <form action="/profileSettings/" id="submitForm" method="post">{% csrf_token %}
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <h3 class="myHeadLine">Personal Details</h3>
+                            </div>
+                        </div>
+                        <div class="row inputRow">
+                            <div class="col-xs-12 col-sm-4 pull-left">
+                                <input type="text" class="form-group myInput" name="full_name" value="{{user.first_name}}" placeholder="Full Name" />
+                            </div>
+                            <div class="col-xs-12 col-sm-4 text-center">
+                                <input type="text" class="form-group myInput" name="username" value="{{user.username}}" placeholder="username" />
+                            </div>
+                            <div class="col-xs-12 col-sm-4 pull-right ">
+                                <input type="text" class="form-group myInput" name="title" value="{{user.title}}" placeholder="Job Title or Business Type" />
+                            </div>
+                        </div>
+                       <div class="row inputRow">
+                            <div class="col-xs-12 col-sm-8 pull-left">
+                                <input type="text" class="form-group myInput" name="address" value="{{user.address}}" placeholder="Address Line 1" />
+                            </div>
+                            <div class="col-xs-12 col-sm-2 text-center">
+                                <input type="text" class="form-group myInput" name="city" value="{{user.city}}" placeholder="City" />
+                            </div>
+                            <div class="col-xs-12 col-sm-2 pull-right">
+                                <input type="text" class="form-group myInput" name="zip" value="{{user.zip_code}}" placeholder="Zip Code" />
+                            </div>
+                        </div>
+                        <div class="row inputRow">
+                            <!--<div class="col-xs-12 col-sm-8 pull-left">-->
+                            <!--    <input type="password" class="form-group myInput" placeholder="Address Line 2" />-->
+                            <!--</div>-->
+                             <div class="col-xs-12 col-sm-4 pull-left" id="act">
+                                <div class="dropdown" >
+                                    {% if user.language %}
+                                    <a id="action1" href="#!" class="dropToggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user.language}}</a>
+                                    <!--<i class="fa fa-caret-down pull-right" id="drop"></i>-->
+                                    <ul class="dropdown-menu" aria-labelledby="action1">
+                                        {% for language in langs %}
+                                        <li><a href="#">{{language.language}}</a></li>
+                                        {% endfor %}
+                                        <input type="text" name="language" id="lang" value="{{user.language}}" hidden/>
+                                    </ul>
+                                    {% else %}
+                                    <a id="action1" href="#!" class="dropToggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Language</a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="action1">
+                                        {% for language in langs %}
+                                        <li><a href="#">{{language.language}}</a></li>
+                                        {% endfor %}
+                                        <input type="text" name="language" id="lang" value="" hidden/>
+                                    </ul>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 pull-right">
+                                <input type="text" class="form-group myInput" name="country"  value="{{user.country}}" placeholder="Country" />
+                            </div>
+                            <div class="col-xs-12 col-sm-4 pull-right">
+                                <input type="text" class="form-group myInput" name="state" value="{{user.state}}" placeholder="State/Province" />
+                            </div>
+                        </div>
+                        </form>
+                        <!--<div class="row inputRow">-->
+
+                            <!--<div class="col-xs-12 col-sm-4 text-center">-->
+                            <!--    <div class="dropdown">-->
+                            <!--        <a id="action1" href="#!" class="dropToggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Second Language&nbsp;&nbsp;<i class="fa fa-caret-down pull-right"></i></a>-->
+                            <!--        <ul class="dropdown-menu" aria-labelledby="action1">-->
+                            <!--            <li><a href="#">Select</a></li>-->
+                            <!--            <li><a href="#">Send Payment</a></li>-->
+                            <!--            <li><a href="#">Give Feedback</a></li>-->
+                            <!--            <li><a href="#">Raise Dispute</a></li>-->
+                            <!--            <li><a href="#">Cancel</a></li>-->
+                            <!--        </ul>-->
+                            <!--    </div>-->
+                            <!--</div>-->
+
+                            <!--<div class="col-xs-12 col-sm-4 pull-right">-->
+                            <!--    <div class="dropdown">-->
+                            <!--        <a id="action1" href="#!" class="dropToggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Country&nbsp;&nbsp;<i class="fa fa-caret-down pull-right"></i></a>-->
+                            <!--        <ul class="dropdown-menu" aria-labelledby="action1">-->
+                            <!--            <li><a href="#">Select</a></li>-->
+                            <!--            <li><a href="#">Send Payment</a></li>-->
+                            <!--            <li><a href="#">Give Feedback</a></li>-->
+                            <!--            <li><a href="#">Raise Dispute</a></li>-->
+                            <!--            <li><a href="#">Cancel</a></li>-->
+                            <!--        </ul>-->
+                            <!--    </div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="row headline">
+                            <div class="col-xs-12 text-center">
+                                <a id="submitButton" class="myButton">Save Changes</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+    <script>
+        $("#act").click(function(){
+            $("#action1").click();
+        });
+        $("#submitButton").click(function(){
+            // alert($("#action1").html());
+            $("#lang").val($("#action1").html());
+            $("#submitForm").submit();
+        });
+    </script>
+
+{% endblock %}

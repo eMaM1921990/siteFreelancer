@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'login_header.html' %}
+
+    <!-- ====================================================================== -->
+    <!-- Start: Main Content -->
+    <!-- ====================================================================== -->
+
+    <div class="mainContent">
+        <div class="container">
+            <div class="row myContent plansContent">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="plans">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+
+                                <input type="text" id="user_plan" value="{{ user_plan }}" hidden>
+
+                                <h1 class="myHeadLine">Teenlancer Membership</h1>
+                                <h3 class="subHeadLine">No obligations. Change plans anytime. Maximise your Earnings!</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3 text-center">
+                                <div class="planCont"  id="Bronze">
+                                    <div class="upperCont">
+                                        <h5 class="myTitle">Bronze</h5>
+                                        <h5 class="mySubTitle">Free</h5>
+                                        <h6 class="myTimeFrame">Forever</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                    </div>
+                                    <div class="lowerCont">
+                                        <h5 class="plusFeatures">All Free Features</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;Registration</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;Send Private Messages</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;No Distraction Ads</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;20 Teensies</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;10 Skills</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;200 Messages Storage</h5>
+                                        <a href="/bronze" class="myButton">Select</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 text-center">
+                                <div class="planCont" id="Silver">
+                                    <div class="upperCont" >
+                                        <h5 class="myTitle">Silver</h5>
+                                        <h5 class="mySubTitle">$9.99<span>USD</span></h5>
+                                        <h6 class="myTimeFrame">Monthly</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                    </div>
+                                    <div class="lowerCont">
+                                        <h5 class="plusFeatures">Plus Bronze Features</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;Custom URL</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;Cover Photo</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;30 Teensies</h5>
+                                        <!--<h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;20 Skills</h5>-->
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;300 Message Storage</h5>
+                                        <a href="/silver" class="myButton">Select</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 text-center">
+                                <div class="planCont" id="Gold">
+                                    <!--planActive-->
+                                    <div class="upperCont">
+                                        <h5 class="myTitle">Gold</h5>
+                                        <h5 class="mySubTitle">$14.95<span>USD</span></h5>
+                                        <h6 class="myTimeFrame">Monthly</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                    </div>
+                                    <div class="lowerCont">
+                                        <h5 class="plusFeatures">Plus Silver Features</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;Change Username</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;Send Private Messages</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;Cancel Orders</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;40 Teensies</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;400 Messages Storage</h5>
+                                        <a href="/gold" class="myButton">Select</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-3 text-center">
+                                <div class="planCont" id="Platinum">
+                                    <div class="upperCont" >
+                                        <h5 class="myTitle">Platinum</h5>
+                                        <h5 class="mySubTitle">$19.90<span>USD</span></h5>
+                                        <h6 class="myTimeFrame">Monthly</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                    </div>
+                                    <div class="lowerCont">
+                                        <h5 class="plusFeatures">Plus Gold Features</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;3 Day Withdrawal</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;Raise Disputes</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;100 Teensies</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;20 Teensies</h5>
+                                        <h5><i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;4000 Message Storage</h5>
+                                        <a href="/platinum" class="myButton">Select</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================== -->
+    <!-- End: Main Content -->
+    <!-- ====================================================================== -->
+
+
+    <script>
+        var plan = $("#user_plan").val();
+        if ( plan == "Bronze" ){
+            $("#Bronze").addClass("planActive");
+        } else if ( plan == "Silver" ){
+            $("#Silver").addClass("planActive");
+        }else if ( plan == "Silver" ){
+            $("#Gold").addClass("planActive");
+        }else if ( plan == "Silver" ){
+            $("#Platinum").addClass("planActive");
+        }
+
+
+    </script>
+
+
+{% endblock %}
