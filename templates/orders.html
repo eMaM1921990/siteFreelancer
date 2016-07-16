@@ -30,34 +30,26 @@
                         <div class="box-header">
                             <a class="btn btn-default">Update</a>
                             <div class="form-group">
-                                <select class="form-control">
+                                <select class="form-control" id="orderActionType">
                                     <option>Bulk Actions</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
                                 </select>
                             </div>
                             <a class="btn btn-default">Apply</a>
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option>All Dates</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
+                                    <option value="0">All Dates</option>
+                                    {% for dateObj in date %}
+                                        <option value="{{ dateObj }}">{{ dateObj }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option>All Niches</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
+                                    <option>All Orders</option>
+
                                 </select>
                             </div>
-                            <a class="btn btn-default">Filter</a>
+                            <a class="btn btn-default" href="javascript:OrderTableFilter()">Filter</a>
 
                             </div>
 
@@ -66,7 +58,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th></th>
                                     <th>Name</th>
                                     <th>Client</th>
                                     <th>Status</th>
@@ -78,7 +70,7 @@
                                 <tbody>
                                 {% for order in orders %}
                                 <tr>
-                                    <td>{{ order.pk }}</td>
+                                    <td><input type="checkbox" value="{{ order.id }}" id="orderID" name="orderID"></td>
                                     <td>{{ order.teensie.teensie_name}}</td>
                                     <td>{{ order.user.first_name }}</td>
                                     <td>{{ order.teensie.status }}</td>

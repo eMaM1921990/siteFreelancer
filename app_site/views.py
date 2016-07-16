@@ -70,7 +70,11 @@ def users(request):
         return HttpResponseRedirect('/login/')
     else:
         user = Users.objects.get(pk=request.session["user_id"])
-        return render(request, "allUsers.html", {"user": user, "users": Users.objects.all()})
+        data=Users.objects.all()
+        dateList={}
+        for i in data:
+            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+        return render(request, "allUsers.html", {"user": user, "users":data ,"date":dateList})
 
 
 def witgdrawalAdmin(request):
@@ -202,7 +206,12 @@ def pins(request):
         return HttpResponseRedirect('/login/')
     else:
         user = Users.objects.get(pk=request.session["user_id"])
-        return render(request, "pins.html", {"user": user, "niches": TeensiesFeatured.objects.all()})
+        data=TeensiesFeatured.objects.all()
+        dateList={}
+        for i in data:
+            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+
+        return render(request, "pins.html", {"user": user, "niches": data,"date":dateList})
 
 
 def trash(request):
@@ -211,7 +220,12 @@ def trash(request):
         return HttpResponseRedirect('/login/')
     else:
         user = Users.objects.get(pk=request.session["user_id"])
-        return render(request, "trash.html", {"user": user, "niches": TeensiesDeleted.objects.all()})
+        data=TeensiesDeleted.objects.all()
+        dateList={}
+        for i in data:
+            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+
+        return render(request, "trash.html", {"user": user, "niches": data,"date":dateList})
 
 
 def languages(request):
@@ -238,7 +252,12 @@ def cancelAdmin(request):
         return HttpResponseRedirect('/login/')
     else:
         user = Users.objects.get(pk=request.session["user_id"])
-        return render(request, "cancellations.html", {"user": user, "niches": TeensiesCancelled.objects.all()})
+        data=TeensiesCancelled.objects.all()
+        dateList={}
+        for i in data:
+            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+
+        return render(request, "cancellations.html", {"user": user, "niches": data,"date":dateList})
 
 
 def niches(request):
@@ -250,7 +269,8 @@ def niches(request):
         data=TeensiesPosted.objects.all()
         dateList={}
         for i in data:
-            dateList[i.date]=i.date.strftime('%b %Y')
+            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+
         return render(request, "niches.html", {"user": user, "niches": TeensiesPosted.objects.all(),"date":dateList})
 
 
@@ -260,7 +280,11 @@ def ordersAdmin(request):
         return HttpResponseRedirect('/login/')
     else:
         user = Users.objects.get(pk=request.session["user_id"])
-        return render(request, "orders.html", {"user": user, "orders": TeensiesOrdered.objects.all()})
+        orders=TeensiesOrdered.objects.all()
+        dateList={}
+        for i in orders:
+            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+        return render(request, "orders.html", {"user": user, "orders": orders,"date":dateList})
 
 
 def admin(request):
@@ -1297,3 +1321,20 @@ def deleteNiches(request):
     if request.POST:
         instance=AdminGridControl()
         return HttpResponse(instance.delete_niches(request))
+
+@csrf_exempt
+def filterNiches(request):
+    if request.POST:
+        instance=AdminGridControl()
+        return HttpResponse(instance.filter_niches(request))
+
+@csrf_exempt
+def restoreNiches(request):
+    if request.POST:
+        instance=AdminGridControl()
+        return HttpResponse(instance.restore_trash(request))
+@csrf_exempt
+def blacklistUser(request):
+    if request.POST:
+        instance=AdminGridControl()
+        return HttpResponse(instance.blacklist_user(request))

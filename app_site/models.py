@@ -200,7 +200,7 @@ class TeensiesPosted(models.Model):
 
 class TeensiesDeleted(models.Model):
     teensie = models.ForeignKey(TeensiesPosted, null=True, db_column='teensie', blank=True)
-    date = models.DateField(null=True, blank=True)
+    date = models.DateField(auto_now_add=True)
     class Meta:
         db_table = u'Teensies_deleted'
         managed=MANAGED

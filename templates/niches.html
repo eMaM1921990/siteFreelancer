@@ -35,10 +35,10 @@
                             </div>
                             <a class="btn btn-default" href="javascript:HandleNichRequest()">Apply</a>
                             <div class="form-group">
-                                <select class="form-control">
-                                    <option>All Dates</option>
+                                <select class="form-control" id="date">
+                                    <option value="0">All Dates</option>
                                     {% for dateObj in date %}
-                                        <option>{{ dateObj }}</option>
+                                        <option value="{{ dateObj }}">{{ dateObj }}</option>
                                     {% endfor %}
 
 
@@ -49,7 +49,7 @@
                                     <option>All Niches</option>
                                 </select>
                             </div>
-                            <a class="btn btn-default">Filter</a>
+                            <a class="btn btn-default" href="javascript:NichTableFilter()">Filter</a>
 
                             </div>
 

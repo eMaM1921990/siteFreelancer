@@ -4,6 +4,7 @@
 
 <body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
+{% csrf_token %}
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -32,29 +33,20 @@
                             <div class="form-group">
                                 <select class="form-control">
                                     <option>Bulk Actions</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
+                                    <option>Blacklist</option>
                                 </select>
                             </div>
-                            <a class="btn btn-default">Apply</a>
+                            <a class="btn btn-default" href="javascript:blackListSelectedUsers()">Apply</a>
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option>All Dates</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
+                                    {% for dateObj in date %}
+                                        <option value="{{ dateObj }}">{{ dateObj }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option>All Niches</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
+                                    <option>All Users</option>
                                 </select>
                             </div>
                             <a class="btn btn-default">Filter</a>
@@ -66,7 +58,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>--</th>
                                     <th>Username</th>
                                     <th>Full Name</th>
                                     <th>Type</th>
@@ -80,7 +72,7 @@
                                 <tbody>
                                 {% for u in users %}
                                 <tr>
-                                    <td>{{ u.pk }}</td>
+                                    <td><input type="checkbox" value="{{ u.id }}" id="id"></td>
                                     <td>{{ u.username }}</td>
                                     <td>{{ u.first_name }}</td>
                                     <td>{{ u.account_type }}</td>

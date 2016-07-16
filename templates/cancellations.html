@@ -32,29 +32,22 @@
                             <div class="form-group">
                                 <select class="form-control">
                                     <option>Bulk Actions</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
+
                                 </select>
                             </div>
                             <a class="btn btn-default">Apply</a>
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option>All Dates</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
+                                    <option value="0">All Dates</option>
+                                    {% for dateObj in date %}
+                                        <option value="{{ dateObj }}">{{ dateObj }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option>All Niches</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
+                                    <option>All Cancelled</option>
+
                                 </select>
                             </div>
                             <a class="btn btn-default">Filter</a>

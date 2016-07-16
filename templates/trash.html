@@ -21,7 +21,7 @@
 
         <!-- Main content -->
         <section class="content">
-
+{% csrf_token %}
             <!-- Your Page Content Here -->
             <div class="row">
                 <div class="col-xs-12">
@@ -33,29 +33,23 @@
                             <div class="form-group">
                                 <select class="form-control">
                                     <option>Bulk Actions</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
+                                    <option>Restore</option>
+
                                 </select>
                             </div>
-                            <a class="btn btn-default">Apply</a>
+                            <a class="btn btn-default" href="javascript:restoreSelected()">Apply</a>
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option>All Dates</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
+                                    {% for dateObj in date %}
+                                        <option value="{{ dateObj }}">{{ dateObj }}</option>
+                                    {% endfor %}
+
                                 </select>
                             </div>
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option>All Niches</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
+                                    <option>All Trash</option>
+
                                 </select>
                             </div>
                             <a class="btn btn-default">Filter</a>
@@ -79,7 +73,7 @@
                                 <tbody>
                                 {% for niche in niches %}
                                 <tr>
-                                    <td>{{ niche.pk }}</td>
+                                    <td><input type="checkbox" value="{{ niche.id }}" id="id"></td>
                                     <td>{{ niche.teensie.teensie_name}}</td>
                                     <td>{{ niche.teensie.user.first_name }}</td>
                                     <td>{{ niche.teensie.category }}</td>
