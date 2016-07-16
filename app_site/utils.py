@@ -1,9 +1,11 @@
+import json
 from siteFreelancer import settings
 
 __author__ = 'emam'
 
-import mailchimp
-
-def get_mailchimp_api():
-    return mailchimp.Mailchimp(settings.MAILCHIMP_API_KEY) #your api key here
-
+def responeJson(status,message):
+    data = {}
+    data['status'] = status
+    data['message'] = message
+    json_data = json.dumps(data)
+    return json_data

@@ -223,7 +223,7 @@
                 <img src="{% static 'dashIcon.png' %}" alt="link" class="linkIcon" />
                 <span>Dashboard</span></a></li>
             <li class="treeview">
-                <a href="#">
+                <a href="#" id="press">
                     <!--<i class="fa fa-link"></i>-->
                     <img src="{% static 'nichesIcon.png'%}" alt="link" class="linkIcon" />
                     <span>Niches</span>
@@ -231,7 +231,7 @@
                           <i class="fa fa-angle-left pull-right"></i>
                         </span>
                 </a>
-                <ul class="treeview-menu">
+                <ul class="treeview-menu" id="collapse">
                     <li><a href="/admin/niches/">All Niches</a></li>
                     <li><a href="/admin/orders/">Orders</a></li>
                     <li><a href="/admin/pins/">Pins</a></li>
@@ -336,3 +336,38 @@
     </section>
     <!-- /.sidebar -->
   </aside>
+
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+     //insert all your ajax callback code here.
+     //Which will run only after page is fully loaded in background.
+                      var listItems = $(".sidebar-menu ");
+                listItems.each(function() {
+                    $(this).find('li ').each(function() {
+                        // get first child
+                        var firstChild=$(this).find(':first-child');
+                        // get second child
+                        $(this).find('ul li a').each(function(event) {
+
+                         var current = $(this);
+                             if(current.attr('href')==('{{ request.get_full_path }}')){
+                                 firstChild.click();
+
+
+
+
+                             }
+
+
+
+                        });
+
+                    });
+                        // and the rest of your code
+                    });
+
+});
+
+
+    </script>

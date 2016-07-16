@@ -140,6 +140,8 @@ urlpatterns = patterns('',
 
 
 
+    # Grid Control
+    url(r'^delete_niches/', app_site.views.deleteNiches, name='deleteNiches'),
 
     # url(r'^mysite/', include('mysite.foo.urls')),
 

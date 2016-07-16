@@ -18,7 +18,7 @@
             </ol>
         <!-- Main content -->
         <section class="content">
-
+    {% csrf_token %}
             <!-- Your Page Content Here -->
             <div class="row">
                 <div class="col-xs-12">
@@ -28,31 +28,25 @@
                         <div class="box-header">
                             <a class="btn btn-default">Update</a>
                             <div class="form-group">
-                                <select class="form-control">
+                                <select class="form-control" id="nichActionType">
                                     <option>Bulk Actions</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
+                                    <option value="1">Trash</option>
                                 </select>
                             </div>
-                            <a class="btn btn-default">Apply</a>
+                            <a class="btn btn-default" href="javascript:HandleNichRequest()">Apply</a>
                             <div class="form-group">
                                 <select class="form-control">
                                     <option>All Dates</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
+                                    {% for dateObj in date %}
+                                        <option>{{ dateObj }}</option>
+                                    {% endfor %}
+
+
                                 </select>
                             </div>
                             <div class="form-group">
                                 <select class="form-control">
                                     <option>All Niches</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
                                 </select>
                             </div>
                             <a class="btn btn-default">Filter</a>
@@ -64,7 +58,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th></th>
                                     <th>Name</th>
                                     <th>VA</th>
                                     <th>Category</th>
@@ -75,8 +69,8 @@
                                 </thead>
                                 <tbody>
                                 {% for niche in niches %}
-                                <tr>
-                                    <td>{{ niche.pk }}</td>
+                                <tr id="{{ niche.id }}">
+                                    <td><input type="radio" value="{{ niche.id }}" id="nicheID" name="nicheID"></td>
                                     <td>{{ niche.teensie_name}}</td>
                                     <td>{{ niche.user.first_name }}</td>
                                     <td>{{ niche.category }}</td>
@@ -86,15 +80,7 @@
                                 </tr>
                                 {% endfor %}
                                 </tbody>
-                                <!--<tfoot>-->
-                                <!--<tr>-->
-                                    <!--<th>Rendering engine</th>-->
-                                    <!--<th>Browser</th>-->
-                                    <!--<th>Platform(s)</th>-->
-                                    <!--<th>Engine version</th>-->
-                                    <!--<th>CSS grade</th>-->
-                                <!--</tr>-->
-                                <!--</tfoot>-->
+
                             </table>
                         </div>
                         <!-- /.box-body -->

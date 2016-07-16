@@ -1,9 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 # Create your views here.
 # Create your views here.
 from datetime import datetime
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 from app_site.models import *
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
@@ -23,7 +25,7 @@ import dateutil.parser
 from utils import *
 from models import *
 import mailchimp
-
+from requestHandler import *
 
 def results(request):
     auth = check(request)
@@ -245,7 +247,11 @@ def niches(request):
         return HttpResponseRedirect('/login/')
     else:
         user = Users.objects.get(pk=request.session["user_id"])
-        return render(request, "niches.html", {"user": user, "niches": TeensiesPosted.objects.all()})
+        data=TeensiesPosted.objects.all()
+        dateList={}
+        for i in data:
+            dateList[i.date]=i.date.strftime('%b %Y')
+        return render(request, "niches.html", {"user": user, "niches": TeensiesPosted.objects.all(),"date":dateList})
 
 
 def ordersAdmin(request):
@@ -1285,3 +1291,9 @@ def facebook_login(request):
             save_user_activity(request)
             return HttpResponseRedirect('/dashboard/')
     return render(request, 'login.html')
+
+@csrf_exempt
+def deleteNiches(request):
+    if request.POST:
+        instance=AdminGridControl()
+        return HttpResponse(instance.delete_niches(request))

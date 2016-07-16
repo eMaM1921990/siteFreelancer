@@ -393,16 +393,17 @@ function _init() {
         //Get the clicked link and the next element
         var $this = $(this);
         var checkElement = $this.next();
-
         //Check if the next element is a menu and is visible
-        if ((checkElement.is('.treeview-menu')) && (checkElement.is(':visible')) && (!$('body').hasClass('sidebar-collapse'))) {
+        if (((checkElement.is('.treeview-menu')) && (checkElement.is(':visible')) && (!$('body').hasClass('sidebar-collapse'))) ) {
+
+
           //Close the menu
-          checkElement.slideUp(animationSpeed, function () {
-            checkElement.removeClass('menu-open');
-            //Fix the layout in case the sidebar stretches over the height of the window
-            //_this.layout.fix();
-          });
-          checkElement.parent("li").removeClass("active");
+          //checkElement.slideUp(animationSpeed, function () {
+          //  checkElement.removeClass('menu-open');
+          //  //Fix the layout in case the sidebar stretches over the height of the window
+          //  //_this.layout.fix();
+          //});
+          //checkElement.parent("li").removeClass("active");
         }
         //If the menu is not visible
         else if ((checkElement.is('.treeview-menu')) && (!checkElement.is(':visible'))) {
@@ -415,7 +416,9 @@ function _init() {
           //Get the parent li
           var parent_li = $this.parent("li");
 
+
           //Open the target menu and add the menu-open class
+
           checkElement.slideDown(animationSpeed, function () {
             //Add the class active to the parent li
             checkElement.addClass('menu-open');
