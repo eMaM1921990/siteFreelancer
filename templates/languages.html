@@ -32,29 +32,22 @@
                             <div class="form-group">
                                 <select class="form-control">
                                     <option>Bulk Actions</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
-                                    <option>Delete</option>
+                                    <option>Edit</option>
+                                    <option>Clone</option>
+                                    <option>Trash</option>
                                 </select>
                             </div>
                             <a class="btn btn-default">Apply</a>
                             <div class="form-group">
                                 <select class="form-control">
                                     <option>All Dates</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
-                                    <option>One Week</option>
+
                                 </select>
                             </div>
                             <div class="form-group">
                                 <select class="form-control">
-                                    <option>All Niches</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
-                                    <option>lorem ipsum</option>
+                                    <option>All Language</option>
+
                                 </select>
                             </div>
                             <a class="btn btn-default">Filter</a>
@@ -66,7 +59,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>--</th>
                                     <th>Language</th>
                                     <!--<th>Niches</th>-->
                                     <!--<th>Date</th>-->
@@ -75,7 +68,7 @@
                                <tbody>
                                {% for lang in languages %}
                                <tr>
-                                   <td>{{ lang.pk }}</td>
+                                   <td><input type="checkbox" id="langId" value="{{ lang.id }}"></td>
                                    <td>{{ lang.language }}</td>
                                    <!--<td>{{ cat.pk }}</td>-->
                                </tr>
