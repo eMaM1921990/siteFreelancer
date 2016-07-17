@@ -142,7 +142,6 @@ urlpatterns = patterns('',
 
     # Grid Control
     url(r'^delete_niches/', app_site.views.deleteNiches, name='deleteNiches'),
-    url(r'^filter_niches/', app_site.views.filterNiches, name='filterNiches'),
     url(r'^restore_niches/', app_site.views.restoreNiches, name='restoreNiches'),
     url(r'^blacklist_user/', app_site.views.blacklistUser, name='blacklistUser'),
 

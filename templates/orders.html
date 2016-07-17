@@ -28,6 +28,8 @@
 
                     <div class="box myTable">
                         <div class="box-header">
+                            <form id="filter" method="get" action="/admin/orders/">
+
                             <a class="btn btn-default">Update</a>
                             <div class="form-group">
                                 <select class="form-control" id="orderActionType">
@@ -36,7 +38,7 @@
                             </div>
                             <a class="btn btn-default">Apply</a>
                             <div class="form-group">
-                                <select class="form-control">
+                                <select class="form-control" id="date">
                                     <option value="0">All Dates</option>
                                     {% for dateObj in date %}
                                         <option value="{{ dateObj }}">{{ dateObj }}</option>
@@ -49,8 +51,8 @@
 
                                 </select>
                             </div>
-                            <a class="btn btn-default" href="javascript:OrderTableFilter()">Filter</a>
-
+                            <a class="btn btn-default" onclick="document.getElementById('filter').submit();">Filter</a>
+                            </form>
                             </div>
 
                         <!-- /.box-header -->

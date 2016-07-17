@@ -205,13 +205,27 @@ def pins(request):
     if not auth:
         return HttpResponseRedirect('/login/')
     else:
-        user = Users.objects.get(pk=request.session["user_id"])
-        data=TeensiesFeatured.objects.all()
-        dateList={}
-        for i in data:
-            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=TeensiesFeatured.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
 
-        return render(request, "pins.html", {"user": user, "niches": data,"date":dateList})
+            return render(request, "pins.html", {"user": user, "niches": data,"date":dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=TeensiesFeatured.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+
+            if request.GET['date']!='0':
+                instance=AdminGridControl()
+                data=instance.filter_pins(request)
+
+            return render(request, "pins.html", {"user": user, "niches": data,"date":dateList})
+
 
 
 def trash(request):
@@ -219,13 +233,25 @@ def trash(request):
     if not auth:
         return HttpResponseRedirect('/login/')
     else:
-        user = Users.objects.get(pk=request.session["user_id"])
-        data=TeensiesDeleted.objects.all()
-        dateList={}
-        for i in data:
-            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=TeensiesDeleted.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
 
-        return render(request, "trash.html", {"user": user, "niches": data,"date":dateList})
+            return render(request, "trash.html", {"user": user, "niches": data,"date":dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=TeensiesDeleted.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            if request.GET['date']!='0':
+                instance=AdminGridControl()
+                data=instance.filter_trash(request)
+            return render(request, "trash.html", {"user": user, "niches": data,"date":dateList})
+
 
 
 def languages(request):
@@ -251,27 +277,51 @@ def cancelAdmin(request):
     if not auth:
         return HttpResponseRedirect('/login/')
     else:
-        user = Users.objects.get(pk=request.session["user_id"])
-        data=TeensiesCancelled.objects.all()
-        dateList={}
-        for i in data:
-            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=TeensiesCancelled.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
 
-        return render(request, "cancellations.html", {"user": user, "niches": data,"date":dateList})
+            return render(request, "cancellations.html", {"user": user, "niches": data,"date":dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=TeensiesCancelled.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
 
+            if request.GET['date']!='0':
+                instance=AdminGridControl()
+                data=instance.filter_cancellation(request)
+
+            return render(request, "cancellations.html", {"user": user, "niches": data,"date":dateList})
 
 def niches(request):
     auth = check(request)
     if not auth:
         return HttpResponseRedirect('/login/')
     else:
-        user = Users.objects.get(pk=request.session["user_id"])
-        data=TeensiesPosted.objects.all()
-        dateList={}
-        for i in data:
-            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=TeensiesPosted.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%m-%Y')]=i.date.strftime('%b %Y')
+            return render(request, "niches.html", {"user": user, "niches":data,"date":dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=TeensiesPosted.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%m-%Y')]=i.date.strftime('%b %Y')
+            instance=AdminGridControl()
+            if request.GET['date']!='0':
+                data=instance.filter_niches(request)
+            return render(request, "niches.html", {"user": user, "niches":data,"date":dateList})
 
-        return render(request, "niches.html", {"user": user, "niches": TeensiesPosted.objects.all(),"date":dateList})
+
 
 
 def ordersAdmin(request):
@@ -279,12 +329,24 @@ def ordersAdmin(request):
     if not auth:
         return HttpResponseRedirect('/login/')
     else:
-        user = Users.objects.get(pk=request.session["user_id"])
-        orders=TeensiesOrdered.objects.all()
-        dateList={}
-        for i in orders:
-            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
-        return render(request, "orders.html", {"user": user, "orders": orders,"date":dateList})
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            orders=TeensiesOrdered.objects.all()
+            dateList={}
+            for i in orders:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "orders.html", {"user": user, "orders": orders,"date":dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=TeensiesPosted.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%m-%Y')]=i.date.strftime('%b %Y')
+            instance=AdminGridControl()
+            if request.GET['date']!='0':
+                data=instance.filter_orders(request)
+            return render(request, "orders.html", {"user": user, "niches":data,"date":dateList})
+
 
 
 def admin(request):
@@ -1322,11 +1384,6 @@ def deleteNiches(request):
         instance=AdminGridControl()
         return HttpResponse(instance.delete_niches(request))
 
-@csrf_exempt
-def filterNiches(request):
-    if request.POST:
-        instance=AdminGridControl()
-        return HttpResponse(instance.filter_niches(request))
 
 @csrf_exempt
 def restoreNiches(request):

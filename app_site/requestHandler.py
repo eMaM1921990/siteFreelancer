@@ -5,6 +5,11 @@ __author__ = 'emam'
 from utils import *
 from models import *
 import simplejson
+from django.core import serializers
+
+
+
+
 class AdminGridControl():
 
     #Handle niches action
@@ -25,17 +30,56 @@ class AdminGridControl():
 
     def filter_niches(self,request):
         try:
-            print request.POST['date'].strftime('%Y')
-            print request.POST['date'].strftime('%m')
-            exequery=TeensiesPosted.objects.filter(date=datetime.date(request.POST['date'].strftime('%Y'),request.POST['date'].strftime('%m')))
-            return Serializer.serialize('json',exequery)
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=TeensiesPosted.objects.filter(date__year=year,date__month=month)
+            return exequery
         except Exception as e:
+            print str(e)
             return responeJson(False,str(e))
 
 
     #Handle Orders
     def filter_orders(self,request):
-        return None
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=TeensiesOrdered.objects.filter(date__year=year,date__month=month)
+            return  exequery
+        except Exception as e:
+            return None
+
+    #Handle Pin
+    def filter_pins(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=TeensiesFeatured.objects.filter(date__year=year,date__month=month)
+            return  exequery
+        except Exception as e:
+            return None
+
+    #Handle Cancellation order
+    def filter_cancellation(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=TeensiesCancelled.objects.filter(date__year=year,date__month=month)
+            return  exequery
+        except Exception as e:
+            return None
+
+    #Handle trash
+    def filter_trash(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=TeensiesDeleted.objects.filter(date__year=year,date__month=month)
+            return  exequery
+        except Exception as e:
+            return None
+
+
 
 
     #handle trash

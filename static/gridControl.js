@@ -42,30 +42,10 @@ function removeSelectedNich(){
 	});
 }
 
-function NichTableFilter(){
-    if($('#date').val().length>1){
-        $.ajax({
-		url : "/filter_niches/",
-		type : "POST",
-		dataType : "json",
-		data:{
-			date:$('#date').val(),
-            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value
-		},
-		success : function(responseText) {
-			console.log(responseText);
 
-		},
-		error : function(xhr, errmsg, err) {
-			console.log(errmsg);
-
-		}
-	});
-    }
+function Filter(){
 
 }
-
-
 
 
 function checkedID(){
