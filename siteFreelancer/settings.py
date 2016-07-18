@@ -84,13 +84,13 @@ WSGI_APPLICATION = 'siteFreelancer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 DB='eMaM151987$site'
-DB='site'
+# DB='site'
 USER='eMaM151987'
-USER='root'
+# USER='root'
 PASSWORD='Azsxdcfv1234'
-PASSWORD='0122308791'
+# PASSWORD='0122308791'
 HOST='eMaM151987.mysql.pythonanywhere-services.com'
-HOST='localhost'
+# HOST='localhost'
 
 DATABASES = {
     'default': {
