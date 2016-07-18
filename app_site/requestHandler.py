@@ -89,6 +89,24 @@ class AdminGridControl():
         except Exception as e:
             return None
 
+    def filter_client(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=Users.objects.filter(date__year=year,date__month=month,account_type__type='Client')
+            return  exequery
+        except Exception as e:
+            return None
+
+    def filter_var(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=Users.objects.filter(date__year=year,date__month=month,account_type__type='Teenlancer')
+            return  exequery
+        except Exception as e:
+            return None
+
 
 
 
