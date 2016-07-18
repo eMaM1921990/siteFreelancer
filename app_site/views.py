@@ -222,14 +222,14 @@ def blacklist(request):
     else:
         if 'date' not in request.GET:
             user = Users.objects.get(pk=request.session["user_id"])
-            data=Users.objects.filter(statis='in-active')
+            data=Users.objects.filter(status='in-active')
             dateList={}
             for i in data:
                 dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
             return render(request, "black_listed.html", {"usetyper": user, "users": data,'date':dateList})
         else:
             user = Users.objects.get(pk=request.session["user_id"])
-            data=Users.objects.filter(statis='in-active')
+            data=Users.objects.filter(status='in-active')
             dateList={}
             for i in data:
                 dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
