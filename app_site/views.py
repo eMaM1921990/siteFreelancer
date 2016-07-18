@@ -69,12 +69,23 @@ def users(request):
     if not auth:
         return HttpResponseRedirect('/login/')
     else:
-        user = Users.objects.get(pk=request.session["user_id"])
-        data=Users.objects.all()
-        dateList={}
-        for i in data:
-            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
-        return render(request, "allUsers.html", {"user": user, "users":data ,"date":dateList})
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "allUsers.html", {"user": user, "users":data ,"date":dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            if 'date'!='0':
+                instance=AdminGridControl()
+                data=instance.filter_users(request)
+            return render(request, "allUsers.html", {"user": user, "users":data ,"date":dateList})
 
 
 def witgdrawalAdmin(request):

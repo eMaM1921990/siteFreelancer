@@ -29,6 +29,7 @@
 
                     <div class="box myTable">
                         <div class="box-header">
+                            <form id="filter" method="get" action="/admin/users/">
                             <a class="btn btn-default">Update</a>
                             <div class="form-group">
                                 <select class="form-control">
@@ -49,8 +50,8 @@
                                     <option>All Users</option>
                                 </select>
                             </div>
-                            <a class="btn btn-default">Filter</a>
-
+                            <a class="btn btn-default" onclick="document.getElementById('filter').submit();">Filter</a>
+                            </form>
                             </div>
 
                         <!-- /.box-header -->

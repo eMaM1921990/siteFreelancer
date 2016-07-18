@@ -88,7 +88,7 @@ DB='site'
 USER='eMaM151987'
 USER='root'
 PASSWORD='Azsxdcfv1234'
-PASSWORD='admin'
+PASSWORD='0122308791'
 HOST='eMaM151987.mysql.pythonanywhere-services.com'
 HOST='localhost'
 
