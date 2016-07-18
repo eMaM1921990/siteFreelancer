@@ -215,6 +215,30 @@ def vas(request):
             return render(request, "vas.html", {"usetyper": user, "users": data,'date':dateList})
 
 
+def blacklist(request):
+    auth = check(request)
+    if not auth:
+        return HttpResponseRedirect('/login/')
+    else:
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.filter(statis='in-active')
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "black_listed.html", {"usetyper": user, "users": data,'date':dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.filter(statis='in-active')
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            if 'date'!='0':
+                instance=AdminGridControl()
+                data=instance.filter_blackListed(request)
+            return render(request, "black_listed.html", {"usetyper": user, "users": data,'date':dateList})
+
+
 def clients(request):
     auth = check(request)
     if not auth:
@@ -1436,3 +1460,9 @@ def blacklistUser(request):
     if request.POST:
         instance=AdminGridControl()
         return HttpResponse(instance.blacklist_user(request))
+
+@csrf_exempt
+def restoreUser(request):
+    if request.POST:
+        instance=AdminGridControl()
+        return HttpResponse(instance.restore_users(request))

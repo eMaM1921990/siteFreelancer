@@ -125,3 +125,31 @@ function blackListSelectedUsers() {
         });
     }
 }
+
+
+function RestoreSelectedUsers() {
+    var inputArr = checkedID();
+    if (inputArr.length > 0) {
+        $.ajax({
+            url: "/restore_user/",
+            type: "POST",
+            dataType: "json",
+            data: {
+                ids: JSON.stringify(inputArr),
+                csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value
+            },
+            success: function (responseText) {
+                if (responseText.status) {
+                    location.reload();
+                } else {
+
+                }
+
+            },
+            error: function (xhr, errmsg, err) {
+                console.log(errmsg);
+
+            }
+        });
+    }
+}
