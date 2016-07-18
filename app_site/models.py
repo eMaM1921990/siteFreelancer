@@ -13,7 +13,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-MANAGED=False
+MANAGED=True
 class AccountType(models.Model):
     # id = models.IntegerField(unique=True)
     type = models.CharField(max_length=135, blank=True)
