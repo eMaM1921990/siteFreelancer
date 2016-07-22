@@ -79,6 +79,71 @@ class AdminGridControl():
         except Exception as e:
             return None
 
+    #Handle Membership
+    def filter_membership(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=Membership.objects.filter(~Q(membership_type__type="Bronze"))
+            if request.GET['date']!=0:
+               exequery=exequery.filter(date__year=year,date__month=month)
+            if request.GET['type']!=0:
+               exequery=exequery.filter(membership_type__type=request.GET['type'])
+            return  exequery
+        except Exception as e:
+            return None
+
+
+
+    #Handler silver
+    def filter_silver(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=Membership.objects.filter(membership_type__type="Silver")
+            if request.GET['date']!=0:
+               exequery=exequery.filter(date__year=year,date__month=month)
+            return  exequery
+        except Exception as e:
+            return None
+
+    #Handler Gold
+    def filter_gold(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=Membership.objects.filter(membership_type__type="Gold")
+            if request.GET['date']!=0:
+               exequery=exequery.filter(date__year=year,date__month=month)
+            return  exequery
+        except Exception as e:
+            return None
+
+
+    #Handle platinum
+    def filter_platinum(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=Membership.objects.filter(membership_type__type="Platinum")
+            if request.GET['date']!=0:
+               exequery=exequery.filter(date__year=year,date__month=month)
+            return  exequery
+        except Exception as e:
+            return None
+
+    #Handle reqyuest release
+    def filter_requests(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=TeensiesOrdered.objects.filter(released="request")
+            if request.GET['date']!=0:
+               exequery=exequery.filter(date__year=year,date__month=month)
+            return  exequery
+        except Exception as e:
+            return None
+
 
 
 

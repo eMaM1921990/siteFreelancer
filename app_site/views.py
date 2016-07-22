@@ -92,9 +92,23 @@ def releaseAdmin(request):
     if not auth:
         return HttpResponseRedirect('/login/')
     else:
-        user = Users.objects.get(pk=request.session["user_id"])
-        return render(request, "releaseRequests.html",
-                      {"user": user, "withdrawals": TeensiesOrdered.objects.filter(released="request")})
+        if 'date' not in request.GET and 'type' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=TeensiesOrdered.objects.filter(released="request")
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "releaseRequests.html",
+                          {"user": user, "withdrawals":data,"date":dateList })
+        else:
+            instance=AdminGridControl()
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=instance.filter_requests(request)
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "releaseRequests.html",
+                          {"user": user, "withdrawals":data,"date":dateList })
 
 
 def pages(request):
@@ -112,10 +126,22 @@ def allMembers(request):
     if not auth:
         return HttpResponseRedirect('/login/')
     else:
-        user = Users.objects.get(pk=request.session["user_id"])
-        bronze_type = MembershipType.objects.get(type="Bronze")
-        membership = Membership.objects.filter(~Q(membership_type=bronze_type))
-        return render(request, "allMembers.html", {"user": user, "members": membership, "type": "All"})
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            bronze_type = MembershipType.objects.get(type="Bronze")
+            membership = Membership.objects.filter(~Q(membership_type=bronze_type))
+            dateList={}
+            for i in membership:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "allMembers.html", {"user": user, "members": membership, "type": "All","date":dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            instance=AdminGridControl()
+            membership=instance.filter_membership(request)
+            dateList={}
+            for i in membership:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "allMembers.html", {"user": user, "members": membership, "type": "All","date":dateList})
 
 
 def allDisputes(request):
@@ -153,9 +179,20 @@ def silverMembers(request):
         return HttpResponseRedirect('/login/')
     else:
         user = Users.objects.get(pk=request.session["user_id"])
-        silver = MembershipType.objects.get(type="Silver")
-        membership = Membership.objects.filter(membership_type=silver)
-        return render(request, "allMembers.html", {"user": user, "members": membership, "type": silver.type})
+        if 'date' not in request.GET:
+            silver = MembershipType.objects.get(type="Silver")
+            membership = Membership.objects.filter(membership_type=silver)
+            dateList={}
+            for i in membership:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "allMembers.html", {"user": user, "members": membership, "type": silver.type,"date":dateList})
+        else:
+            instance=AdminGridControl()
+            membership=instance.filter_silver(request)
+            dateList={}
+            for i in membership:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "allMembers.html", {"user": user, "members": membership, "type": membership.membership_type.type,"date":dateList})
 
 
 def goldMembers(request):
@@ -164,9 +201,20 @@ def goldMembers(request):
         return HttpResponseRedirect('/login/')
     else:
         user = Users.objects.get(pk=request.session["user_id"])
-        gold = MembershipType.objects.get(type="Gold")
-        membership = Membership.objects.filter(membership_type=gold)
-        return render(request, "allMembers.html", {"user": user, "members": membership, "type": gold.type})
+        if 'date' not in request.GET:
+            gold = MembershipType.objects.get(type="Gold")
+            membership = Membership.objects.filter(membership_type=gold)
+            dateList={}
+            for i in membership:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "allMembers.html", {"user": user, "members": membership, "type": gold.type,"date":dateList})
+        else:
+            instance=AdminGridControl()
+            membership=instance.filter_gold(request)
+            dateList={}
+            for i in membership:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "allMembers.html", {"user": user, "members": membership, "type": membership.membership_type.type,"date":dateList})
 
 
 def platinumMembers(request):
@@ -175,10 +223,20 @@ def platinumMembers(request):
         return HttpResponseRedirect('/login/')
     else:
         user = Users.objects.get(pk=request.session["user_id"])
-        platinum = MembershipType.objects.get(type="Platinum")
-        membership = Membership.objects.filter(membership_type=platinum)
-        return render(request, "allMembers.html", {"user": user, "members": membership, "type": platinum.type})
-
+        if 'date' not in request.GET:
+            platinum = MembershipType.objects.get(type="Platinum")
+            membership = Membership.objects.filter(membership_type=platinum)
+            dateList={}
+            for i in membership:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "allMembers.html", {"user": user, "members": membership, "type": platinum.type,'date':dateList})
+        else:
+            instance=AdminGridControl()
+            membership=instance.filter_platinum(request)
+            dateList={}
+            for i in membership:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "allMembers.html", {"user": user, "members": membership, "type": membership.membership_type.type,"date":dateList})
 
 def vas(request):
     auth = check(request)
