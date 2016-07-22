@@ -69,12 +69,23 @@ def users(request):
     if not auth:
         return HttpResponseRedirect('/login/')
     else:
-        user = Users.objects.get(pk=request.session["user_id"])
-        data=Users.objects.all()
-        dateList={}
-        for i in data:
-            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
-        return render(request, "allUsers.html", {"user": user, "users":data ,"date":dateList})
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "allUsers.html", {"user": user, "users":data ,"date":dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.all()
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            if 'date'!='0':
+                instance=AdminGridControl()
+                data=instance.filter_users(request)
+            return render(request, "allUsers.html", {"user": user, "users":data ,"date":dateList})
 
 
 def witgdrawalAdmin(request):
@@ -243,9 +254,47 @@ def vas(request):
     if not auth:
         return HttpResponseRedirect('/login/')
     else:
-        user = Users.objects.get(pk=request.session["user_id"])
-        acc_type = AccountType.objects.get(type="Teenlancer")
-        return render(request, "vas.html", {"user": user, "users": Users.objects.filter(account_type=acc_type)})
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.filter(account_type__='Teenlancer')
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "vas.html", {"usetyper": user, "users": data,'date':dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.filter(account_type__='Teenlancer')
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            if 'date'!='0':
+                instance=AdminGridControl()
+                data=instance.filter_var(request)
+            return render(request, "vas.html", {"usetyper": user, "users": data,'date':dateList})
+
+
+def blacklist(request):
+    auth = check(request)
+    if not auth:
+        return HttpResponseRedirect('/login/')
+    else:
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.filter(status='in-active')
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "black_listed.html", {"usetyper": user, "users": data,'date':dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.filter(status='in-active')
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            if 'date'!='0':
+                instance=AdminGridControl()
+                data=instance.filter_blackListed(request)
+            return render(request, "black_listed.html", {"usetyper": user, "users": data,'date':dateList})
 
 
 def clients(request):
@@ -253,9 +302,25 @@ def clients(request):
     if not auth:
         return HttpResponseRedirect('/login/')
     else:
-        user = Users.objects.get(pk=request.session["user_id"])
-        acc_type = AccountType.objects.get(type="Client")
-        return render(request, "clients.html", {"user": user, "users": Users.objects.filter(account_type=acc_type)})
+        if 'date' not in request.GET:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.filter(account_type__type="Client")
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+            return render(request, "clients.html", {"user": user, "users": data,"date":dateList})
+        else:
+            user = Users.objects.get(pk=request.session["user_id"])
+            data=Users.objects.filter(account_type__type="Client")
+            dateList={}
+            for i in data:
+                dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+
+            if 'date'!='0':
+                instance=AdminGridControl()
+                data=instance.filter_client(request)
+            return render(request, "clients.html", {"user": user, "users":data,"date":dateList})
+
 
 
 def pins(request):
@@ -1453,3 +1518,9 @@ def blacklistUser(request):
     if request.POST:
         instance=AdminGridControl()
         return HttpResponse(instance.blacklist_user(request))
+
+@csrf_exempt
+def restoreUser(request):
+    if request.POST:
+        instance=AdminGridControl()
+        return HttpResponse(instance.restore_users(request))

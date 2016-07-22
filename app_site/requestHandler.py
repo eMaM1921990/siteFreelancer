@@ -79,6 +79,15 @@ class AdminGridControl():
         except Exception as e:
             return None
 
+    #Handle users
+    def filter_users(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=Users.objects.filter(date__year=year,date__month=month)
+            return  exequery
+        except Exception as e:
+            return None
     #Handle Membership
     def filter_membership(self,request):
         try:
@@ -145,6 +154,35 @@ class AdminGridControl():
             return None
 
 
+    def filter_client(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=Users.objects.filter(date__year=year,date__month=month,account_type__type='Client')
+            return  exequery
+        except Exception as e:
+            return None
+
+    def filter_var(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=Users.objects.filter(date__year=year,date__month=month,account_type__type='Teenlancer')
+            return  exequery
+        except Exception as e:
+            return None
+
+    def filter_blackListed(self,request):
+        try:
+            year=str(request.GET['date']).split('-')[1]
+            month=str(request.GET['date']).split('-')[0]
+            exequery=Users.objects.filter(date__year=year,date__month=month,status='in-active')
+            return  exequery
+        except Exception as e:
+            return None
+
+
+
 
 
     #handle trash
@@ -168,7 +206,36 @@ class AdminGridControl():
 
     ##handle user
     def blacklist_user(self,request):
-        return None
+        message='Successfully blocked selected rows ['
+        try:
+            dataJson=simplejson.JSONDecoder().decode(request.POST['ids'])
+            for i in dataJson:
+                record=Users.objects.get(id=int(i['id']))
+                record.status='In-active'
+                record.save()
+                message=message+str(record.username)
+            message=message+']'
+            return responeJson(True,message)
+        except Exception as e:
+            return responeJson(False,str(e))
+
+
+    def restore_users(self,request):
+        message='Successfully restored selected rows ['
+        try:
+            dataJson=simplejson.JSONDecoder().decode(request.POST['ids'])
+            for i in dataJson:
+                record=Users.objects.get(id=int(i['id']))
+                record.status='Active'
+                record.save()
+                message=message+str(record.username)
+            message=message+']'
+            return responeJson(True,message)
+        except Exception as e:
+            return responeJson(False,str(e))
+
+
+
 
 
 

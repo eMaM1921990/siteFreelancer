@@ -13,7 +13,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-MANAGED=False
+MANAGED=True
 class AccountType(models.Model):
     # id = models.IntegerField(unique=True)
     type = models.CharField(max_length=135, blank=True)
@@ -56,6 +56,7 @@ class Users(models.Model):
     address = models.CharField(max_length=255, blank=True)
     state = models.CharField(max_length=250, blank=True)
     zip_code = models.CharField(max_length=180, blank=True, db_column='zip')
+    status=models.CharField(max_length=180,default='Active')
 
     class Meta:
         db_table = u'Users'

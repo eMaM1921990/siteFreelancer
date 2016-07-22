@@ -98,6 +98,7 @@ urlpatterns = patterns('',
     url(r'^admin/users/', app_site.views.users, name='users'),
     url(r'^admin/clients/', app_site.views.clients, name='clients'),
     url(r'^admin/vas/', app_site.views.vas, name='vas'),
+    url(r'^admin/blacklist/', app_site.views.blacklist, name='blacklist'),
 
     url(r'^admin/trash/', app_site.views.trash, name='trash'),
     url(r'^admin/cancellations/', app_site.views.cancelAdmin, name='cancelAdmin'),
@@ -144,6 +145,7 @@ urlpatterns = patterns('',
     url(r'^delete_niches/', app_site.views.deleteNiches, name='deleteNiches'),
     url(r'^restore_niches/', app_site.views.restoreNiches, name='restoreNiches'),
     url(r'^blacklist_user/', app_site.views.blacklistUser, name='blacklistUser'),
+    url(r'^restore_user/', app_site.views.restoreUser, name='restoreUser'),
 
     # url(r'^mysite/', include('mysite.foo.urls')),
 

@@ -28,15 +28,15 @@
 
                     <div class="box myTable">
                         <div class="box-header">
-                            <form id="filter" method="get" action="/admin/clients/">
+                            <form id="filter" method="get" action="/admin/blacklist/">
                             <a class="btn btn-default">Update</a>
                             <div class="form-group">
                                 <select class="form-control">
                                     <option>Bulk Actions</option>
-                                    <option>Blacklist</option>
+                                    <option>Restore</option>
                                 </select>
                             </div>
-                            <a class="btn btn-default" href="javascript:blackListSelectedUsers()">Apply</a>
+                            <a class="btn btn-default" href="javascript:RestoreSelectedUsers()">Apply</a>
                             <div class="form-group">
                                 <select class="form-control" id="date">
                                     <option value="0">All Dates</option>
