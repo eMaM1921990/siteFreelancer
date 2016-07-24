@@ -181,7 +181,10 @@ def chatHistory(request):
     else:
         user = Users.objects.get(pk=request.session["user_id"])
         messages = Messages.objects.all()
-        return render(request, "chatsHistory.html", {"user": user, "messages": messages})
+        dateList={}
+        for i in membership:
+            dateList[i.date.strftime('%b %Y')]=i.date.strftime('%b %Y')
+        return render(request, "chatsHistory.html", {"user": user, "messages": messages,'date':dateList})
 
 
 def silverMembers(request):
