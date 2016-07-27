@@ -158,5 +158,5 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-FB_ID=''
-FB_SECRET=''
+FB_ID='1761851487423547'
+FB_SECRET='d3207a876dcfd877b25bb03e0c2ceda6'
