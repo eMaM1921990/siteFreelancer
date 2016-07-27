@@ -1262,7 +1262,7 @@ def profile(request):
         rating = 0.0
         count = 0
         for teensie in teensies:
-            if teensie.rating != 0.0:
+            if teensie.rating :
                 rating = (rating + teensie.rating)
                 count += 1
         if count > 0:

@@ -15,13 +15,13 @@
                         <form action="/editTeensie/{{teensie.pk}}/" method="post" id="postForm">{% csrf_token %}
                         <div class="row headline">
                             <div class="col-xs-12 text-center">
-                                <h3 class="myHeadLine">Edit a Teensie</h3>
+                                <h3 class="myHeadLine">Edit a Niche</h3>
                             </div>
                         </div>
 
                         <div class="row inputRow">
                             <div class="col-xs-12 col-sm-6 pull-left">
-                                <input type="text" id="name" name="name" class="form-group myInput" value="{{teensie.teensie_name}}" placeholder="Teensie Name" />
+                                <input type="text" id="name" name="name" class="form-group myInput" value="{{teensie.teensie_name}}" placeholder="Niche Name" />
                             </div>
                             <div class="col-xs-12 col-sm-6 pull-right ">
                                 <input type="text" id="skills" name="skills" class="form-group myInput" value="{{teensie.skills}}" placeholder="Skills Required" />

@@ -139,6 +139,7 @@ USE_TZ = True
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
 SENDGRID_USER = "drowerik3"
 SENDGRID_PASSWORD = "2552d3af"
+EMAIL_HOST_USER='password@vassista.com'
 
 #MailChimp setting
 MAILCHIMP_API_KEY='696bf301dce790c9dd65956d5bfe2dd3-us13'
@@ -157,3 +158,5 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+FB_ID=''
+FB_SECRET=''

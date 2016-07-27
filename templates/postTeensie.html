@@ -18,7 +18,7 @@
                         <form action="/postTeensie/" method="post" id="postForm">{% csrf_token %}
                         <div class="row headline">
                             <div class="col-xs-12 text-center">
-                                <h3 class="myHeadLine">Post a Teensie</h3>
+                                <h3 class="myHeadLine">Post a Niche</h3>
                             </div>
                         </div>
 
@@ -32,19 +32,15 @@
                         </div>
                         <div class="row inputRow">
                             <div class="col-xs-12 col-sm-6 pull-left">
-                                <div class="dropdown">
-                                    <a id="action1" href="#!"  class="dropToggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Category&nbsp;&nbsp;<i class="fa fa-caret-down pull-right"></i></a>
-                                    <ul class="dropdown-menu" aria-labelledby="action1">
-                                        {% for category in categories %}
-                                            <li><a>{{ category }}</a></li>
+                                    <select name="category" id="category"  class="form-group myInput">
+                                        <option value="" disabled selected>Select Category</option>
+
+
+                                         {% for category in categories %}
+                                             <option value="{{ category.id }}">{{ category.category }}</option>
                                         {% endfor %}
-                                        <input type="text" name="category" id="category" hidden/>
-                                        <!--<li><a href="#">Develop</a></li>-->
-                                        <!--<li><a href="#">Marketing</a></li>-->
-                                        <!--<li><a href="#">SEO</a></li>-->
-                                        <!--<li><a href="#">Shit</a></li>-->
-                                    </ul>
-                                </div>
+
+                                    </select>
                             </div>
                             <div class="col-xs-12 col-sm-6 pull-right ">
                                 <h3 class="myHeadLine headClient myInputLabel">Timeframe</h3>
@@ -80,7 +76,7 @@
 
                         <div class="row headline">
                             <div class="col-xs-12 text-center">
-                                <a href="#!" id="postButton" class="myButton">Post Teensie Now</a>
+                                <a href="#!" id="postButton" class="myButton">Post Niche Now</a>
                             </div>
                         </div>
 
